@@ -1,0 +1,76 @@
+---
+metrics:
+  configs:
+    - name: near-multichain-mainnet-prom
+      remote_write:
+        - basic_auth:
+            password: "${GRAFANA_CLOUD_PSWD}"
+            username: "${GRAFANA_USERNAME}"
+          url: "${GRAFANA_PUSH_URL}"
+      scrape_configs:
+        - job_name: multichain-mainnet-pagoda
+          static_configs:
+            - targets:
+                - "near.mainnet.sig.network"
+              labels:
+                multichain_node: "et-mpc-node.near"
+                environment: "mainnet"
+        - job_name: multichain-mainnet-lifted
+          static_configs:
+            - targets:
+                - "near-mpc.liftedinit.org"
+              labels:
+                multichain_node: "lifted-mainnet.near"
+                environment: "mainnet"
+        - job_name: multichain-mainnet-staking4all
+          static_configs:
+            - targets:
+                - "multichain-mainnet-0.staking4all.org"
+              labels:
+                multichain_node: "near-mpc-staking4all-01.near"
+                environment: "mainnet"
+        - job_name: multichain-mainnet-nodemonster
+          static_configs:
+            - targets:
+                - "near.node.monster"
+              labels:
+                multichain_node: "nodemonster.near"
+                environment: "mainnet"
+        - job_name: multichain-mainnet-aurora
+          static_configs:
+            - targets:
+                - "multichain-mainnet.aurora.dev"
+              labels:
+                multichain_node: "multichain-mainnet-aurora.near"
+                environment: "mainnet"
+        - job_name: multichain-mainnet-luganodes
+          static_configs:
+            - targets:
+                - "near.mpc.lgns.net"
+              labels:
+                multichain_node: "mpc-lgns.near"
+                environment: "mainnet"
+        - job_name: multichain-mainnet-infstones
+          static_configs:
+            - targets:
+                - "multichain-mainnet-0.infstones.io"
+              labels:
+                multichain_node: "nearmpc-infstones.near"
+                environment: "mainnet"
+        - job_name: multichain-mainnet-blacksand
+          static_configs:
+            - targets:
+                - "multichain-mainnet-0.near.blksnd.xyz"
+              labels:
+                multichain_node: "blacksandtech.near"
+                environment: "mainnet"
+        - job_name: mpc-recovery-mainnet
+          static_configs:
+            - targets:
+                - "mpc.mainnet.sig.network"
+              labels:
+                mpc_recovery: "leader"
+                environment: "mainnet"
+
+  global:
+    scrape_interval: 30s

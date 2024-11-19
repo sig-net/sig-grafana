@@ -1,0 +1,76 @@
+---
+metrics:
+  configs:
+    - name: near-multichain-testnet-prom
+      remote_write:
+        - basic_auth:
+            password: "${GRAFANA_CLOUD_PSWD}"
+            username: "${GRAFANA_USERNAME}"
+          url: "${GRAFANA_PUSH_URL}"
+      scrape_configs:
+        - job_name: multichain-testnet-nodemonster
+          static_configs:
+            - targets:
+                - "34.128.134.136"
+              labels:
+                multichain_node: "nodemonster.testnet"
+                environment: "testnet"
+        - job_name: multichain-testnet-staking4all
+          static_configs:
+            - targets:
+                - "34.144.193.111"
+              labels:
+                multichain_node: "near-mpc-staking4all-01.testnet"
+                environment: "testnet"
+        - job_name: multichain-testnet-lifted
+          static_configs:
+            - targets:
+                - "34.49.54.107"
+              labels:
+                multichain_node: "lifted-near.testnet"
+                environment: "testnet"
+        - job_name: multichain-testnet-pagoda
+          static_configs:
+            - targets:
+                - "34.144.213.12"
+              labels:
+                multichain_node: "pagoda-multichain.testnet"
+                environment: "testnet"
+        - job_name: multichain-testnet-infstones
+          static_configs:
+            - targets:
+                - "34.36.206.107"
+              labels:
+                multichain_node: "infstones_nearmpc.testnet"
+                environment: "testnet"
+        - job_name: multichain-testnet-luganodes
+          static_configs:
+            - targets:
+                - "34.49.231.59"
+              labels:
+                multichain_node: "mpc-lgns.testnet"
+                environment: "testnet"
+        - job_name: multichain-testnet-aurora
+          static_configs:
+            - targets:
+                - "34.49.211.4"
+              labels:
+                multichain_node: "aurora-multichain.testnet"
+                environment: "testnet"
+        - job_name: multichain-testnet-blacksand
+          static_configs:
+            - targets:
+                - "34.98.94.79"
+              labels:
+                multichain_node: "bst-near.testnet"
+                environment: "testnet"
+        - job_name: mpc-recovery-testnet
+          static_configs:
+            - targets:
+                - "mpc.testnet.sig.network"
+              labels:
+                mpc_recovery: "leader"
+                environment: "testnet"
+
+  global:
+    scrape_interval: 30s

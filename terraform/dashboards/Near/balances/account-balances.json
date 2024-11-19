@@ -1,0 +1,681 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "infinity",
+          "uid": "yesoreyeram-infinity-datasource"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 360,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 10,
+      "panels": [],
+      "title": "[MAINNET] [MULTICHAIN]",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 1
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.4.0-77868",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "result.amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "Balance",
+              "type": "string"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://rpc.mainnet.near.org",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"et-mpc-node.near\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"et-mpc-node.near\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
+          }
+        }
+      ],
+      "title": "et-mpc-node.near balance (Our node)",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 1
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.4.0-77868",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "result.amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "Balance",
+              "type": "string"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://rpc.mainnet.near.org",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"ping-account.near\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"ping-account.near\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
+          }
+        }
+      ],
+      "title": "ping-account.near balance (heartbeat service)",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 9,
+      "panels": [],
+      "title": "[TESTNET] [MULTICHAIN]",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 10
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.4.0-77868",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "result.amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "Balance",
+              "type": "string"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://rpc.testnet.near.org",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"ping-account.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"ping-account.testnet\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
+          }
+        }
+      ],
+      "title": "ping-account.testne balance (heartbeat service)",
+      "type": "stat"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 11,
+      "panels": [
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 19
+          },
+          "id": 3,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.3.0-75826",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "Balance",
+                  "type": "string"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "type": "json",
+              "url": "https://rpc.mainnet.near.org",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"account_creator.near\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"account_creator.near\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "account_creator.near MPC Recovery Mainnet Account Balance",
+          "type": "stat"
+        }
+      ],
+      "title": "[MAINNET] [MPC Recovery]",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 19
+      },
+      "id": 12,
+      "panels": [
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 89
+          },
+          "id": 4,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.3.0-75826",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "Balance",
+                  "type": "string"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "type": "json",
+              "url": "https://rpc.testnet.near.org",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"mpc-recovery-dev-creator.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"mpc-recovery-dev-creator.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "mpc-recovery-dev-creator.testnet MPC Recovery Testnet Account Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 89
+          },
+          "id": 2,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.3.0-75826",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "Balance",
+                  "type": "string"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "type": "json",
+              "url": "https://rpc.testnet.near.org",
+              "url_options": {
+                "body_content_type": "text/plain",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"pagoda-multichain.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"pagoda-multichain.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "pagoda-multichain.testnet Testnet Account Balance",
+          "type": "stat"
+        }
+      ],
+      "title": "[TESTNET] [MPC Recovery]",
+      "type": "row"
+    }
+  ],
+  "preload": false,
+  "refresh": "",
+  "schemaVersion": 40,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Account Balances",
+  "uid": "ddtms2vlw0buob",
+  "version": 14,
+  "weekStart": ""
+}

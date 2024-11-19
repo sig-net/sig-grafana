@@ -1,0 +1,97 @@
+---
+metrics:
+  configs:
+    - name: near-multichain-dev-prom
+      remote_write:
+        - basic_auth:
+            password: "${GRAFANA_CLOUD_PSWD}"
+            username: "${GRAFANA_USERNAME}"
+          url: "${GRAFANA_PUSH_URL}"
+      scrape_configs:
+        - job_name: multichain-dev-0
+          static_configs:
+            - targets:
+                - "10.101.0.56:3000"
+              labels:
+                multichain_node: "multichain-node-dev-0.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-1
+          static_configs:
+            - targets:
+                - "10.101.0.81:3000"
+              labels:
+                multichain_node: "multichain-node-dev-1.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-2
+          static_configs:
+            - targets:
+                - "10.101.0.57:3000"
+              labels:
+                multichain_node: "multichain-node-dev-2.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-3
+          static_configs:
+            - targets:
+                - "10.101.0.129:3000"
+              labels:
+                multichain_node: "multichain-node-dev-3.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-4
+          static_configs:
+            - targets:
+                - "10.101.0.124:3000"
+              labels:
+                multichain_node: "multichain-node-dev-4.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-5
+          static_configs:
+            - targets:
+                - "10.101.0.101:3000"
+              labels:
+                multichain_node: "multichain-node-dev-5.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-6
+          static_configs:
+            - targets:
+                - "10.101.0.122:3000"
+              labels:
+                multichain_node: "multichain-node-dev-6.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-7
+          static_configs:
+            - targets:
+                - "10.101.0.123:3000"
+              labels:
+                multichain_node: "multichain-node-dev-7.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-8
+          static_configs:
+            - targets:
+                - "10.101.0.125:3000"
+              labels:
+                multichain_node: "multichain-node-dev-8.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-9
+          static_configs:
+            - targets:
+                - "10.101.0.126:3000"
+              labels:
+                multichain_node: "multichain-node-dev-9.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-10
+          static_configs:
+            - targets:
+                - "10.101.0.127:3000"
+              labels:
+                multichain_node: "multichain-node-dev-10.testnet"
+                environment: "dev"
+        - job_name: multichain-dev-11
+          static_configs:
+            - targets:
+                - "10.101.0.128:3000"
+              labels:
+                multichain_node: "multichain-node-dev-11.testnet"
+                environment: "dev"
+
+  global:
+    scrape_interval: 30s
