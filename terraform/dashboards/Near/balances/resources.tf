@@ -20,12 +20,12 @@ provider "grafana" {
 
 
 data "google_secret_manager_secret_version" "dashboard_token" {
-  project   = "sig-bootstrap"
-  secret    = "grafana_cloud_dashboards_token"
-  version   = "2"
+  project = "sig-bootstrap"
+  secret  = "grafana_cloud_dashboards_token"
+  version = "2"
 }
 
 data "google_secret_manager_secret_version" "grafana_cloud_url" {
-  project   = "sig-bootstrap"
-  secret    = "grafana-cloud-url"
+  project = "sig-bootstrap"
+  secret  = "grafana-cloud-url"
 }
