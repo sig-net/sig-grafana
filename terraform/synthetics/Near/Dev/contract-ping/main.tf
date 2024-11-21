@@ -17,9 +17,9 @@ resource "google_project_iam_member" "sa-roles" {
     "roles/logging.logWriter",
   ])
 
-  role     = each.key
-  member   = "serviceAccount:${google_service_account.service_account.email}"
-   project = var.project_id
+  role    = each.key
+  member  = "serviceAccount:${google_service_account.service_account.email}"
+  project = var.project_id
 }
 
 resource "google_cloud_run_service" "contract_ping" {
@@ -77,8 +77,8 @@ resource "google_cloud_run_service" "contract_ping" {
     }
     metadata {
       annotations = {
-        "autoscaling.knative.dev/minScale"        = "1"
-        "run.googleapis.com/cpu-throttling"       = false
+        "autoscaling.knative.dev/minScale"  = "1"
+        "run.googleapis.com/cpu-throttling" = false
       }
     }
   }
@@ -96,7 +96,7 @@ resource "google_cloud_run_service" "contract_ping" {
       template[0].metadata[0].annotations["run.googleapis.com/client-name"],
     ]
   }
-  depends_on = [ google_service_account.service_account ]
+  depends_on = [google_service_account.service_account]
 }
 
 data "google_iam_policy" "noauth" {
@@ -109,9 +109,9 @@ data "google_iam_policy" "noauth" {
 }
 
 resource "google_cloud_run_service_iam_policy" "noauth" {
-  location    = google_cloud_run_service.contract_ping.location
-  project     = google_cloud_run_service.contract_ping.project
-  service     = google_cloud_run_service.contract_ping.name
+  location = google_cloud_run_service.contract_ping.location
+  project  = google_cloud_run_service.contract_ping.project
+  service  = google_cloud_run_service.contract_ping.name
 
   policy_data = data.google_iam_policy.noauth.policy_data
 }
