@@ -19,6 +19,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -836,7 +837,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -867,7 +869,7 @@
             "uid": "grafanacloud-prom"
           },
           "editorMode": "code",
-          "expr": "max(rate(multichain_signature_generator_failures{node_account_id=~\"$node_account_id\"}[1h]))/max(rate(multichain_num_total_historical_signature_generators{node_account_id=~\"$node_account_id\"}[1h]))",
+          "expr": "max(rate(multichain_signature_generator_failures{node_account_id=~\"$node_account_id\"}[1h]))/max(rate(multichain_num_total_historical_signature_generators{node_account_id=~\"$node_account_id\"}[1h]))*100",
           "legendFormat": "failure rate",
           "range": true,
           "refId": "A"
@@ -4639,6 +4641,6 @@
   "timezone": "utc",
   "title": "Chain Signatures",
   "uid": "bdg2srektjy0wd",
-  "version": 205,
+  "version": 1,
   "weekStart": ""
 }
