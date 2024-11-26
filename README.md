@@ -15,7 +15,6 @@
 - In [`resources.tf`](./terraform/dashboards/Near/chain-signatures/resources.tf) files, the authentication and state information will need to change to match what is used in your organization. Currently we utilze Google Cloud Platform Secret Manger to consume sensitive data such as Grafana usernames, passwords, API credentials and URLs.
 - You may remove node paths that do not apply to your organization. Since we are the owner of this service, we do our part to monitor nodes across the ecosystem, but you do not have to do so.
 - We track balances of certain nodes that we use for development as well as certain "tooling" accounts we use, you may remove these, as they are pretty useless to everyone but us.
-- If you would like to continue to edit or create new dashboards via code, there is a VS Code plugin for local development, this is to test out JSON files before commiting them to source control. If you would like to do the same, you will need to configure a Grafana Service Account with "Viewer" permissions, and generate an API key. [VS Code Plugin Docs](https://marketplace.visualstudio.com/items?itemName=Grafana.grafana-vscode)
 
 
 ### Alerts
@@ -35,3 +34,6 @@
 ### Synthetics
 ---
 - This is a custom service which was created to ping a the smart contract of the ecosystem to act as a "heartbeat" monitor for the overall smart contract functionality. You do not need to monitor synthetics for the smart contract, but I encourage you to configure your own Synthetics for your node just for visibility. I have not converted synthetic alerts and configurations into terraform just yet, as they are a work in progress, but I plan to do so in the future once we have something more fleshed out and useful for the greater community.
+
+### How to contribute
+If you would like to continue to edit or create new dashboards via code, there is a VS Code plugin for local development, this is to test out JSON files before commiting them to source control. If you would like to do the same, you will need to configure a Grafana Service Account with "Viewer" permissions, and generate an API key. [VS Code Plugin Docs](https://marketplace.visualstudio.com/items?itemName=Grafana.grafana-vscode). 
