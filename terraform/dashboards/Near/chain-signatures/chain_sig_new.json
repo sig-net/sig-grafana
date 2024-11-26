@@ -2144,7 +2144,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "s"
         },
         "overrides": []
       },
@@ -2175,13 +2176,13 @@
             "uid": "grafanacloud-prom"
           },
           "editorMode": "code",
-          "expr": "sum by (node_account_id) (histogram_quantile(0.95, rate(multichain_presignature_latency_sec_bucket{node_account_id=~\"$node_account_id\"}[1m])))",
+          "expr": "sum by (node_account_id) (histogram_quantile(0.95, rate(multichain_presignature_latency_sec_bucket{node_account_id=~\"$node_account_id\"}[1h])))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "P95 Presignature Latency Per Min",
+      "title": "P95 Presignature Latency Per Hour",
       "type": "timeseries"
     },
     {
