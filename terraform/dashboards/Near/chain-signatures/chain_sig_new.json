@@ -2241,7 +2241,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -2272,13 +2273,13 @@
             "uid": "grafanacloud-prom"
           },
           "editorMode": "code",
-          "expr": "max(rate(multichain_presignature_generator_failures{node_account_id=~\"$node_account_id\"}[1h]))/max(rate(multichain_num_total_historical_presignature_generators{node_account_id=~\"$node_account_id\"}[1h]))",
+          "expr": "max(increase(multichain_presignature_generator_failures{node_account_id=~\"$node_account_id\"}[1h]))/max(increase(multichain_num_total_historical_presignature_generators{node_account_id=~\"$node_account_id\"}[1h]))*100",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "Presignature Failure Rate Per Hour",
+      "title": "Presignature Failure Per Hour",
       "type": "timeseries"
     },
     {
