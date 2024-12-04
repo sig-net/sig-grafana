@@ -25,12 +25,18 @@ jobs:
       - name: Terraform init
         run: terraform init
         working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
 
       - name: Terraform Plan
         run: terraform plan -input=false
         working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
 
       - name: Terraform Apply
         if: github.event.pull_request.merged == true
         run: terraform apply -auto-approve -input=false
         working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
