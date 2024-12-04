@@ -1151,7 +1151,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2122
+            "y": 2218
           },
           "id": 1,
           "options": {
@@ -1248,7 +1248,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 2122
+            "y": 2218
           },
           "id": 40,
           "options": {
@@ -1348,7 +1348,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2802
+            "y": 2898
           },
           "id": 4,
           "options": {
@@ -1445,7 +1445,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 2802
+            "y": 2898
           },
           "id": 3,
           "options": {
@@ -1556,7 +1556,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2123
+            "y": 2219
           },
           "id": 60,
           "options": {
@@ -1651,7 +1651,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 2123
+            "y": 2219
           },
           "id": 62,
           "options": {
@@ -1746,7 +1746,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2291
+            "y": 2387
           },
           "id": 63,
           "options": {
@@ -1841,7 +1841,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 2291
+            "y": 2387
           },
           "id": 66,
           "options": {
@@ -1936,7 +1936,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2299
+            "y": 2395
           },
           "id": 71,
           "options": {
@@ -2045,7 +2045,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 716
+            "y": 812
           },
           "id": 11,
           "options": {
@@ -2142,7 +2142,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 716
+            "y": 812
           },
           "id": 10,
           "options": {
@@ -2241,7 +2241,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 724
+            "y": 820
           },
           "id": 45,
           "options": {
@@ -2337,7 +2337,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 724
+            "y": 820
           },
           "id": 50,
           "options": {
@@ -2432,7 +2432,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 732
+            "y": 828
           },
           "id": 72,
           "options": {
@@ -2523,7 +2523,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 732
+            "y": 828
           },
           "id": 73,
           "options": {
@@ -2615,7 +2615,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 740
+            "y": 836
           },
           "id": 57,
           "options": {
@@ -2711,7 +2711,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 740
+            "y": 836
           },
           "id": 51,
           "options": {
@@ -2806,7 +2806,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 748
+            "y": 844
           },
           "id": 38,
           "options": {
@@ -2902,7 +2902,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 748
+            "y": 844
           },
           "id": 37,
           "options": {
@@ -2998,7 +2998,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 756
+            "y": 852
           },
           "id": 22,
           "options": {
@@ -3110,7 +3110,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 85
+            "y": 45
           },
           "id": 39,
           "options": {
@@ -3207,7 +3207,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 85
+            "y": 45
           },
           "id": 7,
           "options": {
@@ -3308,7 +3308,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 93
+            "y": 53
           },
           "id": 44,
           "options": {
@@ -3406,7 +3406,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 93
+            "y": 53
           },
           "id": 58,
           "options": {
@@ -3497,13 +3497,38 @@
               },
               "unit": "s"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "__systemRef": "hideSeriesFrom",
+                "matcher": {
+                  "id": "byNames",
+                  "options": {
+                    "mode": "exclude",
+                    "names": [
+                      "multichain-node-dev-6.testnet"
+                    ],
+                    "prefix": "All except:",
+                    "readOnly": true
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": true
+                    }
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 101
+            "y": 61
           },
           "id": 53,
           "options": {
@@ -3600,7 +3625,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 101
+            "y": 61
           },
           "id": 52,
           "options": {
@@ -3696,7 +3721,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 109
+            "y": 69
           },
           "id": 21,
           "options": {
@@ -3799,7 +3824,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 109
+            "y": 69
           },
           "id": 65,
           "options": {
@@ -3899,7 +3924,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 117
+            "y": 77
           },
           "id": 19,
           "options": {
@@ -3996,7 +4021,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 117
+            "y": 77
           },
           "id": 20,
           "options": {
@@ -4109,7 +4134,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 166
+            "y": 126
           },
           "id": 76,
           "options": {
@@ -4133,7 +4158,7 @@
                 "uid": "grafanacloud-prom"
               },
               "editorMode": "code",
-              "expr": "increase(multichain_send_encrypted_total{environment=~\"$environment\"}[1h])",
+              "expr": "max by(node_account_id) (increase(multichain_send_encrypted_total{environment=~\"$environment\"}[1h]))",
               "instant": false,
               "legendFormat": "__auto",
               "range": true,
@@ -4208,7 +4233,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 166
+            "y": 126
           },
           "id": 30,
           "options": {
@@ -4232,7 +4257,7 @@
                 "uid": "grafanacloud-prom"
               },
               "editorMode": "code",
-              "expr": "increase(multichain_send_encrypted_failure{environment=~\"$environment\"}[1h])",
+              "expr": "max by (node_account_id) (increase(multichain_send_encrypted_failure{environment=~\"$environment\"}[1h]))",
               "instant": false,
               "legendFormat": "__auto",
               "range": true,
@@ -4298,7 +4323,8 @@
                     "value": 80
                   }
                 ]
-              }
+              },
+              "unit": "ms"
             },
             "overrides": []
           },
@@ -4306,7 +4332,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 174
+            "y": 134
           },
           "id": 75,
           "options": {
@@ -4330,14 +4356,14 @@
                 "uid": "grafanacloud-prom"
               },
               "editorMode": "code",
-              "expr": "max by (node_account_id) (multichain_send_encrypted_ms_count{node_account_id=~\"$node_account_id\"})",
+              "expr": "sum by (node_account_id) (histogram_quantile(0.5, increase(multichain_send_encrypted_ms_bucket{node_account_id=~\"$node_account_id\"}[1h])))",
               "instant": false,
               "legendFormat": "__auto",
               "range": true,
               "refId": "A"
             }
           ],
-          "title": "Sent Encrypted Latency",
+          "title": "Median Send Encrypted Latency",
           "type": "timeseries"
         },
         {
@@ -4396,7 +4422,8 @@
                     "value": 80
                   }
                 ]
-              }
+              },
+              "unit": "ms"
             },
             "overrides": []
           },
@@ -4404,7 +4431,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 174
+            "y": 134
           },
           "id": 74,
           "options": {
@@ -4428,14 +4455,14 @@
                 "uid": "grafanacloud-prom"
               },
               "editorMode": "code",
-              "expr": "max by (node_account_id) (multichain_send_encrypted_ms_count{node_account_id=~\"$node_account_id\"})",
+              "expr": "sum by (node_account_id) (histogram_quantile(0.5, increase(multichain_failed_send_encrypted_ms_bucket{node_account_id=~\"$node_account_id\"}[1h])))",
               "instant": false,
               "legendFormat": "__auto",
               "range": true,
               "refId": "A"
             }
           ],
-          "title": "Failed Encrypted Latency",
+          "title": "Median Failed Encrypted Latency",
           "type": "timeseries"
         }
       ],
@@ -4519,7 +4546,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2127
+            "y": 2223
           },
           "id": 69,
           "options": {
@@ -4621,7 +4648,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 2127
+            "y": 2223
           },
           "id": 67,
           "options": {
@@ -4723,7 +4750,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2135
+            "y": 2231
           },
           "id": 68,
           "options": {
