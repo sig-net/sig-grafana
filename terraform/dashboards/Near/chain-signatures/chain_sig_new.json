@@ -1135,7 +1135,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1151,7 +1152,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2218
+            "y": 1034
           },
           "id": 1,
           "options": {
@@ -1167,7 +1168,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -1233,7 +1234,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1248,7 +1250,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 2218
+            "y": 1034
           },
           "id": 40,
           "options": {
@@ -1263,7 +1265,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -1333,7 +1335,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1348,7 +1351,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2898
+            "y": 1346
           },
           "id": 4,
           "options": {
@@ -1364,7 +1367,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -1430,7 +1433,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1445,7 +1449,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 2898
+            "y": 1346
           },
           "id": 3,
           "options": {
@@ -1461,7 +1465,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -1541,7 +1545,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1556,7 +1561,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2219
+            "y": 1035
           },
           "id": 60,
           "options": {
@@ -1571,7 +1576,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -1636,7 +1641,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1651,7 +1657,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 2219
+            "y": 1035
           },
           "id": 62,
           "options": {
@@ -1666,7 +1672,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -1731,7 +1737,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1746,7 +1753,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2387
+            "y": 1163
           },
           "id": 63,
           "options": {
@@ -1761,7 +1768,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -1826,7 +1833,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1841,7 +1849,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 2387
+            "y": 1163
           },
           "id": 66,
           "options": {
@@ -1856,7 +1864,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -1921,7 +1929,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1936,7 +1945,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2395
+            "y": 1171
           },
           "id": 71,
           "options": {
@@ -1951,7 +1960,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -2030,7 +2039,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2045,7 +2055,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 812
+            "y": 1036
           },
           "id": 11,
           "options": {
@@ -2061,7 +2071,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -2127,7 +2137,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2142,7 +2153,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 812
+            "y": 1036
           },
           "id": 10,
           "options": {
@@ -2158,7 +2169,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -2225,7 +2236,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2241,7 +2253,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 820
+            "y": 1116
           },
           "id": 45,
           "options": {
@@ -2256,7 +2268,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -2321,7 +2333,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2337,7 +2350,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 820
+            "y": 1116
           },
           "id": 50,
           "options": {
@@ -2352,7 +2365,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -2412,12 +2425,14 @@
                   "mode": "off"
                 }
               },
+              "displayName": "${__field.labels.node_account_id}",
               "mappings": [],
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2432,7 +2447,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 828
+            "y": 1124
           },
           "id": 72,
           "options": {
@@ -2447,7 +2462,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "editorMode": "code",
@@ -2503,12 +2518,14 @@
                   "mode": "off"
                 }
               },
+              "displayName": "${__field.labels.node_account_id}",
               "mappings": [],
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2517,13 +2534,38 @@
                 ]
               }
             },
-            "overrides": []
+            "overrides": [
+              {
+                "__systemRef": "hideSeriesFrom",
+                "matcher": {
+                  "id": "byNames",
+                  "options": {
+                    "mode": "exclude",
+                    "names": [
+                      "multichain-mainnet-aurora.near"
+                    ],
+                    "prefix": "All except:",
+                    "readOnly": true
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": true
+                    }
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 828
+            "y": 1124
           },
           "id": 73,
           "options": {
@@ -2538,7 +2580,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "editorMode": "code",
@@ -2594,12 +2636,14 @@
                   "mode": "off"
                 }
               },
+              "displayName": "${__field.labels.node_account_id}",
               "mappings": [],
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2615,7 +2659,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 836
+            "y": 1132
           },
           "id": 57,
           "options": {
@@ -2630,7 +2674,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -2638,7 +2682,7 @@
                 "uid": "grafanacloud-prom"
               },
               "editorMode": "code",
-              "expr": "max(increase(multichain_presignature_generator_failures{node_account_id=~\"$node_account_id\"}[1h]))/max(increase(multichain_num_total_historical_presignature_generators{node_account_id=~\"$node_account_id\"}[1h]))*100",
+              "expr": "increase(multichain_presignature_generator_failures{node_account_id=~\"$node_account_id\"}[1h])/increase(multichain_num_total_historical_presignature_generators{node_account_id=~\"$node_account_id\"}[1h])*100",
               "legendFormat": "__auto",
               "range": true,
               "refId": "A"
@@ -2695,7 +2739,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2711,7 +2756,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 836
+            "y": 1132
           },
           "id": 51,
           "options": {
@@ -2726,7 +2771,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -2791,7 +2836,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2806,7 +2852,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 844
+            "y": 1140
           },
           "id": 38,
           "options": {
@@ -2821,7 +2867,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -2887,7 +2933,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2902,7 +2949,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 844
+            "y": 1140
           },
           "id": 37,
           "options": {
@@ -2917,7 +2964,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -2983,7 +3030,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2998,7 +3046,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 852
+            "y": 1148
           },
           "id": 22,
           "options": {
@@ -3014,7 +3062,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -3110,7 +3158,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 45
+            "y": 1037
           },
           "id": 39,
           "options": {
@@ -3207,7 +3255,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 45
+            "y": 1037
           },
           "id": 7,
           "options": {
@@ -3308,7 +3356,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 53
+            "y": 1077
           },
           "id": 44,
           "options": {
@@ -3406,7 +3454,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 53
+            "y": 1077
           },
           "id": 58,
           "options": {
@@ -3497,38 +3545,13 @@
               },
               "unit": "s"
             },
-            "overrides": [
-              {
-                "__systemRef": "hideSeriesFrom",
-                "matcher": {
-                  "id": "byNames",
-                  "options": {
-                    "mode": "exclude",
-                    "names": [
-                      "multichain-node-dev-6.testnet"
-                    ],
-                    "prefix": "All except:",
-                    "readOnly": true
-                  }
-                },
-                "properties": [
-                  {
-                    "id": "custom.hideFrom",
-                    "value": {
-                      "legend": false,
-                      "tooltip": false,
-                      "viz": true
-                    }
-                  }
-                ]
-              }
-            ]
+            "overrides": []
           },
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 61
+            "y": 1085
           },
           "id": 53,
           "options": {
@@ -3625,7 +3648,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 61
+            "y": 1085
           },
           "id": 52,
           "options": {
@@ -3721,7 +3744,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 69
+            "y": 1093
           },
           "id": 21,
           "options": {
@@ -3824,7 +3847,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 69
+            "y": 1093
           },
           "id": 65,
           "options": {
@@ -3924,7 +3947,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 77
+            "y": 1101
           },
           "id": 19,
           "options": {
@@ -4021,7 +4044,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 77
+            "y": 1101
           },
           "id": 20,
           "options": {
@@ -4134,7 +4157,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 126
+            "y": 1038
           },
           "id": 76,
           "options": {
@@ -4233,7 +4256,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 126
+            "y": 1038
           },
           "id": 30,
           "options": {
@@ -4332,7 +4355,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 134
+            "y": 1062
           },
           "id": 75,
           "options": {
@@ -4431,7 +4454,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 134
+            "y": 1062
           },
           "id": 74,
           "options": {
@@ -4530,7 +4553,8 @@
                 "mode": "percentage",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4546,7 +4570,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2223
+            "y": 1039
           },
           "id": 69,
           "options": {
@@ -4561,7 +4585,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -4632,7 +4656,8 @@
                 "mode": "percentage",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4648,7 +4673,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 2223
+            "y": 1039
           },
           "id": 67,
           "options": {
@@ -4663,7 +4688,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
@@ -4734,7 +4759,8 @@
                 "mode": "percentage",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4750,7 +4776,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 2231
+            "y": 1047
           },
           "id": 68,
           "options": {
@@ -4765,7 +4791,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "11.4.0-79146",
+          "pluginVersion": "11.4.0-79828",
           "targets": [
             {
               "datasource": {
