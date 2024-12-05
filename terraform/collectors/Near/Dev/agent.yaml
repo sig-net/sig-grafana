@@ -88,7 +88,7 @@ metrics:
         - job_name: multichain-dev-11
           static_configs:
             - targets:
-                - "10.101.0.128:3000"
+                - "10.101.0.22:3000"
               labels:
                 multichain_node: "multichain-node-dev-11.testnet"
                 environment: "dev"
