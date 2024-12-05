@@ -5,8 +5,6 @@ on:
     types: [closed]
     branches:
       - "main"
-    paths:
-      - terraform/dasboards/Near/chain-signaures
 
 jobs:
   terraform:
@@ -35,7 +33,7 @@ jobs:
           GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
 
       - name: Terraform Apply
-        if: github.event.pull_request.merged == true
+        if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
         run: terraform apply -auto-approve -input=false
         working-directory: ${{ env.working-dir }}
         env:
