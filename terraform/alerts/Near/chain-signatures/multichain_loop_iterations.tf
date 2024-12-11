@@ -161,7 +161,7 @@ resource "grafana_rule_group" "rule_group_06a869a8aabfd2fb" {
       description      = "Main loop iterations have slowed to {{ $values.A }}/min on node {{ $labels.node_account_id }}"
       summary          = "[DEV][ITER]Main loop iterations less than 200/min"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "Multichain Dev"
