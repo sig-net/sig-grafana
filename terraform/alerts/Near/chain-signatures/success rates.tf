@@ -51,7 +51,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       description      = "Signature success rate has been below 95% for 5 min: {{ $values.A }}%"
       summary          = "[MAINNET][SIGNATURES] Success Rate below 95%"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -106,7 +106,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       description      = "Signature success rate has been below 95% for 5 mins: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES] Success rate below 95%"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "MPC Alerts"
