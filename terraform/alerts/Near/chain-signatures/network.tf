@@ -261,7 +261,7 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
       __dashboardUid__ = "bdg2srektjy0wd"
       __panelId__      = "3"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "MPC Alerts"

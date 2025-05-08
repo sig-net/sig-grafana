@@ -49,7 +49,7 @@ resource "grafana_rule_group" "rule_group_52a0e1fab90ce868" {
       __dashboardUid__ = "bdg2srektjy0wd"
       __panelId__      = "11"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "Multichain Dev"
@@ -176,7 +176,7 @@ resource "grafana_rule_group" "rule_group_52a0e1fab90ce868" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"sum by(node_account_id) (rate(multichain_num_total_historical_presignature_generators_success{node_account_id=~\\\"(aurora-multichain\\\\\\\\.testnet|bst-near\\\\\\\\.testnet|infstones_nearmpc\\\\\\\\.testnet|lifted-near\\\\\\\\.testnet|mpc-lgns\\\\\\\\.testnet|near-mpc-staking4all-01\\\\\\\\.testnet|nodemonster\\\\\\\\.testnet|pagoda-multichain\\\\\\\\.testnet)\\\"}[1h]) / rate(multichain_num_total_historical_presignature_generators{node_account_id=~\\\"(aurora-multichain\\\\\\\\.testnet|bst-near\\\\\\\\.testnet|infstones_nearmpc\\\\\\\\.testnet|lifted-near\\\\\\\\.testnet|mpc-lgns\\\\\\\\.testnet|near-mpc-staking4all-01\\\\\\\\.testnet|nodemonster\\\\\\\\.testnet|pagoda-multichain\\\\\\\\.testnet)\\\"}[1h]))\",\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\"}"
+      model          = "{\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"sum by(node_account_id) (rate(multichain_num_total_historical_presignature_generators_success{node_account_id=~\\\"(multichain-node-dev-0\\\\\\\\.testnet|multichain-node-dev-1\\\\\\\\.testnet|multichain-node-dev-2\\\\\\\\.testnet|multichain-node-dev-3\\\\\\\\.testnet|multichain-node-dev-4\\\\\\\\.testnet|multichain-node-dev-5\\\\\\\\.testnet|multichain-node-dev-6\\\\\\\\.testnet|multichain-node-dev-7\\\\\\\\.testnet)\\\"}[1h]))\",\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\"}"
     }
     data {
       ref_id = "B"
@@ -261,7 +261,7 @@ resource "grafana_rule_group" "rule_group_52a0e1fab90ce868" {
       __dashboardUid__ = "bdg2srektjy0wd"
       __panelId__      = "11"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "Multichain Dev"

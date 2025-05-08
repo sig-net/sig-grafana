@@ -1,6 +1,6 @@
 locals {
   static_envs = {
-    NEXT_PUBLIC_NETWORK_ID = "mainnet"
+    NEAR_NETWORK_ID = "mainnet"
   }
 }
 
@@ -33,11 +33,11 @@ resource "google_cloud_run_service" "contract_ping" {
     spec {
       service_account_name = google_service_account.service_account.email
       containers {
-        args  = ["node", "dist/server.js"]
+        args  = ["npm", "run", "start"]
         image = "europe-west1-docker.pkg.dev/near-cs-mainnet/tools/contract-pinger:latest"
         ports {
           name           = "http1"
-          container_port = 3000
+          container_port = 3001
         }
         dynamic "env" {
           for_each = local.static_envs
@@ -47,7 +47,7 @@ resource "google_cloud_run_service" "contract_ping" {
           }
         }
         env {
-          name = "NEXT_PUBLIC_NEAR_ACCOUNT_ID"
+          name = "NEAR_ACCOUNT"
           value_from {
             secret_key_ref {
               name = "contract_ping_near_account_id"
@@ -56,7 +56,7 @@ resource "google_cloud_run_service" "contract_ping" {
           }
         }
         env {
-          name = "NEXT_PUBLIC_NEAR_PRIVATE_KEY"
+          name = "NEAR_PRIVATE_KEY"
           value_from {
             secret_key_ref {
               name = "contract_ping_near_private_key_mainnet"
@@ -65,10 +65,19 @@ resource "google_cloud_run_service" "contract_ping" {
           }
         }
         env {
-          name = "NEXT_PUBLIC_CHAIN_SIGNATURE_CONTRACT"
+          name = "SEPOLIA_INFURA_URL"
           value_from {
             secret_key_ref {
-              name = "chain-sig-mainnet-contract"
+              name = "eth-sepolia-infura-url"
+              key  = "3"
+            }
+          }
+        }
+        env {
+          name = "EVM_PRIVATE_KEY"
+          value_from {
+            secret_key_ref {
+              name = "eth-pinger-private-key"
               key  = "latest"
             }
           }
@@ -78,6 +87,7 @@ resource "google_cloud_run_service" "contract_ping" {
     metadata {
       annotations = {
         "autoscaling.knative.dev/minScale"  = "1"
+        "autoscaling.knative.dev/maxScale"  = "1"
         "run.googleapis.com/cpu-throttling" = false
       }
     }

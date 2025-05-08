@@ -11,77 +11,77 @@ metrics:
         - job_name: multichain-dev-0
           static_configs:
             - targets:
-                - "10.101.0.56:3000"
+                - "10.101.0.39:3000"
               labels:
                 multichain_node: "multichain-node-dev-0.testnet"
                 environment: "dev"
         - job_name: multichain-dev-1
           static_configs:
             - targets:
-                - "10.101.0.81:3000"
+                - "10.101.0.40:3000"
               labels:
                 multichain_node: "multichain-node-dev-1.testnet"
                 environment: "dev"
         - job_name: multichain-dev-2
           static_configs:
             - targets:
-                - "10.101.0.57:3000"
+                - "10.101.0.41:3000"
               labels:
                 multichain_node: "multichain-node-dev-2.testnet"
                 environment: "dev"
         - job_name: multichain-dev-3
           static_configs:
             - targets:
-                - "10.101.0.129:3000"
+                - "10.101.0.44:3000"
               labels:
                 multichain_node: "multichain-node-dev-3.testnet"
                 environment: "dev"
         - job_name: multichain-dev-4
           static_configs:
             - targets:
-                - "10.101.0.124:3000"
+                - "10.101.0.45:3000"
               labels:
                 multichain_node: "multichain-node-dev-4.testnet"
                 environment: "dev"
         - job_name: multichain-dev-5
           static_configs:
             - targets:
-                - "10.101.0.101:3000"
+                - "10.101.0.46:3000"
               labels:
                 multichain_node: "multichain-node-dev-5.testnet"
                 environment: "dev"
         - job_name: multichain-dev-6
           static_configs:
             - targets:
-                - "10.101.0.122:3000"
+                - "10.101.0.47:3000"
               labels:
                 multichain_node: "multichain-node-dev-6.testnet"
                 environment: "dev"
         - job_name: multichain-dev-7
           static_configs:
             - targets:
-                - "10.101.0.123:3000"
+                - "10.101.0.43:3000"
               labels:
                 multichain_node: "multichain-node-dev-7.testnet"
                 environment: "dev"
         - job_name: multichain-dev-8
           static_configs:
             - targets:
-                - "10.101.0.125:3000"
+                - "10.101.0.48:3000"
               labels:
                 multichain_node: "multichain-node-dev-8.testnet"
                 environment: "dev"
         - job_name: multichain-dev-9
           static_configs:
             - targets:
-                - "10.101.0.126:3000"
+                - "10.101.0.49:3000"
               labels:
                 multichain_node: "multichain-node-dev-9.testnet"
                 environment: "dev"
         - job_name: multichain-dev-10
           static_configs:
             - targets:
-                - "10.101.0.127:3000"
+                - "10.101.0.42:3000"
               labels:
                 multichain_node: "multichain-node-dev-10.testnet"
                 environment: "dev"
@@ -94,4 +94,4 @@ metrics:
                 environment: "dev"
 
   global:
-    scrape_interval: 30s
+    scrape_interval: 60s
