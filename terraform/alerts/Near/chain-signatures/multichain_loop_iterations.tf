@@ -17,7 +17,7 @@ resource "grafana_rule_group" "rule_group_06a869a8aabfd2fb" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"increase(multichain_protocol_iter_total_count{node_account_id=~\\\"(blacksandtech\\\\\\\\.near|et-mpc-node\\\\\\\\.near|lifted-mainnet\\\\\\\\.near|mpc-lgns\\\\\\\\.near|multichain-mainnet-aurora\\\\\\\\.near|near-mpc-staking4all-01\\\\\\\\.near|nearmpc-infstones\\\\\\\\.near|nodemonster\\\\\\\\.near)\\\"}[5m])\",\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\"}"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"increase(multichain_protocol_iter_total_count{node_account_id=~\\\"(sig.stakin\\\\\\\\.near|node.sig-net\\\\\\\\.near|lifted-sig\\\\\\\\.near|taxistake-sig\\\\\\\\.near|natsai-bp\\\\\\\\.near|sig-mpc-staking4all-01\\\\\\\\.near|luganodes\\\\\\\\.near|sig-piertwo\\\\\\\\.near)\\\"}[5m])\",\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\"}"
     }
     data {
       ref_id = "B"
@@ -39,7 +39,7 @@ resource "grafana_rule_group" "rule_group_06a869a8aabfd2fb" {
       }
 
       datasource_uid = "__expr__"
-      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[200],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[50],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
     no_data_state  = "NoData"
@@ -49,7 +49,7 @@ resource "grafana_rule_group" "rule_group_06a869a8aabfd2fb" {
       __dashboardUid__ = "bdg2srektjy0wd"
       __panelId__      = "66"
       description      = "Main loop iterations have slowed to {{ $values.A }}/min on node {{ $labels.node_account_id }}"
-      summary          = "[MAINNET][ITER]Main loop iterations below 200/min"
+      summary          = "[MAINNET][ITER]Main loop iterations below 50/min"
     }
     is_paused = true
 
@@ -72,7 +72,7 @@ resource "grafana_rule_group" "rule_group_06a869a8aabfd2fb" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"increase(multichain_protocol_iter_total_count{node_account_id=~\\\"(aurora-multichain\\\\\\\\.testnet|bst-near\\\\\\\\.testnet|infstones_nearmpc\\\\\\\\.testnet|lifted-near\\\\\\\\.testnet|mpc-lgns\\\\\\\\.testnet|near-mpc-staking4all-01\\\\\\\\.testnet|nodemonster\\\\\\\\.testnet|pagoda-multichain\\\\\\\\.testnet)\\\"}[5m])\",\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\"}"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"increase(multichain_protocol_iter_total_count{node_account_id=~\\\"(multichain-node-dev-0\\\\\\\\.testnet|multichain-node-dev-1\\\\\\\\.testnet|multichain-node-dev-2\\\\\\\\.testnet|multichain-node-dev-3\\\\\\\\.testnet|multichain-node-dev-4\\\\\\\\.testnet|multichain-node-dev-5\\\\\\\\.testnet|multichain-node-dev-6\\\\\\\\.testnet|multichain-node-dev-7\\\\\\\\.testnet)\\\"}[5m])\",\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\"}"
     }
     data {
       ref_id = "B"
@@ -94,7 +94,7 @@ resource "grafana_rule_group" "rule_group_06a869a8aabfd2fb" {
       }
 
       datasource_uid = "__expr__"
-      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[200],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[50],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
     no_data_state  = "NoData"
@@ -104,7 +104,7 @@ resource "grafana_rule_group" "rule_group_06a869a8aabfd2fb" {
       __dashboardUid__ = "bdg2srektjy0wd"
       __panelId__      = "66"
       description      = "Main loop iterations have slowed to {{ $values.A }}/min on node {{ $labels.node_account_id }}"
-      summary          = "[TESTNET][ITER]Main loop iterations below 200/min"
+      summary          = "[TESTNET][ITER]Main loop iterations below 50/min"
     }
     is_paused = true
 
@@ -149,7 +149,7 @@ resource "grafana_rule_group" "rule_group_06a869a8aabfd2fb" {
       }
 
       datasource_uid = "__expr__"
-      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[200],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[50],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
     no_data_state  = "NoData"
@@ -159,9 +159,9 @@ resource "grafana_rule_group" "rule_group_06a869a8aabfd2fb" {
       __dashboardUid__ = "bdg2srektjy0wd"
       __panelId__      = "66"
       description      = "Main loop iterations have slowed to {{ $values.A }}/min on node {{ $labels.node_account_id }}"
-      summary          = "[DEV][ITER]Main loop iterations less than 200/min"
+      summary          = "[DEV][ITER]Main loop iterations less than 50/min"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "Multichain Dev"

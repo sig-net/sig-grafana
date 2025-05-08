@@ -8,61 +8,61 @@ metrics:
             username: "${GRAFANA_USERNAME}"
           url: "${GRAFANA_PUSH_URL}"
       scrape_configs:
-        - job_name: multichain-testnet-nodemonster
+        - job_name: multichain-testnet-0
           static_configs:
             - targets:
-                - "34.128.134.136"
+                - "35.205.86.117:3000"
               labels:
-                multichain_node: "nodemonster.testnet"
+                multichain_node: "multichain-node-0.testnet"
                 environment: "testnet"
-        - job_name: multichain-testnet-staking4all
+        - job_name: multichain-testnet-1
           static_configs:
             - targets:
-                - "34.144.193.111"
+                - "34.78.91.252:3000"
               labels:
-                multichain_node: "near-mpc-staking4all-01.testnet"
+                multichain_node: "multichain-node-1.testnet"
                 environment: "testnet"
-        - job_name: multichain-testnet-lifted
+        - job_name: multichain-testnet-2
           static_configs:
             - targets:
-                - "34.49.54.107"
+                - "34.34.165.67:3000"
               labels:
-                multichain_node: "lifted-near.testnet"
+                multichain_node: "multichain-node-2.testnet"
                 environment: "testnet"
-        - job_name: multichain-testnet-pagoda
+        - job_name: multichain-testnet-3
           static_configs:
             - targets:
-                - "34.144.213.12"
+                - "34.77.198.253:3000"
               labels:
-                multichain_node: "pagoda-multichain.testnet"
+                multichain_node: "multichain-node-3.testnet"
                 environment: "testnet"
-        - job_name: multichain-testnet-infstones
+        - job_name: multichain-testnet-4
           static_configs:
             - targets:
-                - "34.36.206.107"
+                - "35.240.60.175:3000"
               labels:
-                multichain_node: "infstones_nearmpc.testnet"
+                multichain_node: "multichain-node-4.testnet"
                 environment: "testnet"
-        - job_name: multichain-testnet-luganodes
+        - job_name: multichain-testnet-5
           static_configs:
             - targets:
-                - "34.49.231.59"
+                - "34.38.241.198:3000"
               labels:
-                multichain_node: "mpc-lgns.testnet"
+                multichain_node: "multichain-node-5.testnet"
                 environment: "testnet"
-        - job_name: multichain-testnet-aurora
+        - job_name: multichain-testnet-6
           static_configs:
             - targets:
-                - "34.49.211.4"
+                - "34.38.48.138:3000"
               labels:
-                multichain_node: "aurora-multichain.testnet"
+                multichain_node: "multichain-node-6.testnet"
                 environment: "testnet"
-        - job_name: multichain-testnet-blacksand
+        - job_name: multichain-testnet-7
           static_configs:
             - targets:
-                - "34.98.94.79"
+                - "146.148.114.107:3000"
               labels:
-                multichain_node: "bst-near.testnet"
+                multichain_node: "multichain-node-7.testnet"
                 environment: "testnet"
         - job_name: mpc-recovery-testnet
           static_configs:
@@ -73,4 +73,4 @@ metrics:
                 environment: "testnet"
 
   global:
-    scrape_interval: 30s
+    scrape_interval: 60s

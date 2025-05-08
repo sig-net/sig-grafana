@@ -51,7 +51,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       description      = "Signature success rate has been below 95% for 5 min: {{ $values.A }}%"
       summary          = "[MAINNET][SIGNATURES] Success Rate below 95%"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -94,7 +94,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "__expr__"
-      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[95],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[40],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
     no_data_state  = "NoData"
@@ -103,10 +103,10 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "bdg2srektjy0wd"
       __panelId__      = "64"
-      description      = "Signature success rate has been below 95% for 5 mins: {{ $values.A }}%"
-      summary          = "[TESTNET][SIGNATURES] Success rate below 95%"
+      description      = "Signature success rate has been below 40% for 5 mins: {{ $values.A }}%"
+      summary          = "[TESTNET][SIGNATURES] Success rate below 40%"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -159,7 +159,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       __dashboardUid__ = "bdg2srektjy0wd"
       __panelId__      = "46"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "Multichain Dev"
@@ -180,7 +180,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"sum by(node_account_id) (rate(multichain_num_total_historical_presignature_generators_success{node_account_id=~\\\"(blacksandtech\\\\\\\\.near|et-mpc-node\\\\\\\\.near|infstones\\\\\\\\.near|lifted-mainnet\\\\\\\\.near|mpc-lgns\\\\\\\\.near|multichain-mainnet-aurora\\\\\\\\.near|near-mpc-staking4all-01\\\\\\\\.near|nodemonster\\\\\\\\.near)\\\"}[1h]) / rate(multichain_num_total_historical_presignature_generators{node_account_id=~\\\"(blacksandtech\\\\\\\\.near|et-mpc-node\\\\\\\\.near|infstones\\\\\\\\.near|lifted-mainnet\\\\\\\\.near|mpc-lgns\\\\\\\\.near|multichain-mainnet-aurora\\\\\\\\.near|near-mpc-staking4all-01\\\\\\\\.near|nodemonster\\\\\\\\.near)\\\"}[1h]))\",\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\"}"
+      model          = "{\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"sum by(node_account_id) (rate(multichain_num_total_historical_presignature_generators_success{node_account_id=~\\\"(sig.stakin\\\\\\\\.near|node.sig-net\\\\\\\\.near|lifted-sig\\\\\\\\.near|taxistake-sig\\\\\\\\.near|natsai-bp\\\\\\\\.near|sig-mpc-staking4all-01\\\\\\\\.near|luganodes\\\\\\\\.near|sig-piertwo\\\\\\\\.near)\\\"}[1h]))\",\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\"}"
     }
     data {
       ref_id = "B"

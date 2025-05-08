@@ -59,7 +59,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     }
   }
   rule {
-    name      = "[MAINNET] [BALANCE] et-mpc-node.near (our node)"
+    name      = "[MAINNET] [BALANCE] node.sig-net.near (our node)"
     condition = "C"
 
     data {
@@ -71,7 +71,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       }
 
       datasource_uid = "b9562554-cb12-4f47-9c39-f18de199d3e5"
-      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"b9562554-cb12-4f47-9c39-f18de199d3e5\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.mainnet.near.org\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"et-mpc-node.near\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"et-mpc-node.near\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"b9562554-cb12-4f47-9c39-f18de199d3e5\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.mainnet.near.org\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"node.sig-net.near\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"node.sig-net.near\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
     }
     data {
       ref_id = "C"
@@ -102,7 +102,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "1"
-      description      = "et-mpc-node.near balance is {{ $values.B }}"
+      description      = "node.sig-net.near balance is {{ $values.B }}"
     }
     is_paused = false
 
