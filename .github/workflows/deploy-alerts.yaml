@@ -1,0 +1,40 @@
+name: "Chain Signatures Alerts Update"
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [closed]
+    branches:
+      - "main"
+
+jobs:
+  terraform:
+    name: "Terraform Deploy"
+    runs-on: ubuntu-latest
+    env:
+      working-dir: ./terraform/alerts/Near/chain-signatures
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.7.0
+
+      - name: Terraform init
+        run: terraform init
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform Plan
+        run: terraform plan -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform Apply
+        if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+        run: terraform apply -auto-approve -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
