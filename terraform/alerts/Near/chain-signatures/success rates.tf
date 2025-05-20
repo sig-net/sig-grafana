@@ -60,7 +60,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
-    name      = "[TESTNET][SIGNATURES]Signature Success Rate/Hr"
+    name      = "[TESTNET][SIGNATURES][SOLANA]Signature Success Rate/Hr"
     condition = "C"
 
     data {
@@ -72,7 +72,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"code\",\"exemplar\":false,\"expr\":\" (sum (increase(multichain_sign_requests_success{environment=\\\"testnet\\\"}[1h]))/\\n max(increase(multichain_sign_requests_count{environment=\\\"testnet\\\"}[1h])))*100\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"code\",\"exemplar\":false,\"expr\":\" (sum (increase(multichain_sign_requests_success{chain=\\\"Solana\\\",environment=\\\"testnet\\\"}[1h]))/\\n max(increase(multichain_sign_requests_count{chain=\\\"Solana\\\",environment=\\\"testnet\\\"}[1h])))*100\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
     }
     data {
       ref_id = "B"
@@ -102,9 +102,64 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     for            = "5m"
     annotations = {
       __dashboardUid__ = "bdg2srektjy0wd"
-      __panelId__      = "64"
+      __panelId__      = "109"
       description      = "Signature success rate has been below 40% for 5 mins: {{ $values.A }}%"
-      summary          = "[TESTNET][SIGNATURES] Success rate below 40%"
+      summary          = "[TESTNET][SIGNATURES][SOLANA] Success rate below 40%"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "MPC Alerts"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[TESTNET][SIGNATURES][ETH]Signature Success Rate/Hr"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 900
+        to   = 0
+      }
+
+      datasource_uid = "grafanacloud-prom"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"code\",\"exemplar\":false,\"expr\":\" (sum (increase(multichain_sign_requests_success{chain=\\\"Ethereum\\\",environment=\\\"testnet\\\"}[1h]))/\\n max(increase(multichain_sign_requests_count{chain=\\\"Ethereum\\\",environment=\\\"testnet\\\"}[1h])))*100\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"B\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"A\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"reducer\":\"last\",\"refId\":\"B\",\"type\":\"reduce\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[40],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "KeepLast"
+    exec_err_state = "KeepLast"
+    for            = "15m"
+    annotations = {
+      __dashboardUid__ = "bdg2srektjy0wd"
+      __panelId__      = "108"
+      description      = "Signature success rate has been below 40% for 5 mins: {{ $values.A }}%"
+      summary          = "[TESTNET][SIGNATURES][ETH] Success rate below 40%"
     }
     is_paused = false
 
@@ -221,7 +276,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
-    name      = "[DEV][SIGNATURES]Signature Success Rate/Hr"
+    name      = "[DEV][SIGNATURES][Solana]Signature Success Rate/Hr"
     condition = "C"
 
     data {
@@ -233,7 +288,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"code\",\"exemplar\":false,\"expr\":\" (sum (increase(multichain_sign_requests_success{environment=\\\"dev\\\"}[1h]))/\\n max(increase(multichain_sign_requests_count{environment=\\\"dev\\\"}[1h])))*100\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"code\",\"exemplar\":false,\"expr\":\" (sum (increase(multichain_sign_requests_success{chain=\\\"Solana\\\",environment=\\\"dev\\\"}[1h]))/\\n max(increase(multichain_sign_requests_count{chain=\\\"Solana\\\",environment=\\\"dev\\\"}[1h])))*100\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
     }
     data {
       ref_id = "B"
@@ -263,9 +318,64 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     for            = "5m"
     annotations = {
       __dashboardUid__ = "bdg2srektjy0wd"
-      __panelId__      = "64"
+      __panelId__      = "109"
       description      = "Signature success rate has been below 50% for 5 mins: {{ $values.A }}%"
-      summary          = "[DEV][SIGNATURES] Success rate below 50%"
+      summary          = "[DEV][SIGNATURES][SOLANA] Success rate below 50%"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "Multichain Dev"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[DEV][SIGNATURES][ETH]Signature Success Rate/Hr"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 900
+        to   = 0
+      }
+
+      datasource_uid = "grafanacloud-prom"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"code\",\"exemplar\":false,\"expr\":\" (sum (increase(multichain_sign_requests_success{chain=\\\"Ethereum\\\",environment=\\\"dev\\\"}[1h]))/\\n max(increase(multichain_sign_requests_count{chain=\\\"Ethereum\\\",environment=\\\"dev\\\"}[1h])))*100\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"B\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"A\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"reducer\":\"last\",\"refId\":\"B\",\"type\":\"reduce\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[50],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "bdg2srektjy0wd"
+      __panelId__      = "108"
+      description      = "Signature success rate has been below 50% for 5 mins: {{ $values.A }}%"
+      summary          = "[DEV][SIGNATURES][ETH] Success rate below 50%"
     }
     is_paused = false
 

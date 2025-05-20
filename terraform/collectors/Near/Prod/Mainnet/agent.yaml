@@ -64,6 +64,13 @@ metrics:
               labels:
                 multichain_node: "sig.stakin.near"
                 environment: "mainnet"
+        - job_name: multichain-mainnet-blacksand
+          static_configs:
+            - targets:
+                - "signetwork-mainnet.svc.blacksand.xyz"
+              labels:
+                multichain_node: "blacksandtech-sig.near"
+                environment: "mainnet"
         - job_name: mpc-recovery-mainnet
           static_configs:
             - targets:
