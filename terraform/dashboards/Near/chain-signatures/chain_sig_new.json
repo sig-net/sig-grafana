@@ -3438,7 +3438,7 @@
             "uid": "grafanacloud-prom"
           },
           "editorMode": "code",
-          "expr": "sum by (node_account_id) (histogram_quantile(0.95, rate(multichain_sign_latency_sec_bucket{node_account_id=~\"$node_account_id\"}[1m])))",
+          "expr": "sum by (node_account_id) (histogram_quantile(0.95, sum(rate(multichain_sign_latency_sec_bucket{node_account_id=~\"$node_account_id\", environment=\"$environment\"}[$__rate_interval])) by (le, node_account_id)))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -3632,7 +3632,7 @@
             "uid": "grafanacloud-prom"
           },
           "editorMode": "code",
-          "expr": "sum by (node_account_id) (histogram_quantile(0.5, rate(multichain_sign_latency_sec_bucket{node_account_id=~\"$node_account_id\"}[1m])))",
+          "expr": "sum by (node_account_id) (histogram_quantile(0.5, sum(rate(multichain_sign_latency_sec_bucket{node_account_id=~\"$node_account_id\", environment=\"$environment\"}[$__rate_interval])) by (le, node_account_id)))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
