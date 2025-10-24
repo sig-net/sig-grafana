@@ -60,6 +60,116 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
     }
   }
   rule {
+    name      = "[MAINNET][HARDWARE]CPU Usage Percentage High"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 900
+        to   = 0
+      }
+
+      datasource_uid = "grafanacloud-prom"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"builder\",\"expr\":\"multichain_cpu_usage_percentage{node_account_id=~\\\"(node\\\\\\\\.sig-net\\\\\\\\.near|sig-piertwo\\\\\\\\.near|sig\\\\\\\\.stakin\\\\\\\\.near|natsai-bp\\\\\\\\.near|sig-mpc-staking4all-01\\\\\\\\.near|lifted-sig\\\\\\\\.near|taxistake-sig\\\\\\\\.near|blacksandtech-sig\\\\\\\\.near)\\\"}\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"B\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"A\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"reducer\":\"last\",\"refId\":\"B\",\"type\":\"reduce\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[90],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "bdg2srektjy0wd"
+      __panelId__      = "69"
+      description      = "CPU usage percentage has been at or above 90% for more than 5 mins: {{ $values.A }}%"
+      summary          = "[MAINNET][HARDWARE] Node CPU usage 90% or above"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "MPC Alerts"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[TESTNET][HARDWARE]CPU Usage Percentage High"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 900
+        to   = 0
+      }
+
+      datasource_uid = "grafanacloud-prom"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"builder\",\"expr\":\"multichain_cpu_usage_percentage{node_account_id=~\\\"(multichain-node-0\\\\\\\\.testnet|multichain-node-1\\\\\\\\.testnet|multichain-node-2\\\\\\\\.testnet|multichain-node-3\\\\\\\\.testnet|multichain-node-4\\\\\\\\.testnet|multichain-node-5\\\\\\\\.testnet|multichain-node-6\\\\\\\\.testnet|multichain-node-7\\\\\\\\.testnet)\\\"}\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"B\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"A\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"reducer\":\"last\",\"refId\":\"B\",\"type\":\"reduce\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[90],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "bdg2srektjy0wd"
+      __panelId__      = "69"
+      description      = "CPU usage percentage has been at or above 90% for more than 5 mins: {{ $values.A }}%"
+      summary          = "[TESNET][HARDWARE] Node CPU usage 90% or above"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "MPC Alerts"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
     name      = "[DEV][HARDWARE]Available Disk Space Below 20%"
     condition = "C"
 
@@ -165,6 +275,116 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
 
     notification_settings {
       contact_point = "Multichain Dev"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[TESTNET][HARDWARE]Available Memory in GB"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 900
+        to   = 0
+      }
+
+      datasource_uid = "grafanacloud-prom"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"builder\",\"expr\":\"multichain_available_memory_bytes{node_account_id=~\\\"(multichain-node-0\\\\\\\\.testnet|multichain-node-1\\\\\\\\.testnet|multichain-node-2\\\\\\\\.testnet|multichain-node-3\\\\\\\\.testnet|multichain-node-4\\\\\\\\.testnet|multichain-node-5\\\\\\\\.testnet|multichain-node-6\\\\\\\\.testnet|multichain-node-7\\\\\\\\.testnet)\\\"} / 1000000000\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"B\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"A\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"reducer\":\"last\",\"refId\":\"B\",\"type\":\"reduce\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "bdg2srektjy0wd"
+      __panelId__      = "67"
+      description      = "Node has abnormally high memory usage: {{ $values.A }} GB remaining"
+      summary          = "[TESTNET][HARDWARE]Node memory usage high"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "MPC Alerts"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[MAINNET][HARDWARE]Available Memory in GB"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 900
+        to   = 0
+      }
+
+      datasource_uid = "grafanacloud-prom"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"builder\",\"expr\":\"multichain_available_memory_bytes{node_account_id=~\\\"(node\\\\\\\\.sig-net\\\\\\\\.near|sig-piertwo\\\\\\\\.near|sig\\\\\\\\.stakin\\\\\\\\.near|natsai-bp\\\\\\\\.near|sig-mpc-staking4all-01\\\\\\\\.near|lifted-sig\\\\\\\\.near|taxistake-sig\\\\\\\\.near|blacksandtech-sig\\\\\\\\.near)\\\"} / 1000000000\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"B\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"A\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"reducer\":\"last\",\"refId\":\"B\",\"type\":\"reduce\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "bdg2srektjy0wd"
+      __panelId__      = "67"
+      description      = "Node has abnormally high memory usage: {{ $values.A }} GB remaining"
+      summary          = "[MAINNET][HARDWARE]Node memory usage high"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "MPC Alerts"
       group_by      = null
       mute_timings  = null
     }
