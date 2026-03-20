@@ -1,0 +1,107 @@
+name: Deploy Alerts
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'terraform/alerts/**'
+      - '.github/workflows/deploy-alerts.yaml'
+
+jobs:
+  changes:
+    name: Detect changed alert modules
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      chain_signatures: ${{ steps.filter.outputs.chain_signatures }}
+      mpc_recovery: ${{ steps.filter.outputs.mpc_recovery }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed paths
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            chain_signatures:
+              - 'terraform/alerts/Near/chain-signatures/**'
+            mpc_recovery:
+              - 'terraform/alerts/Near/mpc-recovery/**'
+
+  deploy-chain-signatures:
+    name: Deploy chain-signatures alerts
+    needs: changes
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.chain_signatures == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      working-dir: ./terraform/alerts/Near/chain-signatures
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.0
+
+      - name: Terraform init
+        run: terraform init -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform plan
+        run: terraform plan -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform apply
+        run: terraform apply -auto-approve -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+  deploy-mpc-recovery:
+    name: Deploy mpc-recovery alerts
+    needs: changes
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.mpc_recovery == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      working-dir: ./terraform/alerts/Near/mpc-recovery
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.0
+
+      - name: Terraform init
+        run: terraform init -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform plan
+        run: terraform plan -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform apply
+        run: terraform apply -auto-approve -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
