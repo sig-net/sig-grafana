@@ -1,39 +1,106 @@
-name: "Chain Signatures Dashboard Update"
+name: Deploy Dashboards
+
 on:
   workflow_dispatch:
-  pull_request:
-    types: [closed]
+  push:
     branches:
-      - "main"
+      - main
+    paths:
+      - 'terraform/dashboards/**'
+      - '.github/workflows/deploy-cs-dashboards.yaml'
 
 jobs:
-  terraform:
-    name: "Terraform Deploy"
+  changes:
+    name: Detect changed dashboard modules
     runs-on: ubuntu-latest
-    env:
-      working-dir: ./terraform/dashboards/Near/chain-signatures
+    permissions:
+      contents: read
+    outputs:
+      balances: ${{ steps.filter.outputs.balances }}
+      chain_signatures: ${{ steps.filter.outputs.chain_signatures }}
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed paths
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            balances:
+              - 'terraform/dashboards/Near/balances/**'
+            chain_signatures:
+              - 'terraform/dashboards/Near/chain-signatures/**'
+
+  deploy-balances:
+    name: Deploy balances dashboard
+    needs: changes
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.balances == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      working-dir: ./terraform/dashboards/Near/balances
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.7.0
 
       - name: Terraform init
-        run: terraform init
+        run: terraform init -input=false
         working-directory: ${{ env.working-dir }}
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
 
-      - name: Terraform Plan
+      - name: Terraform plan
         run: terraform plan -input=false
         working-directory: ${{ env.working-dir }}
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
 
-      - name: Terraform Apply
-        if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+      - name: Terraform apply
+        run: terraform apply -auto-approve -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+  deploy-chain-signatures:
+    name: Deploy chain-signatures dashboard
+    needs: changes
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.chain_signatures == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      working-dir: ./terraform/dashboards/Near/chain-signatures
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.0
+
+      - name: Terraform init
+        run: terraform init -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform plan
+        run: terraform plan -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform apply
         run: terraform apply -auto-approve -input=false
         working-directory: ${{ env.working-dir }}
         env:
