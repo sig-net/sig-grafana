@@ -1,4 +1,4 @@
-name: Deploy Dashboards
+name: Deploy Alerts
 
 on:
   workflow_dispatch:
@@ -6,18 +6,18 @@ on:
     branches:
       - main
     paths:
-      - 'terraform/dashboards/**'
-      - '.github/workflows/deploy-cs-dashboards.yaml'
+      - 'terraform/alerts/**'
+      - '.github/workflows/deploy-alerts.yaml'
 
 jobs:
   changes:
-    name: Detect changed dashboard modules
+    name: Detect changed alert modules
     runs-on: ubuntu-latest
     permissions:
       contents: read
     outputs:
-      balances: ${{ steps.filter.outputs.balances }}
       chain_signatures: ${{ steps.filter.outputs.chain_signatures }}
+      mpc_recovery: ${{ steps.filter.outputs.mpc_recovery }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,20 +29,20 @@ jobs:
         uses: dorny/paths-filter@v3
         with:
           filters: |
-            balances:
-              - 'terraform/dashboards/Near/balances/**'
             chain_signatures:
-              - 'terraform/dashboards/Near/chain-signatures/**'
+              - 'terraform/alerts/Near/chain-signatures/**'
+            mpc_recovery:
+              - 'terraform/alerts/Near/mpc-recovery/**'
 
-  deploy-balances:
-    name: Deploy balances dashboard
+  deploy-chain-signatures:
+    name: Deploy chain-signatures alerts
     needs: changes
-    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.balances == 'true'
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.chain_signatures == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
     env:
-      working-dir: ./terraform/dashboards/Near/balances
+      working-dir: ./terraform/alerts/Near/chain-signatures
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -70,15 +70,15 @@ jobs:
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
 
-  deploy-chain-signatures:
-    name: Deploy chain-signatures dashboard
+  deploy-mpc-recovery:
+    name: Deploy mpc-recovery alerts
     needs: changes
-    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.chain_signatures == 'true'
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.mpc_recovery == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
     env:
-      working-dir: ./terraform/dashboards/Near/chain-signatures
+      working-dir: ./terraform/alerts/Near/mpc-recovery
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
