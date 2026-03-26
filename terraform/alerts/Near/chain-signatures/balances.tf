@@ -3,7 +3,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
   name             = "balances"
   folder_uid       = "multichain"
   interval_seconds = 60
-  
+
   rule {
     name      = "[TESTNET][SOL][BALANCE] Testnet Network Balance"
     condition = "C"
@@ -1242,6 +1242,276 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
 
     notification_settings {
       contact_point = "MPC Alerts"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[DEV/TESTNET][ETH][BALANCE] Root Account"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"balance\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://contract-ping.sig.network/eth_balance\",\"url_options\":{\"body_content_type\":\"Application/json\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"address\\\": \\\"0xE4765a5D7335DAd51b3058d0b8eDeE540D149a21\\\"\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"x-api-secret\",\"value\":\"default-secret-key\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0.1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "46"
+      description      = "Root Account ETH account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "Multichain Dev"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[DEV/TESTNET][ETH][BALANCE] 0x205F417D35AAe79eEf7681C9dC9Db5876d0dB264"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"balance\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://contract-ping.sig.network/eth_balance\",\"url_options\":{\"body_content_type\":\"Application/json\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"address\\\": \\\"0x205F417D35AAe79eEf7681C9dC9Db5876d0dB264\\\"\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"x-api-secret\",\"value\":\"default-secret-key\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0.1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "47"
+      description      = "0x205F417D35AAe79eEf7681C9dC9Db5876d0dB264 ETH account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "Multichain Dev"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[DEV/TESTNET][ETH][BALANCE] 0xa0127A18e00e29a99307c2d4B3000D9092989A76"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"balance\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://contract-ping.sig.network/eth_balance\",\"url_options\":{\"body_content_type\":\"Application/json\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"address\\\": \\\"0xa0127A18e00e29a99307c2d4B3000D9092989A76\\\"\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"x-api-secret\",\"value\":\"default-secret-key\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0.1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "49"
+      description      = "0xa0127A18e00e29a99307c2d4B3000D9092989A76 ETH account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "Multichain Dev"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[DEV/TESTNET][ETH][BALANCE] 0x65141CA3329DA9A83458017474b5Bc62097Cf24f"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"balance\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://contract-ping.sig.network/eth_balance\",\"url_options\":{\"body_content_type\":\"Application/json\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"address\\\": \\\"0x65141CA3329DA9A83458017474b5Bc62097Cf24f\\\"\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"x-api-secret\",\"value\":\"default-secret-key\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0.1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "48"
+      description      = "0x65141CA3329DA9A83458017474b5Bc62097Cf24f ETH account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "Multichain Dev"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[DEV/TESTNET][ETH][BALANCE] 0x057cf78EeFFF25D74FB6f7f79c0D247D97ebAa56"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"balance\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://contract-ping.sig.network/eth_balance\",\"url_options\":{\"body_content_type\":\"Application/json\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"address\\\": \\\"0x057cf78EeFFF25D74FB6f7f79c0D247D97ebAa56\\\"\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"x-api-secret\",\"value\":\"default-secret-key\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0.1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "51"
+      description      = "0x057cf78EeFFF25D74FB6f7f79c0D247D97ebAa56 ETH account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "Multichain Dev"
       group_by      = null
       mute_timings  = null
     }
