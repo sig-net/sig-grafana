@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/sig-net/sig-grafana/compare/0.1.1...0.1.2) (2026-05-05)
+
+
+### Bug Fixes
+
+* **terraform:** Swap contact point for balance alerts ([#27](https://github.com/sig-net/sig-grafana/issues/27)) ([2c28940](https://github.com/sig-net/sig-grafana/commit/2c28940f2c069c682e53ebbd35bdea69699edde9))
+
 ## [0.1.1](https://github.com/sig-net/sig-grafana/compare/0.1.0...0.1.1) (2026-03-26)
 
 
