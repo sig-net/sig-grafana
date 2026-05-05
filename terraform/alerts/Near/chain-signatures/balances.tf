@@ -53,7 +53,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -107,7 +107,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -863,7 +863,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -917,7 +917,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -971,7 +971,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1025,7 +1025,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1079,7 +1079,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1133,7 +1133,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1187,7 +1187,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1241,7 +1241,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1565,7 +1565,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1619,7 +1619,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1673,7 +1673,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1727,7 +1727,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1781,7 +1781,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1835,7 +1835,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1889,7 +1889,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1943,7 +1943,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -1997,7 +1997,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
