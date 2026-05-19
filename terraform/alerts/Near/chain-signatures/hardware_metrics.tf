@@ -72,7 +72,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"builder\",\"expr\":\"multichain_cpu_usage_percentage{node_account_id=~\\\"(node\\\\\\\\.sig-net\\\\\\\\.near|sig-piertwo\\\\\\\\.near|sig\\\\\\\\.stakin\\\\\\\\.near|natsai-bp\\\\\\\\.near|sig-mpc-staking4all-01\\\\\\\\.near|lifted-sig\\\\\\\\.near|taxistake-sig\\\\\\\\.near|blacksandtech-sig\\\\\\\\.near)\\\"}\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"builder\",\"expr\":\"multichain_cpu_usage_percentage{node_account_id=~\\\"(node\\\\\\\\.sig-net\\\\\\\\.near|sig-piertwo\\\\\\\\.near|sig\\\\\\\\.stakin\\\\\\\\.near|natsai-bp\\\\\\\\.near|sig-mpc-staking4all-01\\\\\\\\.near|lifted-sig\\\\\\\\.near|taxistake-sig\\\\\\\\.near|luganodes\\\\\\\\.near|blacksandtech-sig\\\\\\\\.near)\\\"}\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
     }
     data {
       ref_id = "B"
@@ -347,7 +347,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"builder\",\"expr\":\"multichain_available_memory_bytes{node_account_id=~\\\"(node\\\\\\\\.sig-net\\\\\\\\.near|sig-piertwo\\\\\\\\.near|sig\\\\\\\\.stakin\\\\\\\\.near|natsai-bp\\\\\\\\.near|sig-mpc-staking4all-01\\\\\\\\.near|lifted-sig\\\\\\\\.near|taxistake-sig\\\\\\\\.near|blacksandtech-sig\\\\\\\\.near)\\\"} / 1000000000\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"builder\",\"expr\":\"multichain_available_memory_bytes{node_account_id=~\\\"(node\\\\\\\\.sig-net\\\\\\\\.near|sig-piertwo\\\\\\\\.near|sig\\\\\\\\.stakin\\\\\\\\.near|natsai-bp\\\\\\\\.near|sig-mpc-staking4all-01\\\\\\\\.near|lifted-sig\\\\\\\\.near|taxistake-sig\\\\\\\\.near|luganodes\\\\\\\\.near|blacksandtech-sig\\\\\\\\.near)\\\"} / 1000000000\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
     }
     data {
       ref_id = "B"
