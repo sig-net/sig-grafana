@@ -125,7 +125,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       description      = "Ethereum 1-hour in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
       summary          = "[MAINNET][SIGNATURES][ETH] Success rate below 95%"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -254,7 +254,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       description      = "Solana 1-hour in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
       summary          = "[MAINNET][SIGNATURES][SOLANA] Success rate below 95%"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -676,7 +676,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       description      = "Presignature generator success rate has been below 80% for more than 1 hour: {{ $values.A }}%"
       summary          = "[MAINNET][PRESIGNATURE] Success rate below 80%"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -806,7 +806,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       description      = "Triple generator success rate has been below 80% for more than 1 hour: {{ $values.A }}%"
       summary          = "[MAINNET][TRIPLE] Success rate below 80%"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"

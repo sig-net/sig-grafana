@@ -460,7 +460,7 @@ resource "grafana_rule_group" "chain_signatures_prod_business_critical" {
         description      = rule.value.description
         summary          = rule.value.summary
       }
-      is_paused = startswith(rule.value.name, "[MAINNET]")
+      is_paused = false
 
       notification_settings {
         contact_point = rule.value.contact_point
@@ -567,7 +567,7 @@ resource "grafana_rule_group" "chain_signatures_prod_sre" {
         description      = rule.value.description
         summary          = rule.value.summary
       }
-      is_paused = startswith(rule.value.name, "[MAINNET]")
+      is_paused = false
 
       notification_settings {
         contact_point = rule.value.contact_point
@@ -674,7 +674,7 @@ resource "grafana_rule_group" "chain_signatures_prod_mpc" {
         description      = rule.value.description
         summary          = rule.value.summary
       }
-      is_paused = startswith(rule.value.name, "[MAINNET]")
+      is_paused = false
 
       notification_settings {
         contact_point = rule.value.contact_point
