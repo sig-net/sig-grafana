@@ -46,7 +46,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "64"
       description      = "Signature success rate has been below 95% for 5 min: {{ $values.A }}%"
       summary          = "[MAINNET][SIGNATURES] Success Rate below 95%"
@@ -101,7 +101,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "109"
       description      = "Signature success rate has been below 40% for 5 mins: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES][SOLANA] Success rate below 40%"
@@ -156,7 +156,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     exec_err_state = "Error"
     for            = "15m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "108"
       description      = "Signature success rate has been below 40% for 5 mins: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES][ETH] Success rate below 40%"
@@ -211,7 +211,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     exec_err_state = "KeepLast"
     for            = "15m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "46"
     }
     is_paused = false
@@ -264,7 +264,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     exec_err_state = "Error"
     for            = "15m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "46"
     }
     is_paused = true
@@ -317,7 +317,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "109"
       description      = "Signature success rate has been below 50% for 5 mins: {{ $values.A }}%"
       summary          = "[DEV][SIGNATURES][SOLANA] Success rate below 50%"
@@ -372,7 +372,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "108"
       description      = "Signature success rate has been below 50% for 5 mins: {{ $values.A }}%"
       summary          = "[DEV][SIGNATURES][ETH] Success rate below 50%"

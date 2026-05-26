@@ -46,7 +46,7 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "1"
     }
     is_paused = true
@@ -99,7 +99,7 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "1"
     }
     is_paused = true
@@ -152,7 +152,7 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "1"
     }
     is_paused = true
@@ -205,7 +205,7 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "3"
     }
     is_paused = true
@@ -258,7 +258,7 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "3"
     }
     is_paused = true
@@ -311,7 +311,7 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "3"
     }
     is_paused = true
