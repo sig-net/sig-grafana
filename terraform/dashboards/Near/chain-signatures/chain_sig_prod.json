@@ -172,7 +172,6 @@
           {
             "matcher": {
               "id": "byName",
-              "scope": "series",
               "options": "Version"
             },
             "properties": [
@@ -185,7 +184,6 @@
           {
             "matcher": {
               "id": "byName",
-              "scope": "series",
               "options": "Chain"
             },
             "properties": [
@@ -198,7 +196,6 @@
           {
             "matcher": {
               "id": "byName",
-              "scope": "series",
               "options": "Commit Hash"
             },
             "properties": [
