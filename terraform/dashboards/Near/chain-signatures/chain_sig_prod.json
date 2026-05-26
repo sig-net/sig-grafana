@@ -87,41 +87,32 @@
       ],
       "transformations": [
         {
-          "kind": "Transformation",
-          "group": "labelsToFields",
-          "spec": {
-            "options": {
-              "mode": "columns"
-            }
+          "id": "labelsToFields",
+          "options": {
+            "mode": "columns"
           }
         },
         {
-          "kind": "Transformation",
-          "group": "merge",
-          "spec": {
-            "options": {}
-          }
+          "id": "merge",
+          "options": {}
         },
         {
-          "kind": "Transformation",
-          "group": "organize",
-          "spec": {
-            "options": {
-              "excludeByName": {
-                "Time": true,
-                "short_hash": true
-              },
-              "indexByName": {
-                "chain": 1,
-                "git_commit_hash": 2,
-                "version": 0
-              },
-              "renameByName": {
-                "Value": "SLI",
-                "chain": "Chain",
-                "git_commit_hash": "Commit Hash",
-                "version": "Version"
-              }
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "short_hash": true
+            },
+            "indexByName": {
+              "chain": 1,
+              "git_commit_hash": 2,
+              "version": 0
+            },
+            "renameByName": {
+              "Value": "SLI",
+              "chain": "Chain",
+              "git_commit_hash": "Commit Hash",
+              "version": "Version"
             }
           }
         }
@@ -181,7 +172,6 @@
           {
             "matcher": {
               "id": "byName",
-              "scope": "series",
               "options": "Version"
             },
             "properties": [
@@ -194,7 +184,6 @@
           {
             "matcher": {
               "id": "byName",
-              "scope": "series",
               "options": "Chain"
             },
             "properties": [
@@ -207,7 +196,6 @@
           {
             "matcher": {
               "id": "byName",
-              "scope": "series",
               "options": "Commit Hash"
             },
             "properties": [
