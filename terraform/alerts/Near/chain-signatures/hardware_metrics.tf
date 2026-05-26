@@ -326,7 +326,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       description      = "Node has abnormally high memory usage: {{ $values.A }} GB remaining"
       summary          = "[TESTNET][HARDWARE]Node memory usage high"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "SRE On-call"

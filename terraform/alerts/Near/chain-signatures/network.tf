@@ -155,7 +155,7 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "1"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -208,7 +208,7 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "3"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"

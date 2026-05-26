@@ -438,7 +438,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       description      = "Signature success rate has been below 40% for 5 mins: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES][SOLANA] Success rate below 40%"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -493,7 +493,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       description      = "Signature success rate has been below 40% for 5 mins: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES][ETH] Success rate below 40%"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"
