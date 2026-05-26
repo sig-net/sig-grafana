@@ -217,7 +217,7 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
     }
   }
   rule {
-    name      = "[MAINNET] [NETWORK] Latest Block Height Increase Per Min"
+    name      = "[MAINNET][NETWORK][ETH] Latest Block Height Stalled"
     condition = "C"
 
     data {
@@ -229,7 +229,21 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"builder\",\"exemplar\":false,\"expr\":\"rate(multichain_latest_block_height{environment=\\\"mainnet\\\"}[1m])\",\"format\":\"time_series\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"{{node_account_id}}\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+      model = jsonencode({
+        datasource = {
+          type = "prometheus"
+          uid  = "grafanacloud-prom"
+        }
+        editorMode    = "code"
+        expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"mainnet\", chain=\"Ethereum\", status=\"indexed\"}[1m]))"
+        instant       = false
+        interval      = ""
+        intervalMs    = 60000
+        legendFormat  = "{{node_account_id}}"
+        maxDataPoints = 43200
+        range         = true
+        refId         = "A"
+      })
     }
     data {
       ref_id = "B"
@@ -240,7 +254,35 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
       }
 
       datasource_uid = "__expr__"
-      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"B\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"A\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"reducer\":\"last\",\"refId\":\"B\",\"type\":\"reduce\"}"
+      model = jsonencode({
+        conditions = [{
+          evaluator = {
+            params = []
+            type   = "gt"
+          }
+          operator = {
+            type = "and"
+          }
+          query = {
+            params = ["B"]
+          }
+          reducer = {
+            params = []
+            type   = "last"
+          }
+          type = "query"
+        }]
+        datasource = {
+          type = "__expr__"
+          uid  = "__expr__"
+        }
+        expression    = "A"
+        intervalMs    = 1000
+        maxDataPoints = 43200
+        reducer       = "last"
+        refId         = "B"
+        type          = "reduce"
+      })
     }
     data {
       ref_id = "C"
@@ -251,7 +293,34 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
       }
 
       datasource_uid = "__expr__"
-      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0.001],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+      model = jsonencode({
+        conditions = [{
+          evaluator = {
+            params = [0.001]
+            type   = "lt"
+          }
+          operator = {
+            type = "and"
+          }
+          query = {
+            params = ["C"]
+          }
+          reducer = {
+            params = []
+            type   = "last"
+          }
+          type = "query"
+        }]
+        datasource = {
+          type = "__expr__"
+          uid  = "__expr__"
+        }
+        expression    = "B"
+        intervalMs    = 1000
+        maxDataPoints = 43200
+        refId         = "C"
+        type          = "threshold"
+      })
     }
 
     no_data_state  = "NoData"
@@ -259,9 +328,135 @@ resource "grafana_rule_group" "rule_group_9b7998e4fd2dcff7" {
     for            = "5m"
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
-      __panelId__      = "3"
+      __panelId__      = "81"
+      description      = "Ethereum indexed block height has not advanced for 5 minutes."
+      summary          = "[MAINNET][NETWORK][ETH] Latest block height stalled"
     }
-    is_paused = true
+    is_paused = false
+
+    notification_settings {
+      contact_point = "MPC Alerts"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
+    name      = "[MAINNET][NETWORK][SOLANA] Latest Block Height Stalled"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 300
+        to   = 0
+      }
+
+      datasource_uid = "grafanacloud-prom"
+      model = jsonencode({
+        datasource = {
+          type = "prometheus"
+          uid  = "grafanacloud-prom"
+        }
+        editorMode    = "code"
+        expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"mainnet\", chain=\"Solana\", status=\"finalized\"}[1m]))"
+        instant       = false
+        interval      = ""
+        intervalMs    = 60000
+        legendFormat  = "{{node_account_id}}"
+        maxDataPoints = 43200
+        range         = true
+        refId         = "A"
+      })
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 300
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model = jsonencode({
+        conditions = [{
+          evaluator = {
+            params = []
+            type   = "gt"
+          }
+          operator = {
+            type = "and"
+          }
+          query = {
+            params = ["B"]
+          }
+          reducer = {
+            params = []
+            type   = "last"
+          }
+          type = "query"
+        }]
+        datasource = {
+          type = "__expr__"
+          uid  = "__expr__"
+        }
+        expression    = "A"
+        intervalMs    = 1000
+        maxDataPoints = 43200
+        reducer       = "last"
+        refId         = "B"
+        type          = "reduce"
+      })
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 300
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model = jsonencode({
+        conditions = [{
+          evaluator = {
+            params = [0.001]
+            type   = "lt"
+          }
+          operator = {
+            type = "and"
+          }
+          query = {
+            params = ["C"]
+          }
+          reducer = {
+            params = []
+            type   = "last"
+          }
+          type = "query"
+        }]
+        datasource = {
+          type = "__expr__"
+          uid  = "__expr__"
+        }
+        expression    = "B"
+        intervalMs    = 1000
+        maxDataPoints = 43200
+        refId         = "C"
+        type          = "threshold"
+      })
+    }
+
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
+      __panelId__      = "140"
+      description      = "Solana finalized block height has not advanced for 5 minutes."
+      summary          = "[MAINNET][NETWORK][SOLANA] Latest block height stalled"
+    }
+    is_paused = false
 
     notification_settings {
       contact_point = "MPC Alerts"
