@@ -51,7 +51,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       description      = "CPU usage percentage has been at or above 90% for more than 5 mins: {{ $values.A }}%"
       summary          = "[DEV][HARDWARE] Node CPU usage 90% or above"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "Multichain Dev"
@@ -106,7 +106,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       description      = "CPU usage percentage has been at or above 90% for more than 5 mins: {{ $values.A }}%"
       summary          = "[MAINNET][HARDWARE] Node CPU usage 90% or above"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -161,7 +161,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       description      = "CPU usage percentage has been at or above 90% for more than 5 mins: {{ $values.A }}%"
       summary          = "[TESNET][HARDWARE] Node CPU usage 90% or above"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -216,7 +216,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       description      = "Root disk space is below 20%: {{ $values.A }} GB remaining"
       summary          = "[DEV][HARDWARE]Available Disk Space Below 20%"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "Multichain Dev"
@@ -271,7 +271,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       description      = "Node has abnormally high memory usage: {{ $values.A }} GB remaining"
       summary          = "[DEV][HARDWARE]Node memory usage high"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "Multichain Dev"
@@ -326,7 +326,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       description      = "Node has abnormally high memory usage: {{ $values.A }} GB remaining"
       summary          = "[TESTNET][HARDWARE]Node memory usage high"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "MPC Alerts"
@@ -381,7 +381,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       description      = "Node has abnormally high memory usage: {{ $values.A }} GB remaining"
       summary          = "[MAINNET][HARDWARE]Node memory usage high"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "MPC Alerts"
