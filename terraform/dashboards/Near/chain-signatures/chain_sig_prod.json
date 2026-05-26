@@ -128,15 +128,21 @@
       ],
       "fieldConfig": {
         "defaults": {
-          "unit": "percent",
-          "decimals": 2,
-          "min": 0,
-          "max": 100,
+          "custom": {
+            "align": "auto",
+            "footer": {
+              "reducers": []
+            },
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "value": 0,
+                "value": null,
                 "color": "dark-red"
               },
               {
@@ -149,18 +155,12 @@
               }
             ]
           },
+          "unit": "percent",
+          "decimals": 2,
+          "min": 0,
+          "max": 100,
           "color": {
             "mode": "thresholds"
-          },
-          "custom": {
-            "align": "auto",
-            "cellOptions": {
-              "type": "auto"
-            },
-            "footer": {
-              "reducers": []
-            },
-            "inspect": false
           }
         },
         "overrides": [
@@ -220,9 +220,9 @@
         ]
       },
       "options": {
+        "showHeader": true,
         "cellHeight": "sm",
         "enablePagination": false,
-        "showHeader": true,
         "sortBy": [
           {
             "desc": true,
