@@ -4523,6 +4523,7 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
+                        "editorMode": "code",
                         "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"indexing\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Indexing",
@@ -4567,9 +4568,10 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"organizing\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Generating Signature",
+                        "legendFormat": "Organizing",
                         "queryType": "range",
                         "range": true
                       }
@@ -4589,9 +4591,10 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"posit\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Responding",
+                        "legendFormat": "Posit",
                         "queryType": "range",
                         "range": true
                       }
@@ -4611,14 +4614,59 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Total",
+                        "legendFormat": "Generating Signature",
                         "queryType": "range",
                         "range": true
                       }
                     },
                     "refId": "E",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Responding",
+                        "range": true
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "G",
                     "hidden": false
                   }
                 }
@@ -4814,9 +4862,10 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"organizing\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Generating Signature",
+                        "legendFormat": "Organizing",
                         "queryType": "range",
                         "range": true
                       }
@@ -4836,9 +4885,10 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"posit\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Responding",
+                        "legendFormat": "Posit",
                         "queryType": "range",
                         "range": true
                       }
@@ -4858,14 +4908,59 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Total",
+                        "legendFormat": "Generating Signature",
                         "queryType": "range",
                         "range": true
                       }
                     },
                     "refId": "E",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Responding",
+                        "range": true
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "G",
                     "hidden": false
                   }
                 }
