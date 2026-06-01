@@ -404,7 +404,26 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"code\",\"exemplar\":false,\"expr\":\" (sum (increase(multichain_sign_requests_success{chain=\\\"Solana\\\",environment=\\\"testnet\\\"}[1h]))/\\n max(increase(multichain_sign_requests_count{chain=\\\"Solana\\\",environment=\\\"testnet\\\"}[1h])))*100\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+      model = jsonencode({
+        datasource = {
+          type = "prometheus"
+          uid  = "grafanacloud-prom"
+        }
+        editorMode    = "code"
+        expr          = <<-EOT
+          (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[1h]))
+          / (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[1h]))
+            + (sum(increase(multichain_sign_request_delayed{environment="testnet", chain="Solana"}[1h]))
+              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[1h])))))) * 100
+        EOT
+        instant       = false
+        interval      = ""
+        intervalMs    = 60000
+        legendFormat  = "1 hour · Solana"
+        maxDataPoints = 43200
+        range         = true
+        refId         = "A"
+      })
     }
     data {
       ref_id = "B"
@@ -429,13 +448,13 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[40],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "Alerting"
+    no_data_state  = "NoData"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
-      __panelId__      = "109"
-      description      = "Signature success rate has been below 40% for 5 mins: {{ $values.A }}%"
+      __panelId__      = "149"
+      description      = "Solana 1-hour in-time request SLI has been below 40% for 5 minutes: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES][SOLANA] Success rate below 40%"
     }
     is_paused = false
@@ -459,7 +478,26 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"code\",\"exemplar\":false,\"expr\":\" (sum (increase(multichain_sign_requests_success{chain=\\\"Ethereum\\\",environment=\\\"testnet\\\"}[1h]))/\\n max(increase(multichain_sign_requests_count{chain=\\\"Ethereum\\\",environment=\\\"testnet\\\"}[1h])))*100\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+      model = jsonencode({
+        datasource = {
+          type = "prometheus"
+          uid  = "grafanacloud-prom"
+        }
+        editorMode    = "code"
+        expr          = <<-EOT
+          (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Ethereum", step="total", status="in_time"}[1h]))
+          / (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Ethereum", step="total", status="in_time"}[1h]))
+            + (sum(increase(multichain_sign_request_delayed{environment="testnet", chain="Ethereum"}[1h]))
+              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Ethereum", step="total", status="in_time"}[1h])))))) * 100
+        EOT
+        instant       = false
+        interval      = ""
+        intervalMs    = 60000
+        legendFormat  = "1 hour · Ethereum"
+        maxDataPoints = 43200
+        range         = true
+        refId         = "A"
+      })
     }
     data {
       ref_id = "B"
@@ -484,13 +522,13 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[40],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "Alerting"
+    no_data_state  = "NoData"
     exec_err_state = "Error"
     for            = "15m"
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
-      __panelId__      = "108"
-      description      = "Signature success rate has been below 40% for 5 mins: {{ $values.A }}%"
+      __panelId__      = "149"
+      description      = "Ethereum 1-hour in-time request SLI has been below 40% for 5 minutes: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES][ETH] Success rate below 40%"
     }
     is_paused = false
@@ -544,7 +582,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     for            = "15m"
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
-      __panelId__      = "46"
+      __panelId__      = "120"
     }
     is_paused = false
 
@@ -827,7 +865,26 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"code\",\"exemplar\":false,\"expr\":\" (sum (increase(multichain_sign_requests_success{chain=\\\"Solana\\\",environment=\\\"dev\\\"}[1h]))/\\n max(increase(multichain_sign_requests_count{chain=\\\"Solana\\\",environment=\\\"dev\\\"}[1h])))*100\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+      model = jsonencode({
+        datasource = {
+          type = "prometheus"
+          uid  = "grafanacloud-prom"
+        }
+        editorMode    = "code"
+        expr          = <<-EOT
+          (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Solana", step="total", status="in_time"}[1h]))
+          / (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Solana", step="total", status="in_time"}[1h]))
+            + (sum(increase(multichain_sign_request_delayed{environment="dev", chain="Solana"}[1h]))
+              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Solana", step="total", status="in_time"}[1h])))))) * 100
+        EOT
+        instant       = false
+        interval      = ""
+        intervalMs    = 60000
+        legendFormat  = "1 hour · Solana"
+        maxDataPoints = 43200
+        range         = true
+        refId         = "A"
+      })
     }
     data {
       ref_id = "B"
@@ -852,13 +909,13 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[50],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "Alerting"
+    no_data_state  = "NoData"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
-      __panelId__      = "109"
-      description      = "Signature success rate has been below 50% for 5 mins: {{ $values.A }}%"
+      __panelId__      = "149"
+      description      = "Solana 1-hour in-time request SLI has been below 50% for 5 minutes: {{ $values.A }}%"
       summary          = "[DEV][SIGNATURES][SOLANA] Success rate below 50%"
     }
     is_paused = false
@@ -882,7 +939,26 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"adhocFilters\":[],\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"disableTextWrap\":false,\"editorMode\":\"code\",\"exemplar\":false,\"expr\":\" (sum (increase(multichain_sign_requests_success{chain=\\\"Ethereum\\\",environment=\\\"dev\\\"}[1h]))/\\n max(increase(multichain_sign_requests_count{chain=\\\"Ethereum\\\",environment=\\\"dev\\\"}[1h])))*100\",\"fullMetaSearch\":false,\"includeNullMetadata\":true,\"instant\":false,\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\",\"useBackend\":false}"
+      model = jsonencode({
+        datasource = {
+          type = "prometheus"
+          uid  = "grafanacloud-prom"
+        }
+        editorMode    = "code"
+        expr          = <<-EOT
+          (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Ethereum", step="total", status="in_time"}[1h]))
+          / (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Ethereum", step="total", status="in_time"}[1h]))
+            + (sum(increase(multichain_sign_request_delayed{environment="dev", chain="Ethereum"}[1h]))
+              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Ethereum", step="total", status="in_time"}[1h])))))) * 100
+        EOT
+        instant       = false
+        interval      = ""
+        intervalMs    = 60000
+        legendFormat  = "1 hour · Ethereum"
+        maxDataPoints = 43200
+        range         = true
+        refId         = "A"
+      })
     }
     data {
       ref_id = "B"
@@ -907,13 +983,13 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[50],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "Alerting"
+    no_data_state  = "NoData"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
-      __panelId__      = "108"
-      description      = "Signature success rate has been below 50% for 5 mins: {{ $values.A }}%"
+      __panelId__      = "149"
+      description      = "Ethereum 1-hour in-time request SLI has been below 50% for 5 minutes: {{ $values.A }}%"
       summary          = "[DEV][SIGNATURES][ETH] Success rate below 50%"
     }
     is_paused = false
