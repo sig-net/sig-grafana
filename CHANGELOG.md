@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.0](https://github.com/sig-net/sig-grafana/compare/0.1.2...0.2.0) (2026-05-27)
+
+
+### Features
+
+* **dashboards:** add prod chain signatures dashboard ([#30](https://github.com/sig-net/sig-grafana/issues/30)) ([4d2e469](https://github.com/sig-net/sig-grafana/commit/4d2e4693cd0fcb32e72e184db6136cf9bccd3e7f))
+
+
+### Bug Fixes
+
+* **dashboards:** align prod panel 163 with classic JSON ([#33](https://github.com/sig-net/sig-grafana/issues/33)) ([4d3cb4c](https://github.com/sig-net/sig-grafana/commit/4d3cb4cd872c763a4c5ae160456af2b187775fb4))
+* **dashboards:** correct prod panel 163 ([#32](https://github.com/sig-net/sig-grafana/issues/32)) ([16f9cc9](https://github.com/sig-net/sig-grafana/commit/16f9cc9c1d5596ec34171ca1862d2089d22d61db))
+* force push active dashboards ([86e57a4](https://github.com/sig-net/sig-grafana/commit/86e57a4a8b6c914c76eb593ff33dbfd732c543e1))
+* **terraform:** update staging dashboard to reflect expected dashboard ([#34](https://github.com/sig-net/sig-grafana/issues/34)) ([32ffe68](https://github.com/sig-net/sig-grafana/commit/32ffe68bf57e203afb5e174defc7825c58c1c9ce))
+* updated terraform provider to support v2 dashboards, added xaing… ([#40](https://github.com/sig-net/sig-grafana/issues/40)) ([922cb4d](https://github.com/sig-net/sig-grafana/commit/922cb4d92a1126da499ae51d40918dcad614e02e))
+
 ## [0.1.2](https://github.com/sig-net/sig-grafana/compare/0.1.1...0.1.2) (2026-05-05)
 
 
