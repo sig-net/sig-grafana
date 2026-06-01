@@ -116,7 +116,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       })
     }
 
-    no_data_state  = "NoData"
+    no_data_state  = "KeepLast"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
@@ -245,7 +245,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       })
     }
 
-    no_data_state  = "NoData"
+    no_data_state  = "KeepLast"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
@@ -374,7 +374,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       })
     }
 
-    no_data_state  = "NoData"
+    no_data_state  = "KeepLast"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
