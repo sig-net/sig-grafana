@@ -1,0 +1,53 @@
+name: Sync Chain Signatures Prod Dashboard
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+    paths:
+      - "terraform/dashboards/Near/chain-signatures/chain_sig_prod.json"
+
+concurrency:
+  group: sync-chain-signatures-prod-dashboard-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  sync-prod-dashboard:
+    name: Normalize prod dashboard export
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Load base prod dashboard reference
+        run: |
+          git fetch origin "${{ github.event.pull_request.base.ref }}"
+          git show "origin/${{ github.event.pull_request.base.ref }}:terraform/dashboards/Near/chain-signatures/chain_sig_prod.json" > /tmp/chain_sig_prod.reference.json
+
+      - name: Normalize prod dashboard fields
+        run: |
+          python3 scripts/sync_chain_sig_prod.py \
+            --candidate terraform/dashboards/Near/chain-signatures/chain_sig_prod.json \
+            --reference /tmp/chain_sig_prod.reference.json
+
+      - name: Commit normalized dashboard
+        run: |
+          if git diff --quiet -- terraform/dashboards/Near/chain-signatures/chain_sig_prod.json; then
+            echo "No dashboard changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add terraform/dashboards/Near/chain-signatures/chain_sig_prod.json
+          git commit -m "chore(dashboards): sync chain signatures prod export"
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
