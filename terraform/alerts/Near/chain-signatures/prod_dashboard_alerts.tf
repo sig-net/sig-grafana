@@ -238,52 +238,148 @@ locals {
       description   = "Mainnet node is not running for {{ $labels.node_account_id }}"
     },
     {
-      name          = "[DEV][NETWORK] Latest Block Height Increase Per Min"
-      expr          = "max by(node_account_id, chain) (increase(multichain_latest_block_height{environment=\"dev\"}[1m]))"
+      name          = "[DEV][NETWORK][ETH] Latest Block Height Stalled"
+      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"dev\", chain=\"Ethereum\", status=\"indexed\"}[1m]))"
       threshold     = 0.001
       comparator    = "lt"
-      panel_id      = "3"
+      panel_id      = "81"
       contact_point = local.chain_signatures_contacts.dev
       for           = "5m"
-      legend_format = "{{chain}}: {{node_account_id}}"
+      legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
       instant       = false
       no_data_state = "NoData"
-      summary       = "[DEV][NETWORK] Latest block height increase is stalled"
-      description   = "Dev latest block increase is below threshold for {{ $labels.chain }} / {{ $labels.node_account_id }}: {{ $values.B }}"
+      summary       = "[DEV][NETWORK][ETH] Latest block height stalled"
+      description   = "Dev Ethereum indexed block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
     },
     {
-      name          = "[TESTNET][NETWORK] Latest Block Height Increase Per Min"
-      expr          = "max by(node_account_id, chain) (increase(multichain_latest_block_height{environment=\"testnet\"}[1m]))"
+      name          = "[DEV][NETWORK][SOLANA] Latest Block Height Stalled"
+      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"dev\", chain=\"Solana\", status=\"finalized\"}[1m]))"
       threshold     = 0.001
       comparator    = "lt"
-      panel_id      = "3"
-      contact_point = local.chain_signatures_contacts.sre
+      panel_id      = "140"
+      contact_point = local.chain_signatures_contacts.dev
       for           = "5m"
-      legend_format = "{{chain}}: {{node_account_id}}"
+      legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
       instant       = false
       no_data_state = "NoData"
-      summary       = "[TESTNET][NETWORK] Latest block height increase is stalled"
-      description   = "Testnet latest block increase is below threshold for {{ $labels.chain }} / {{ $labels.node_account_id }}: {{ $values.B }}"
+      summary       = "[DEV][NETWORK][SOLANA] Latest block height stalled"
+      description   = "Dev Solana finalized block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
     },
     {
-      name          = "[MAINNET][NETWORK] Latest Block Height Increase Per Min"
-      expr          = "max by(node_account_id, chain) (increase(multichain_latest_block_height{environment=\"mainnet\"}[1m]))"
+      name          = "[DEV][NETWORK][HYDRATION] Latest Block Height Stalled"
+      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"dev\", chain=\"Hydration\", status=\"indexed\"}[1m]))"
       threshold     = 0.001
       comparator    = "lt"
-      panel_id      = "3"
-      contact_point = local.chain_signatures_contacts.sre
+      panel_id      = "157"
+      contact_point = local.chain_signatures_contacts.dev
       for           = "5m"
-      legend_format = "{{chain}}: {{node_account_id}}"
+      legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
       instant       = false
       no_data_state = "NoData"
-      summary       = "[MAINNET][NETWORK] Latest block height increase is stalled"
-      description   = "Mainnet latest block increase is below threshold for {{ $labels.chain }} / {{ $labels.node_account_id }}: {{ $values.B }}"
+      summary       = "[DEV][NETWORK][HYDRATION] Latest block height stalled"
+      description   = "Dev Hydration indexed block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
+    },
+    {
+      name          = "[TESTNET][NETWORK][ETH] Latest Block Height Stalled"
+      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"testnet\", chain=\"Ethereum\", status=\"indexed\"}[1m]))"
+      threshold     = 0.001
+      comparator    = "lt"
+      panel_id      = "81"
+      contact_point = local.chain_signatures_contacts.sre
+      for           = "5m"
+      legend_format = "{{node_account_id}}"
+      query_type    = "range"
+      range         = true
+      instant       = false
+      no_data_state = "NoData"
+      summary       = "[TESTNET][NETWORK][ETH] Latest block height stalled"
+      description   = "Testnet Ethereum indexed block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
+    },
+    {
+      name          = "[TESTNET][NETWORK][SOLANA] Latest Block Height Stalled"
+      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"testnet\", chain=\"Solana\", status=\"finalized\"}[1m]))"
+      threshold     = 0.001
+      comparator    = "lt"
+      panel_id      = "140"
+      contact_point = local.chain_signatures_contacts.sre
+      for           = "5m"
+      legend_format = "{{node_account_id}}"
+      query_type    = "range"
+      range         = true
+      instant       = false
+      no_data_state = "NoData"
+      summary       = "[TESTNET][NETWORK][SOLANA] Latest block height stalled"
+      description   = "Testnet Solana finalized block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
+    },
+    {
+      name          = "[TESTNET][NETWORK][HYDRATION] Latest Block Height Stalled"
+      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"testnet\", chain=\"Hydration\", status=\"indexed\"}[1m]))"
+      threshold     = 0.001
+      comparator    = "lt"
+      panel_id      = "157"
+      contact_point = local.chain_signatures_contacts.sre
+      for           = "5m"
+      legend_format = "{{node_account_id}}"
+      query_type    = "range"
+      range         = true
+      instant       = false
+      no_data_state = "NoData"
+      summary       = "[TESTNET][NETWORK][HYDRATION] Latest block height stalled"
+      description   = "Testnet Hydration indexed block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
+    },
+    {
+      name          = "[MAINNET][NETWORK][ETH] Latest Block Height Stalled"
+      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"mainnet\", chain=\"Ethereum\", status=\"indexed\"}[1m]))"
+      threshold     = 0.001
+      comparator    = "lt"
+      panel_id      = "81"
+      contact_point = local.chain_signatures_contacts.sre
+      for           = "5m"
+      legend_format = "{{node_account_id}}"
+      query_type    = "range"
+      range         = true
+      instant       = false
+      no_data_state = "NoData"
+      summary       = "[MAINNET][NETWORK][ETH] Latest block height stalled"
+      description   = "Mainnet Ethereum indexed block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
+    },
+    {
+      name          = "[MAINNET][NETWORK][SOLANA] Latest Block Height Stalled"
+      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"mainnet\", chain=\"Solana\", status=\"finalized\"}[1m]))"
+      threshold     = 0.001
+      comparator    = "lt"
+      panel_id      = "140"
+      contact_point = local.chain_signatures_contacts.sre
+      for           = "5m"
+      legend_format = "{{node_account_id}}"
+      query_type    = "range"
+      range         = true
+      instant       = false
+      no_data_state = "NoData"
+      summary       = "[MAINNET][NETWORK][SOLANA] Latest block height stalled"
+      description   = "Mainnet Solana finalized block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
+    },
+    {
+      name          = "[MAINNET][NETWORK][HYDRATION] Latest Block Height Stalled"
+      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"mainnet\", chain=\"Hydration\", status=\"indexed\"}[1m]))"
+      threshold     = 0.001
+      comparator    = "lt"
+      panel_id      = "157"
+      contact_point = local.chain_signatures_contacts.sre
+      for           = "5m"
+      legend_format = "{{node_account_id}}"
+      query_type    = "range"
+      range         = true
+      instant       = false
+      no_data_state = "NoData"
+      summary       = "[MAINNET][NETWORK][HYDRATION] Latest block height stalled"
+      description   = "Mainnet Hydration indexed block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
     },
   ]
 
