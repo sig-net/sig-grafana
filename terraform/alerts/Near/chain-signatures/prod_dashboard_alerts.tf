@@ -89,7 +89,7 @@ locals {
       query_type    = "range"
       range         = true
       instant       = false
-      no_data_state = "NoData"
+      no_data_state = "OK"
       summary       = "[MAINNET][HARDWARE] Max CPU usage above 80%"
       description   = "Mainnet node CPU usage is above 80% for {{ $labels.node_account_id }}: {{ $values.B }}%"
     },
@@ -137,7 +137,7 @@ locals {
       query_type    = "range"
       range         = true
       instant       = false
-      no_data_state = "NoData"
+      no_data_state = "OK"
       summary       = "[MAINNET][HARDWARE] Min available RAM below 4GiB"
       description   = "Mainnet node available RAM is below 4GiB for {{ $labels.node_account_id }}: {{ $values.B }} bytes"
     },
@@ -185,7 +185,7 @@ locals {
       query_type    = "range"
       range         = true
       instant       = false
-      no_data_state = "NoData"
+      no_data_state = "OK"
       summary       = "[MAINNET][HARDWARE] Min available disk below 20GiB"
       description   = "Mainnet node available disk is below 20GiB for {{ $labels.node_account_id }}: {{ $values.B }} bytes"
     },
@@ -233,7 +233,7 @@ locals {
       query_type    = "range"
       range         = true
       instant       = false
-      no_data_state = "NoData"
+      no_data_state = "OK"
       summary       = "[MAINNET][NETWORK] Node is down"
       description   = "Mainnet node is not running for {{ $labels.node_account_id }}"
     },
@@ -345,7 +345,7 @@ locals {
       query_type    = "range"
       range         = true
       instant       = false
-      no_data_state = "NoData"
+      no_data_state = "OK"
       summary       = "[MAINNET][NETWORK][ETH] Latest block height stalled"
       description   = "Mainnet Ethereum indexed block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
     },
@@ -361,7 +361,7 @@ locals {
       query_type    = "range"
       range         = true
       instant       = false
-      no_data_state = "NoData"
+      no_data_state = "OK"
       summary       = "[MAINNET][NETWORK][SOLANA] Latest block height stalled"
       description   = "Mainnet Solana finalized block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
     },
@@ -377,7 +377,7 @@ locals {
       query_type    = "range"
       range         = true
       instant       = false
-      no_data_state = "NoData"
+      no_data_state = "OK"
       summary       = "[MAINNET][NETWORK][HYDRATION] Latest block height stalled"
       description   = "Mainnet Hydration indexed block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
     },

@@ -97,7 +97,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[90],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "NoData"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
@@ -372,7 +372,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "NoData"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
