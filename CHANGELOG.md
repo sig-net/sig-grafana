@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.3.0](https://github.com/sig-net/sig-grafana/compare/0.2.0...0.3.0) (2026-06-02)
+
+
+### Features
+
+* **alerts:** map prod chain signatures alerts to prod dashboard ([#38](https://github.com/sig-net/sig-grafana/issues/38)) ([fff3086](https://github.com/sig-net/sig-grafana/commit/fff30864f1a03a5a855f5240130592fdc20de0df))
+* **dashboards:** auto-sync chain signatures prod export ([#43](https://github.com/sig-net/sig-grafana/issues/43)) ([0af6ef5](https://github.com/sig-net/sig-grafana/commit/0af6ef56e05fa61f16822d08c15f9ba124f39aeb))
+
+
+### Bug Fixes
+
+* **alerts:** keep mainnet signature sli on last state ([#46](https://github.com/sig-net/sig-grafana/issues/46)) ([e17dbee](https://github.com/sig-net/sig-grafana/commit/e17dbeec122baae2489b8056342aa2d9af40a127))
+* **alerts:** suppress mainnet app alert no-data pages ([#48](https://github.com/sig-net/sig-grafana/issues/48)) ([067d2b5](https://github.com/sig-net/sig-grafana/commit/067d2b5b5bdf3965c05d818ccd6de625d382afd6))
+* **alerts:** suppress mainnet signature SLI no-data pages ([#47](https://github.com/sig-net/sig-grafana/issues/47)) ([425058d](https://github.com/sig-net/sig-grafana/commit/425058d8551ed691d1d787415932c15ef2240fbe))
+* **alerts:** suppress no-data for all mainnet rules ([#49](https://github.com/sig-net/sig-grafana/issues/49)) ([eb2f698](https://github.com/sig-net/sig-grafana/commit/eb2f698c51e0612fa6b40ab2431f9106110bdefd))
+* **dashboards:** remove staging dashboard from terraform to avoid ove… ([#45](https://github.com/sig-net/sig-grafana/issues/45)) ([8a040ff](https://github.com/sig-net/sig-grafana/commit/8a040ffec98c1dfe832052144275ddc37d4e3f94))
+
 ## [0.2.0](https://github.com/sig-net/sig-grafana/compare/0.1.2...0.2.0) (2026-05-27)
 
 
