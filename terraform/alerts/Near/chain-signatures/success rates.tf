@@ -645,11 +645,21 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         }
         editorMode    = "code"
         expr          = <<-EOT
-          sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h]))
-          / sum by(node_account_id) (
-              increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h])
-              + (increase(multichain_presignature_generator_failures{environment="mainnet"}[1h]) or increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h]) * 0)
-            ) * 100
+          (
+            (((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h])) or vector(0))
+            + (sum by(node_account_id) (increase(multichain_presignature_generator_failures{environment="mainnet"}[1h])) or vector(0))) > bool 0)
+            * (
+              ((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h])) or vector(0))
+              / clamp_min(
+                ((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h])) or vector(0))
+                + (sum by(node_account_id) (increase(multichain_presignature_generator_failures{environment="mainnet"}[1h])) or vector(0))),
+                1
+              )) * 100
+            )
+          ) + (
+            (((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h])) or vector(0))
+            + (sum by(node_account_id) (increase(multichain_presignature_generator_failures{environment="mainnet"}[1h])) or vector(0))) == bool 0) * 100
+          )
         EOT
         instant       = false
         interval      = ""
@@ -738,7 +748,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       })
     }
 
-    no_data_state  = "NoData"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "1h"
     annotations = {
@@ -775,11 +785,21 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         }
         editorMode    = "code"
         expr          = <<-EOT
-          sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h]))
-          / sum by(node_account_id) (
-              increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h])
-              + (increase(multichain_triple_generator_failures{environment="mainnet"}[1h]) or increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h]) * 0)
-            ) * 100
+          (
+            (((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h])) or vector(0))
+            + (sum by(node_account_id) (increase(multichain_triple_generator_failures{environment="mainnet"}[1h])) or vector(0))) > bool 0)
+            * (
+              ((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h])) or vector(0))
+              / clamp_min(
+                ((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h])) or vector(0))
+                + (sum by(node_account_id) (increase(multichain_triple_generator_failures{environment="mainnet"}[1h])) or vector(0))),
+                1
+              )) * 100
+            )
+          ) + (
+            (((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h])) or vector(0))
+            + (sum by(node_account_id) (increase(multichain_triple_generator_failures{environment="mainnet"}[1h])) or vector(0))) == bool 0) * 100
+          )
         EOT
         instant       = false
         interval      = ""
@@ -868,7 +888,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       })
     }
 
-    no_data_state  = "NoData"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "1h"
     annotations = {
