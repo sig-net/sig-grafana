@@ -12,7 +12,7 @@ locals {
   business_critical_rules = [
     {
       name          = "[MAINNET][BUSINESS CRITICAL] In-time Requests SLI 30d below 95%"
-      expr          = "(sum(increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[30d])) / (sum(increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[30d])) + (sum(increase(multichain_sign_request_delayed{environment=\"mainnet\"}[30d])) or vector(0)))) * 100"
+      expr          = "(((((sum(increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[30d])) or vector(0)) + (sum(increase(multichain_sign_request_delayed{environment=\"mainnet\"}[30d])) or vector(0))) > bool 0) * ((((sum(increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[30d])) or vector(0)) / clamp_min((((sum(increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[30d])) or vector(0)) + (sum(increase(multichain_sign_request_delayed{environment=\"mainnet\"}[30d])) or vector(0))), 1)) * 100))) + (((((sum(increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[30d])) or vector(0)) + (sum(increase(multichain_sign_request_delayed{environment=\"mainnet\"}[30d])) or vector(0))) == bool 0) * 100))"
       threshold     = 95
       comparator    = "lt"
       panel_id      = "148"
@@ -22,7 +22,7 @@ locals {
       query_type    = "instant"
       range         = false
       instant       = true
-      no_data_state = "NoData"
+      no_data_state = "OK"
       summary       = "[MAINNET][BUSINESS CRITICAL] In-time requests SLI (30d) below 95%"
       description   = "Mainnet in-time requests SLI (30d) is below 95%: {{ $values.B }}"
     },
@@ -402,7 +402,7 @@ locals {
     },
     {
       name          = "[MAINNET][MPC] In-time Requests SLI Trend below 95%"
-      expr          = "(sum by(chain) (rate(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[$__rate_interval])) / (sum by(chain) (rate(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[$__rate_interval])) + (sum by(chain) (rate(multichain_sign_request_delayed{environment=\"mainnet\"}[$__rate_interval])) or (0 * sum by(chain) (rate(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[$__rate_interval])))))) * 100"
+      expr          = "(((((sum by(chain) (rate(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[$__rate_interval])) or vector(0)) + (sum by(chain) (rate(multichain_sign_request_delayed{environment=\"mainnet\"}[$__rate_interval])) or vector(0))) > bool 0) * ((((sum by(chain) (rate(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[$__rate_interval])) or vector(0)) / clamp_min((((sum by(chain) (rate(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[$__rate_interval])) or vector(0)) + (sum by(chain) (rate(multichain_sign_request_delayed{environment=\"mainnet\"}[$__rate_interval])) or vector(0))), 1)) * 100))) + (((((sum by(chain) (rate(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[$__rate_interval])) or vector(0)) + (sum by(chain) (rate(multichain_sign_request_delayed{environment=\"mainnet\"}[$__rate_interval])) or vector(0))) == bool 0) * 100))"
       threshold     = 95
       comparator    = "lt"
       panel_id      = "149"
@@ -412,7 +412,7 @@ locals {
       query_type    = "range"
       range         = true
       instant       = false
-      no_data_state = "NoData"
+      no_data_state = "OK"
       summary       = "[MAINNET][MPC] In-time requests SLI trend below 95%"
       description   = "Mainnet in-time requests SLI trend is below 95% for {{ $labels.chain }}: {{ $values.B }}%"
     },
@@ -444,7 +444,7 @@ locals {
       query_type    = "range"
       range         = true
       instant       = false
-      no_data_state = "NoData"
+      no_data_state = "OK"
       summary       = "[MAINNET][MPC] Backlog size above 200"
       description   = "Mainnet backlog size is above 200 for {{ $labels.node_account_id }}: {{ $values.B }}"
     },
