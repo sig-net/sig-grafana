@@ -24,10 +24,21 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         }
         editorMode    = "code"
         expr          = <<-EOT
-          (sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h]))
-          / (sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h]))
-            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Ethereum"}[1h]))
-              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h])))))) * 100
+          (
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Ethereum"}[1h])) or vector(0))) > bool 0)
+            * (
+              ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h])) or vector(0))
+              / clamp_min(
+                ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h])) or vector(0))
+                + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Ethereum"}[1h])) or vector(0))),
+                1
+              )) * 100
+            )
+          ) + (
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Ethereum"}[1h])) or vector(0))) == bool 0) * 100
+          )
         EOT
         instant       = false
         interval      = ""
@@ -116,7 +127,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       })
     }
 
-    no_data_state  = "KeepLast"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
@@ -153,10 +164,21 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         }
         editorMode    = "code"
         expr          = <<-EOT
-          (sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h]))
-          / (sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h]))
-            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Solana"}[1h]))
-              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h])))))) * 100
+          (
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Solana"}[1h])) or vector(0))) > bool 0)
+            * (
+              ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h])) or vector(0))
+              / clamp_min(
+                ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h])) or vector(0))
+                + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Solana"}[1h])) or vector(0))),
+                1
+              )) * 100
+            )
+          ) + (
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Solana"}[1h])) or vector(0))) == bool 0) * 100
+          )
         EOT
         instant       = false
         interval      = ""
@@ -245,7 +267,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       })
     }
 
-    no_data_state  = "KeepLast"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
@@ -282,10 +304,21 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         }
         editorMode    = "code"
         expr          = <<-EOT
-          (sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h]))
-          / (sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h]))
-            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Hydration"}[1h]))
-              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h])))))) * 100
+          (
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Hydration"}[1h])) or vector(0))) > bool 0)
+            * (
+              ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h])) or vector(0))
+              / clamp_min(
+                ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h])) or vector(0))
+                + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Hydration"}[1h])) or vector(0))),
+                1
+              )) * 100
+            )
+          ) + (
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Hydration"}[1h])) or vector(0))) == bool 0) * 100
+          )
         EOT
         instant       = false
         interval      = ""
@@ -374,7 +407,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       })
     }
 
-    no_data_state  = "KeepLast"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
