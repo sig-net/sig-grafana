@@ -95,7 +95,7 @@ resource "grafana_rule_group" "rule_group_52a0e1fab90ce868" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[10],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "KeepLast"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "10m"
     annotations = {
@@ -148,7 +148,7 @@ resource "grafana_rule_group" "rule_group_52a0e1fab90ce868" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[10],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "KeepLast"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "10m"
     annotations = {
@@ -201,7 +201,7 @@ resource "grafana_rule_group" "rule_group_52a0e1fab90ce868" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0.95],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "KeepLast"
+    no_data_state  = "OK"
     exec_err_state = "KeepLast"
     for            = "15m"
     annotations = {
@@ -307,7 +307,7 @@ resource "grafana_rule_group" "rule_group_52a0e1fab90ce868" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[10],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "KeepLast"
+    no_data_state  = "OK"
     exec_err_state = "Alerting"
     for            = "10m"
     annotations = {

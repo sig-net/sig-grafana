@@ -46,7 +46,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "69"
       description      = "CPU usage percentage has been at or above 90% for more than 5 mins: {{ $values.A }}%"
       summary          = "[DEV][HARDWARE] Node CPU usage 90% or above"
@@ -97,11 +97,11 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[90],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "NoData"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "69"
       description      = "CPU usage percentage has been at or above 90% for more than 5 mins: {{ $values.A }}%"
       summary          = "[MAINNET][HARDWARE] Node CPU usage 90% or above"
@@ -109,7 +109,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -156,7 +156,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "69"
       description      = "CPU usage percentage has been at or above 90% for more than 5 mins: {{ $values.A }}%"
       summary          = "[TESNET][HARDWARE] Node CPU usage 90% or above"
@@ -164,7 +164,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -211,7 +211,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
     exec_err_state = "Error"
     for            = "2h"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "68"
       description      = "Root disk space is below 20%: {{ $values.A }} GB remaining"
       summary          = "[DEV][HARDWARE]Available Disk Space Below 20%"
@@ -266,7 +266,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "67"
       description      = "Node has abnormally high memory usage: {{ $values.A }} GB remaining"
       summary          = "[DEV][HARDWARE]Node memory usage high"
@@ -321,7 +321,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "67"
       description      = "Node has abnormally high memory usage: {{ $values.A }} GB remaining"
       summary          = "[TESTNET][HARDWARE]Node memory usage high"
@@ -329,7 +329,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
@@ -372,11 +372,11 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "NoData"
+    no_data_state  = "OK"
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "bdg2srektjy0wd"
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "67"
       description      = "Node has abnormally high memory usage: {{ $values.A }} GB remaining"
       summary          = "[MAINNET][HARDWARE]Node memory usage high"
@@ -384,7 +384,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
     is_paused = false
 
     notification_settings {
-      contact_point = "MPC Alerts"
+      contact_point = "SRE On-call"
       group_by      = null
       mute_timings  = null
     }
