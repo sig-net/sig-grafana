@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/sig-net/sig-grafana/compare/0.3.0...0.3.1) (2026-06-10)
+
+
+### Bug Fixes
+
+* **alerts:** evaluate chain-signature success-rate alerts over 10m ([#50](https://github.com/sig-net/sig-grafana/issues/50)) ([8cea686](https://github.com/sig-net/sig-grafana/commit/8cea68690b6e3724c3faa9b19f98903f065a34bf))
+* **alerts:** raise testnet signature success-rate threshold to 95% ([#52](https://github.com/sig-net/sig-grafana/issues/52)) ([22c9b69](https://github.com/sig-net/sig-grafana/commit/22c9b69e6d1ef5a52e3b563a78d036e650b1a83a))
+
 ## [0.3.0](https://github.com/sig-net/sig-grafana/compare/0.2.0...0.3.0) (2026-06-02)
 
 
