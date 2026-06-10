@@ -25,25 +25,25 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         editorMode    = "code"
         expr          = <<-EOT
           (
-            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h])) or vector(0))
-            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Ethereum"}[1h])) or vector(0))) > bool 0)
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[10m])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Ethereum"}[10m])) or vector(0))) > bool 0)
             * (
-              ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h])) or vector(0))
+              ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[10m])) or vector(0))
               / clamp_min(
-                ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h])) or vector(0))
-                + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Ethereum"}[1h])) or vector(0))),
+                ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[10m])) or vector(0))
+                + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Ethereum"}[10m])) or vector(0))),
                 1
               )) * 100
             )
           ) + (
-            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[1h])) or vector(0))
-            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Ethereum"}[1h])) or vector(0))) == bool 0) * 100
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Ethereum", step="total", status="in_time"}[10m])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Ethereum"}[10m])) or vector(0))) == bool 0) * 100
           )
         EOT
         instant       = false
         interval      = ""
         intervalMs    = 60000
-        legendFormat  = "1 hour · Ethereum"
+        legendFormat  = "10 minutes · Ethereum"
         maxDataPoints = 43200
         range         = true
         refId         = "A"
@@ -133,7 +133,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Ethereum 1-hour in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
+      description      = "Ethereum 10-minute in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
       summary          = "[MAINNET][SIGNATURES][ETH] Success rate below 95%"
     }
     is_paused = false
@@ -165,25 +165,25 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         editorMode    = "code"
         expr          = <<-EOT
           (
-            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h])) or vector(0))
-            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Solana"}[1h])) or vector(0))) > bool 0)
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[10m])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Solana"}[10m])) or vector(0))) > bool 0)
             * (
-              ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h])) or vector(0))
+              ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[10m])) or vector(0))
               / clamp_min(
-                ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h])) or vector(0))
-                + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Solana"}[1h])) or vector(0))),
+                ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[10m])) or vector(0))
+                + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Solana"}[10m])) or vector(0))),
                 1
               )) * 100
             )
           ) + (
-            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[1h])) or vector(0))
-            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Solana"}[1h])) or vector(0))) == bool 0) * 100
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Solana", step="total", status="in_time"}[10m])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Solana"}[10m])) or vector(0))) == bool 0) * 100
           )
         EOT
         instant       = false
         interval      = ""
         intervalMs    = 60000
-        legendFormat  = "1 hour · Solana"
+        legendFormat  = "10 minutes · Solana"
         maxDataPoints = 43200
         range         = true
         refId         = "A"
@@ -273,7 +273,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Solana 1-hour in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
+      description      = "Solana 10-minute in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
       summary          = "[MAINNET][SIGNATURES][SOLANA] Success rate below 95%"
     }
     is_paused = false
@@ -305,25 +305,25 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         editorMode    = "code"
         expr          = <<-EOT
           (
-            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h])) or vector(0))
-            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Hydration"}[1h])) or vector(0))) > bool 0)
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[10m])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Hydration"}[10m])) or vector(0))) > bool 0)
             * (
-              ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h])) or vector(0))
+              ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[10m])) or vector(0))
               / clamp_min(
-                ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h])) or vector(0))
-                + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Hydration"}[1h])) or vector(0))),
+                ((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[10m])) or vector(0))
+                + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Hydration"}[10m])) or vector(0))),
                 1
               )) * 100
             )
           ) + (
-            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[1h])) or vector(0))
-            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Hydration"}[1h])) or vector(0))) == bool 0) * 100
+            (((sum(increase(multichain_sign_request_latency_sec_count{environment="mainnet", chain="Hydration", step="total", status="in_time"}[10m])) or vector(0))
+            + (sum(increase(multichain_sign_request_delayed{environment="mainnet", chain="Hydration"}[10m])) or vector(0))) == bool 0) * 100
           )
         EOT
         instant       = false
         interval      = ""
         intervalMs    = 60000
-        legendFormat  = "1 hour · Hydration"
+        legendFormat  = "10 minutes · Hydration"
         maxDataPoints = 43200
         range         = true
         refId         = "A"
@@ -413,7 +413,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Hydration 1-hour in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
+      description      = "Hydration 10-minute in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
       summary          = "[MAINNET][SIGNATURES][HYDRATION] Success rate below 95%"
     }
     is_paused = true
@@ -425,7 +425,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
-    name      = "[TESTNET][SIGNATURES][SOLANA]Signature Success Rate/Hr"
+    name      = "[TESTNET][SIGNATURES][SOLANA] Signature Success Rate/10m"
     condition = "C"
 
     data {
@@ -444,15 +444,15 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         }
         editorMode    = "code"
         expr          = <<-EOT
-          (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[1h]))
-          / (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[1h]))
-            + (sum(increase(multichain_sign_request_delayed{environment="testnet", chain="Solana"}[1h]))
-              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[1h])))))) * 100
+          (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[10m]))
+          / (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[10m]))
+            + (sum(increase(multichain_sign_request_delayed{environment="testnet", chain="Solana"}[10m]))
+              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[10m])))))) * 100
         EOT
         instant       = false
         interval      = ""
         intervalMs    = 60000
-        legendFormat  = "1 hour · Solana"
+        legendFormat  = "10 minutes · Solana"
         maxDataPoints = 43200
         range         = true
         refId         = "A"
@@ -487,7 +487,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Solana 1-hour in-time request SLI has been below 40% for 5 minutes: {{ $values.A }}%"
+      description      = "Solana 10-minute in-time request SLI has been below 40% for 5 minutes: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES][SOLANA] Success rate below 40%"
     }
     is_paused = false
@@ -499,7 +499,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
-    name      = "[TESTNET][SIGNATURES][ETH]Signature Success Rate/Hr"
+    name      = "[TESTNET][SIGNATURES][ETH] Signature Success Rate/10m"
     condition = "C"
 
     data {
@@ -518,15 +518,15 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         }
         editorMode    = "code"
         expr          = <<-EOT
-          (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Ethereum", step="total", status="in_time"}[1h]))
-          / (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Ethereum", step="total", status="in_time"}[1h]))
-            + (sum(increase(multichain_sign_request_delayed{environment="testnet", chain="Ethereum"}[1h]))
-              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Ethereum", step="total", status="in_time"}[1h])))))) * 100
+          (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Ethereum", step="total", status="in_time"}[10m]))
+          / (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Ethereum", step="total", status="in_time"}[10m]))
+            + (sum(increase(multichain_sign_request_delayed{environment="testnet", chain="Ethereum"}[10m]))
+              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Ethereum", step="total", status="in_time"}[10m])))))) * 100
         EOT
         instant       = false
         interval      = ""
         intervalMs    = 60000
-        legendFormat  = "1 hour · Ethereum"
+        legendFormat  = "10 minutes · Ethereum"
         maxDataPoints = 43200
         range         = true
         refId         = "A"
@@ -561,7 +561,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Ethereum 1-hour in-time request SLI has been below 40% for 5 minutes: {{ $values.A }}%"
+      description      = "Ethereum 10-minute in-time request SLI has been below 40% for 5 minutes: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES][ETH] Success rate below 40%"
     }
     is_paused = false
@@ -573,7 +573,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
-    name      = "[DEV] [PRESIGNATURE] Generator Success Rate Per Hour"
+    name      = "[DEV] [PRESIGNATURE] Generator Success Rate Per 10 Minutes"
     condition = "C"
 
     data {
@@ -585,7 +585,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "grafanacloud-prom"
-      model          = "{\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"sum by(node_account_id) (rate(multichain_num_total_historical_presignature_generators_success{node_account_id=~\\\"(multichain-node-dev-0\\\\\\\\.testnet|multichain-node-dev-1\\\\\\\\.testnet|multichain-node-dev-2\\\\\\\\.testnet|multichain-node-dev-3\\\\\\\\.testnet|multichain-node-dev-4\\\\\\\\.testnet|multichain-node-dev-5\\\\\\\\.testnet|multichain-node-dev-6\\\\\\\\.testnet|multichain-node-dev-7\\\\\\\\.testnet)\\\"}[1h]) / rate(multichain_num_total_historical_presignature_generators{node_account_id=~\\\"(multichain-node-dev-0\\\\\\\\.testnet|multichain-node-dev-1\\\\\\\\.testnet|multichain-node-dev-2\\\\\\\\.testnet|multichain-node-dev-3\\\\\\\\.testnet|multichain-node-dev-4\\\\\\\\.testnet|multichain-node-dev-5\\\\\\\\.testnet|multichain-node-dev-6\\\\\\\\.testnet|multichain-node-dev-7\\\\\\\\.testnet)\\\"}[1h]))\",\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\"}"
+      model          = "{\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"sum by(node_account_id) (rate(multichain_num_total_historical_presignature_generators_success{node_account_id=~\\\"(multichain-node-dev-0\\\\\\\\.testnet|multichain-node-dev-1\\\\\\\\.testnet|multichain-node-dev-2\\\\\\\\.testnet|multichain-node-dev-3\\\\\\\\.testnet|multichain-node-dev-4\\\\\\\\.testnet|multichain-node-dev-5\\\\\\\\.testnet|multichain-node-dev-6\\\\\\\\.testnet|multichain-node-dev-7\\\\\\\\.testnet)\\\"}[10m]) / rate(multichain_num_total_historical_presignature_generators{node_account_id=~\\\"(multichain-node-dev-0\\\\\\\\.testnet|multichain-node-dev-1\\\\\\\\.testnet|multichain-node-dev-2\\\\\\\\.testnet|multichain-node-dev-3\\\\\\\\.testnet|multichain-node-dev-4\\\\\\\\.testnet|multichain-node-dev-5\\\\\\\\.testnet|multichain-node-dev-6\\\\\\\\.testnet|multichain-node-dev-7\\\\\\\\.testnet)\\\"}[10m]))\",\"interval\":\"\",\"intervalMs\":60000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":true,\"refId\":\"A\"}"
     }
     data {
       ref_id = "B"
@@ -646,19 +646,19 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         editorMode    = "code"
         expr          = <<-EOT
           (
-            (((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h])) or vector(0))
-            + (sum by(node_account_id) (increase(multichain_presignature_generator_failures{environment="mainnet"}[1h])) or vector(0))) > bool 0)
+            (((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[10m])) or vector(0))
+            + (sum by(node_account_id) (increase(multichain_presignature_generator_failures{environment="mainnet"}[10m])) or vector(0))) > bool 0)
             * (
-              ((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h])) or vector(0))
+              ((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[10m])) or vector(0))
               / clamp_min(
-                ((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h])) or vector(0))
-                + (sum by(node_account_id) (increase(multichain_presignature_generator_failures{environment="mainnet"}[1h])) or vector(0))),
+                ((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[10m])) or vector(0))
+                + (sum by(node_account_id) (increase(multichain_presignature_generator_failures{environment="mainnet"}[10m])) or vector(0))),
                 1
               )) * 100
             )
           ) + (
-            (((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[1h])) or vector(0))
-            + (sum by(node_account_id) (increase(multichain_presignature_generator_failures{environment="mainnet"}[1h])) or vector(0))) == bool 0) * 100
+            (((sum by(node_account_id) (increase(multichain_num_total_historical_presignature_generators_success{environment="mainnet"}[10m])) or vector(0))
+            + (sum by(node_account_id) (increase(multichain_presignature_generator_failures{environment="mainnet"}[10m])) or vector(0))) == bool 0) * 100
           )
         EOT
         instant       = false
@@ -750,11 +750,11 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
 
     no_data_state  = "OK"
     exec_err_state = "Error"
-    for            = "1h"
+    for            = "10m"
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "120"
-      description      = "Presignature generator success rate has been below 80% for more than 1 hour: {{ $values.A }}%"
+      description      = "Presignature generator success rate has been below 80% for more than 10 minutes: {{ $values.A }}%"
       summary          = "[MAINNET][PRESIGNATURE] Success rate below 80%"
     }
     is_paused = false
@@ -786,19 +786,19 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         editorMode    = "code"
         expr          = <<-EOT
           (
-            (((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h])) or vector(0))
-            + (sum by(node_account_id) (increase(multichain_triple_generator_failures{environment="mainnet"}[1h])) or vector(0))) > bool 0)
+            (((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[10m])) or vector(0))
+            + (sum by(node_account_id) (increase(multichain_triple_generator_failures{environment="mainnet"}[10m])) or vector(0))) > bool 0)
             * (
-              ((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h])) or vector(0))
+              ((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[10m])) or vector(0))
               / clamp_min(
-                ((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h])) or vector(0))
-                + (sum by(node_account_id) (increase(multichain_triple_generator_failures{environment="mainnet"}[1h])) or vector(0))),
+                ((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[10m])) or vector(0))
+                + (sum by(node_account_id) (increase(multichain_triple_generator_failures{environment="mainnet"}[10m])) or vector(0))),
                 1
               )) * 100
             )
           ) + (
-            (((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[1h])) or vector(0))
-            + (sum by(node_account_id) (increase(multichain_triple_generator_failures{environment="mainnet"}[1h])) or vector(0))) == bool 0) * 100
+            (((sum by(node_account_id) (increase(multichain_num_total_historical_triple_generators_success{environment="mainnet"}[10m])) or vector(0))
+            + (sum by(node_account_id) (increase(multichain_triple_generator_failures{environment="mainnet"}[10m])) or vector(0))) == bool 0) * 100
           )
         EOT
         instant       = false
@@ -890,11 +890,11 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
 
     no_data_state  = "OK"
     exec_err_state = "Error"
-    for            = "1h"
+    for            = "10m"
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "119"
-      description      = "Triple generator success rate has been below 80% for more than 1 hour: {{ $values.A }}%"
+      description      = "Triple generator success rate has been below 80% for more than 10 minutes: {{ $values.A }}%"
       summary          = "[MAINNET][TRIPLE] Success rate below 80%"
     }
     is_paused = false
@@ -906,7 +906,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
-    name      = "[DEV][SIGNATURES][Solana]Signature Success Rate/Hr"
+    name      = "[DEV][SIGNATURES][Solana] Signature Success Rate/10m"
     condition = "C"
 
     data {
@@ -925,15 +925,15 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         }
         editorMode    = "code"
         expr          = <<-EOT
-          (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Solana", step="total", status="in_time"}[1h]))
-          / (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Solana", step="total", status="in_time"}[1h]))
-            + (sum(increase(multichain_sign_request_delayed{environment="dev", chain="Solana"}[1h]))
-              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Solana", step="total", status="in_time"}[1h])))))) * 100
+          (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Solana", step="total", status="in_time"}[10m]))
+          / (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Solana", step="total", status="in_time"}[10m]))
+            + (sum(increase(multichain_sign_request_delayed{environment="dev", chain="Solana"}[10m]))
+              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Solana", step="total", status="in_time"}[10m])))))) * 100
         EOT
         instant       = false
         interval      = ""
         intervalMs    = 60000
-        legendFormat  = "1 hour · Solana"
+        legendFormat  = "10 minutes · Solana"
         maxDataPoints = 43200
         range         = true
         refId         = "A"
@@ -968,7 +968,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Solana 1-hour in-time request SLI has been below 50% for 5 minutes: {{ $values.A }}%"
+      description      = "Solana 10-minute in-time request SLI has been below 50% for 5 minutes: {{ $values.A }}%"
       summary          = "[DEV][SIGNATURES][SOLANA] Success rate below 50%"
     }
     is_paused = false
@@ -980,7 +980,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
-    name      = "[DEV][SIGNATURES][ETH]Signature Success Rate/Hr"
+    name      = "[DEV][SIGNATURES][ETH] Signature Success Rate/10m"
     condition = "C"
 
     data {
@@ -999,15 +999,15 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         }
         editorMode    = "code"
         expr          = <<-EOT
-          (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Ethereum", step="total", status="in_time"}[1h]))
-          / (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Ethereum", step="total", status="in_time"}[1h]))
-            + (sum(increase(multichain_sign_request_delayed{environment="dev", chain="Ethereum"}[1h]))
-              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Ethereum", step="total", status="in_time"}[1h])))))) * 100
+          (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Ethereum", step="total", status="in_time"}[10m]))
+          / (sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Ethereum", step="total", status="in_time"}[10m]))
+            + (sum(increase(multichain_sign_request_delayed{environment="dev", chain="Ethereum"}[10m]))
+              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="dev", chain="Ethereum", step="total", status="in_time"}[10m])))))) * 100
         EOT
         instant       = false
         interval      = ""
         intervalMs    = 60000
-        legendFormat  = "1 hour · Ethereum"
+        legendFormat  = "10 minutes · Ethereum"
         maxDataPoints = 43200
         range         = true
         refId         = "A"
@@ -1042,7 +1042,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Ethereum 1-hour in-time request SLI has been below 50% for 5 minutes: {{ $values.A }}%"
+      description      = "Ethereum 10-minute in-time request SLI has been below 50% for 5 minutes: {{ $values.A }}%"
       summary          = "[DEV][SIGNATURES][ETH] Success rate below 50%"
     }
     is_paused = false
