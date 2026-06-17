@@ -1,0 +1,1353 @@
+{
+  "apiVersion": "dashboard.grafana.app/v2",
+  "kind": "Dashboard",
+  "metadata": {
+    "name": "aefmio30pt3i8e",
+    "namespace": "stacks-1067523",
+    "uid": "XSizF0c8LgnxpfvTiDXJKNQwuYePXbAE0GlCQBbSLHoX",
+    "resourceVersion": "1955668291875766402",
+    "generation": 7,
+    "creationTimestamp": "2025-03-12T14:41:50Z",
+    "labels": {
+      "grafana.app/deprecatedInternalID": "24"
+    },
+    "annotations": {
+      "grafana.app/createdBy": "user:ce16hvx2a3ev4f",
+      "grafana.app/folder": "befk4ud4xv5s0d",
+      "grafana.app/updatedBy": "user:ce16hvx2a3ev4f",
+      "grafana.app/updatedTimestamp": "2025-08-13T16:30:38Z",
+      "grafana.app/folderTitle": "SRE",
+      "grafana.app/folderUrl": "/dashboards/f/befk4ud4xv5s0d/sre"
+    }
+  },
+  "spec": {
+    "annotations": [
+      {
+        "kind": "AnnotationQuery",
+        "spec": {
+          "query": {
+            "kind": "DataQuery",
+            "group": "grafana",
+            "version": "v0",
+            "datasource": {
+              "name": "-- Grafana --"
+            },
+            "spec": {}
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "builtIn": true,
+          "legacyOptions": {
+            "type": "dashboard"
+          }
+        }
+      }
+    ],
+    "cursorSync": "Off",
+    "editable": true,
+    "elements": {
+      "panel-1": {
+        "kind": "Panel",
+        "spec": {
+          "id": 1,
+          "title": "Dev Node CPU Metrics",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-0\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-1\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-2\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-3\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "D",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-4\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "E",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-5\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-6\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "G",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-7\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "H",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-8\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "I",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-9\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "J",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-10\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "K",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(rate(kubernetes_io:container_cpu_core_usage_time{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-11\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "L",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_cpu_limit_cores{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-0\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "M",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "12.2.0-16677249643",
+            "spec": {
+              "options": {
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "percentage",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "dashed"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "M"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "CPU Limit"
+                      },
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "#ff0000",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "A"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-0"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "B"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-1"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "C"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-2"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "D"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-3"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "E"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-4"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "F"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-5"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "G"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-6"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "H"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-7"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "I"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-8"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "J"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-9"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "K"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-10"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "L"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-11"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-2": {
+        "kind": "Panel",
+        "spec": {
+          "id": 2,
+          "title": "Dev Node Memory Metrics",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-0\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-1\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-2\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-3\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "D",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-4\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "E",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-5\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-6\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "G",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-7\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "H",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-8\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "I",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-9\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "J",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-10\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "K",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_used_bytes{monitored_resource=\"k8s_container\",memory_type=\"non-evictable\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-11\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "L",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "stackdriver",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "eefmhllfyfjswe"
+                      },
+                      "spec": {
+                        "promQLQuery": {
+                          "expr": "sum(avg_over_time(kubernetes_io:container_memory_limit_bytes{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=\"default\",metadata_system_top_level_controller_type=\"Deployment\",metadata_system_top_level_controller_name=\"multichain-dev-0\"}[${__interval}]))",
+                          "projectName": "near-cs-dev",
+                          "step": "10s"
+                        },
+                        "queryType": "promQL",
+                        "timeSeriesList": {
+                          "filters": [],
+                          "projectName": "near-cs-dev",
+                          "view": "FULL"
+                        }
+                      }
+                    },
+                    "refId": "M",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "12.2.0-16677249643",
+            "spec": {
+              "options": {
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "bytes",
+                  "thresholds": {
+                    "mode": "percentage",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "dashed"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "M"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "Memory Limit"
+                      },
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "#ff0000",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "A"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-0"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "B"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-1"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "C"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-2"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "D"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-3"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "E"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-4"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "F"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-5"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "G"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-6"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "H"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-7"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "I"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-8"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "J"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-9"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "K"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-10"
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byFrameRefID",
+                      "options": "L"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "multichain-dev-11"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "layout": {
+      "kind": "GridLayout",
+      "spec": {
+        "items": [
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 0,
+              "y": 0,
+              "width": 12,
+              "height": 8,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-1"
+              }
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "x": 12,
+              "y": 0,
+              "width": 12,
+              "height": 8,
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-2"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "links": [],
+    "liveNow": false,
+    "preload": false,
+    "tags": [],
+    "timeSettings": {
+      "timezone": "browser",
+      "from": "now-6h",
+      "to": "now",
+      "autoRefresh": "",
+      "autoRefreshIntervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "hideTimepicker": false,
+      "fiscalYearStartMonth": 0
+    },
+    "title": "Dev Node Hardware Metrics",
+    "variables": []
+  }
+}
