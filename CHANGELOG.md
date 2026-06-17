@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.4.0](https://github.com/sig-net/sig-grafana/compare/0.3.0...0.4.0) (2026-06-17)
+
+
+### Features
+
+* **canton:** add env-switchable monitoring dashboard ([#54](https://github.com/sig-net/sig-grafana/issues/54)) ([d4305a0](https://github.com/sig-net/sig-grafana/commit/d4305a0ade9fdfca125c9e218889c408f35a17d2))
+* **sre:** import hardware dashboards and alerts ([#55](https://github.com/sig-net/sig-grafana/issues/55)) ([992a9d8](https://github.com/sig-net/sig-grafana/commit/992a9d8f7ab873687daa70c224932f837b3ccd82))
+
+
+### Bug Fixes
+
+* **alerts:** evaluate chain-signature success-rate alerts over 10m ([#50](https://github.com/sig-net/sig-grafana/issues/50)) ([8cea686](https://github.com/sig-net/sig-grafana/commit/8cea68690b6e3724c3faa9b19f98903f065a34bf))
+* **alerts:** raise testnet signature success-rate threshold to 95% ([#52](https://github.com/sig-net/sig-grafana/issues/52)) ([22c9b69](https://github.com/sig-net/sig-grafana/commit/22c9b69e6d1ef5a52e3b563a78d036e650b1a83a))
+* **alerts:** use 1h window for in-time SLI trend alerts ([#53](https://github.com/sig-net/sig-grafana/issues/53)) ([48e1cd4](https://github.com/sig-net/sig-grafana/commit/48e1cd4a93d384559206a87d1dae39d8ab78f346))
+* **dashboards:** correct SRE hardware dashboard import ids ([#58](https://github.com/sig-net/sig-grafana/issues/58)) ([2d863fc](https://github.com/sig-net/sig-grafana/commit/2d863fc6b2883fa2ebcef54c8a0bcfa8f6866c3b))
+* **sre:** import existing folder resources ([#56](https://github.com/sig-net/sig-grafana/issues/56)) ([fb8a511](https://github.com/sig-net/sig-grafana/commit/fb8a511010b8db618b9aeac277779eca31395787))
+
 ## [0.3.0](https://github.com/sig-net/sig-grafana/compare/0.2.0...0.3.0) (2026-06-02)
 
 
