@@ -1,5 +1,5 @@
 output "folder_uid" {
-  value = grafana_folder.sre.uid
+  value = local.sre_folder_uid
 }
 
 output "dashboard_uid" {

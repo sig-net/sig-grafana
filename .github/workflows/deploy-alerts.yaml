@@ -18,6 +18,7 @@ jobs:
     outputs:
       chain_signatures: ${{ steps.filter.outputs.chain_signatures }}
       mpc_recovery: ${{ steps.filter.outputs.mpc_recovery }}
+      sre_node_hardware: ${{ steps.filter.outputs.sre_node_hardware }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -33,6 +34,8 @@ jobs:
               - 'terraform/alerts/Near/chain-signatures/**'
             mpc_recovery:
               - 'terraform/alerts/Near/mpc-recovery/**'
+            sre_node_hardware:
+              - 'terraform/alerts/SRE/node-hardware/**'
 
   deploy-chain-signatures:
     name: Deploy chain-signatures alerts
@@ -79,6 +82,42 @@ jobs:
       contents: read
     env:
       working-dir: ./terraform/alerts/Near/mpc-recovery
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.0
+
+      - name: Terraform init
+        run: terraform init -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform plan
+        run: terraform plan -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform apply
+        run: terraform apply -auto-approve -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+  deploy-sre-node-hardware:
+    name: Deploy SRE node hardware alerts
+    needs: changes
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.sre_node_hardware == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      working-dir: ./terraform/alerts/SRE/node-hardware
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
