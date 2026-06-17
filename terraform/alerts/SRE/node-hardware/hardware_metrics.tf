@@ -1,5 +1,5 @@
 resource "grafana_rule_group" "sre_node_hardware" {
-  org_id           = 1
+  # org_id           = 1
   name             = "CPU Usage"
   folder_uid       = "befk4ud4xv5s0d"
   interval_seconds = 60
