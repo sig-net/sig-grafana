@@ -18,6 +18,7 @@ jobs:
     outputs:
       balances: ${{ steps.filter.outputs.balances }}
       chain_signatures: ${{ steps.filter.outputs.chain_signatures }}
+      sre_folder: ${{ steps.filter.outputs.sre_folder }}
       sre_canton_nodes: ${{ steps.filter.outputs.sre_canton_nodes }}
       sre_node_hardware: ${{ steps.filter.outputs.sre_node_hardware }}
     steps:
@@ -35,6 +36,8 @@ jobs:
               - 'terraform/dashboards/Near/balances/**'
             chain_signatures:
               - 'terraform/dashboards/Near/chain-signatures/**'
+            sre_folder:
+              - 'terraform/dashboards/SRE/folder/**'
             sre_canton_nodes:
               - 'terraform/dashboards/SRE/canton-nodes/**'
             sre_node_hardware:
@@ -96,6 +99,42 @@ jobs:
 
       - name: Terraform init
         run: terraform init -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+  deploy-sre-folder:
+    name: Deploy SRE folder
+    needs: changes
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.sre_folder == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      working-dir: ./terraform/dashboards/SRE/folder
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.0
+
+      - name: Terraform init
+        run: terraform init -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform plan
+        run: terraform plan -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform apply
+        run: terraform apply -auto-approve -input=false
         working-directory: ${{ env.working-dir }}
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
