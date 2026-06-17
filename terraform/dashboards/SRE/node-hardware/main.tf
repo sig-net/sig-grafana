@@ -9,7 +9,7 @@ resource "grafana_dashboard" "dev_node_hardware" {
 
 import {
   to = grafana_dashboard.dev_node_hardware
-  id = "XSizF0c8LgnxpfvTiDXJKNQwuYePXbAE0GlCQBbSLHoX"
+  id = "aefmio30pt3i8e"
 }
 
 resource "grafana_dashboard" "mainnet_node_hardware" {
@@ -19,7 +19,7 @@ resource "grafana_dashboard" "mainnet_node_hardware" {
 
 import {
   to = grafana_dashboard.mainnet_node_hardware
-  id = "oyLdUDzvpbvGdZ3GVe1W8s9VpbzwqZXUXhH0BoTKHssX"
+  id = "defk916x2e0hsd"
 }
 
 resource "grafana_dashboard" "testnet_node_hardware" {
@@ -29,5 +29,5 @@ resource "grafana_dashboard" "testnet_node_hardware" {
 
 import {
   to = grafana_dashboard.testnet_node_hardware
-  id = "lLXXUvzL2llXT0bd1qRWKnzrR0diOlod7awZiQvQhzkX"
+  id = "cefmotn3trs3ke"
 }
