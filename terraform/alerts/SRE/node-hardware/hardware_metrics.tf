@@ -1373,3 +1373,8 @@ resource "grafana_rule_group" "sre_node_hardware" {
     }
   }
 }
+
+import {
+  to = grafana_rule_group.sre_node_hardware
+  id = "befk4ud4xv5s0d:CPU Usage"
+}
