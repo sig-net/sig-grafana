@@ -483,11 +483,11 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
 
     no_data_state  = "NoData"
     exec_err_state = "Error"
-    for            = "5m"
+    for            = "30m"
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Solana 10-minute in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
+      description      = "Solana 10-minute in-time request SLI has been below 95% for 30 minutes: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES][SOLANA] Success rate below 95%"
     }
     is_paused = false
