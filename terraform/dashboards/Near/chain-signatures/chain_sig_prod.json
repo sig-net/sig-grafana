@@ -2,22 +2,20 @@
   "apiVersion": "dashboard.grafana.app/v2",
   "kind": "Dashboard",
   "metadata": {
-    "name": "chain_signatures_staging_dashboard",
+    "name": "a8258407-c08f-4796-9d3e-31caacde8653",
     "namespace": "stacks-1067523",
-    "uid": "0dc0493f-30dd-4a13-bcc3-5e2ab4404758",
-    "resourceVersion": "2069001976573591607",
-    "generation": 2,
-    "creationTimestamp": "2026-05-27T15:15:04Z",
+    "uid": "1d6e68e3-479a-4633-bbd2-aefb97c73cc0",
+    "resourceVersion": "2059353125843632851",
+    "generation": 3,
+    "creationTimestamp": "2026-05-26T18:06:50Z",
     "labels": {
-      "grafana.app/deprecatedInternalID": "1509599898324992"
+      "grafana.app/deprecatedInternalID": "1190435293224960"
     },
     "annotations": {
       "grafana.app/createdBy": "service-account:fe29958zk8v7ka",
       "grafana.app/folder": "multichain",
-      "grafana.app/message": "Extend indexing with all status options, add Canton",
-      "grafana.app/saved-from-ui": "Grafana Cloud",
-      "grafana.app/updatedBy": "user:de2gm24cdgs8wf",
-      "grafana.app/updatedTimestamp": "2026-06-22T10:18:06Z",
+      "grafana.app/updatedBy": "service-account:fe29958zk8v7ka",
+      "grafana.app/updatedTimestamp": "2026-05-26T19:17:00Z",
       "grafana.app/folderTitle": "Multichain",
       "grafana.app/folderUrl": "/dashboards/f/multichain/multichain"
     }
@@ -46,7 +44,7 @@
     ],
     "cursorSync": "Off",
     "description": "chain signature",
-    "editable": true,
+    "editable": false,
     "elements": {
       "panel-1": {
         "kind": "Panel",
@@ -10064,7 +10062,7 @@
       "hideTimepicker": false,
       "fiscalYearStartMonth": 0
     },
-    "title": "Chain Signatures (Staging)",
+    "title": "Chain Signatures (Prod)",
     "variables": [
       {
         "kind": "QueryVariable",
