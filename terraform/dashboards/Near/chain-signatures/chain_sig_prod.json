@@ -2,20 +2,22 @@
   "apiVersion": "dashboard.grafana.app/v2",
   "kind": "Dashboard",
   "metadata": {
-    "name": "a8258407-c08f-4796-9d3e-31caacde8653",
+    "name": "chain_signatures_staging_dashboard",
     "namespace": "stacks-1067523",
-    "uid": "1d6e68e3-479a-4633-bbd2-aefb97c73cc0",
-    "resourceVersion": "2059353125843632851",
-    "generation": 3,
-    "creationTimestamp": "2026-05-26T18:06:50Z",
+    "uid": "0dc0493f-30dd-4a13-bcc3-5e2ab4404758",
+    "resourceVersion": "2069001976573591607",
+    "generation": 2,
+    "creationTimestamp": "2026-05-27T15:15:04Z",
     "labels": {
-      "grafana.app/deprecatedInternalID": "1190435293224960"
+      "grafana.app/deprecatedInternalID": "1509599898324992"
     },
     "annotations": {
       "grafana.app/createdBy": "service-account:fe29958zk8v7ka",
       "grafana.app/folder": "multichain",
-      "grafana.app/updatedBy": "service-account:fe29958zk8v7ka",
-      "grafana.app/updatedTimestamp": "2026-05-26T19:17:00Z",
+      "grafana.app/message": "Extend indexing with all status options, add Canton",
+      "grafana.app/saved-from-ui": "Grafana Cloud",
+      "grafana.app/updatedBy": "user:de2gm24cdgs8wf",
+      "grafana.app/updatedTimestamp": "2026-06-22T10:18:06Z",
       "grafana.app/folderTitle": "Multichain",
       "grafana.app/folderUrl": "/dashboards/f/multichain/multichain"
     }
@@ -38,16 +40,13 @@
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
           "name": "Annotations & Alerts",
-          "builtIn": true,
-          "legacyOptions": {
-            "type": "dashboard"
-          }
+          "builtIn": true
         }
       }
     ],
     "cursorSync": "Off",
     "description": "chain signature",
-    "editable": false,
+    "editable": true,
     "elements": {
       "panel-1": {
         "kind": "Panel",
@@ -697,7 +696,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -707,6 +706,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -1069,7 +1069,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -1082,6 +1082,7 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -2416,7 +2417,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -2426,6 +2427,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -2486,32 +2488,7 @@
                     }
                   }
                 },
-                "overrides": [
-                  {
-                    "__systemRef": "hideSeriesFrom",
-                    "matcher": {
-                      "id": "byNames",
-                      "options": {
-                        "mode": "exclude",
-                        "names": [
-                          "Solana"
-                        ],
-                        "prefix": "All except:",
-                        "readOnly": true
-                      }
-                    },
-                    "properties": [
-                      {
-                        "id": "custom.hideFrom",
-                        "value": {
-                          "legend": false,
-                          "tooltip": true,
-                          "viz": true
-                        }
-                      }
-                    ]
-                  }
-                ]
+                "overrides": []
               }
             }
           }
@@ -2785,9 +2762,9 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "max by(node_account_id) (multichain_latest_block_number{node_account_id=~\"$node_account_id\", chain=\"Solana\", status=\"finalized\"})",
+                        "expr": "max by(node_account_id, status) (multichain_latest_block_number{node_account_id=~\"$node_account_id\", chain=\"Solana\"})",
                         "instant": false,
-                        "legendFormat": "__auto",
+                        "legendFormat": "{{node_account_id}} - {{status}}",
                         "queryType": "range",
                         "range": true
                       }
@@ -2804,7 +2781,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -2814,6 +2791,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -3303,7 +3281,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -3316,6 +3294,7 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -3452,7 +3431,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -3639,7 +3618,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -3651,6 +3630,7 @@
                     "last"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -3748,7 +3728,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "text",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "code": {
@@ -3808,7 +3788,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -3820,6 +3800,7 @@
                     "last"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": false
                 },
@@ -3937,7 +3918,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -3949,6 +3930,7 @@
                     "last"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": false
                 },
@@ -4065,7 +4047,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -4077,6 +4059,7 @@
                     "last"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": false
                 },
@@ -4175,9 +4158,9 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "max by(node_account_id) (multichain_latest_block_number{node_account_id=~\"$node_account_id\", chain=\"Hydration\", status=\"indexed\"})",
+                        "expr": "max by(node_account_id, status) (multichain_latest_block_number{node_account_id=~\"$node_account_id\", chain=\"Hydration\"})",
                         "instant": false,
-                        "legendFormat": "__auto",
+                        "legendFormat": "{{node_account_id}} - {{status}}",
                         "queryType": "range",
                         "range": true
                       }
@@ -4194,7 +4177,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -4204,6 +4187,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -4310,7 +4294,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -4320,6 +4304,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -4426,7 +4411,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -4436,6 +4421,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -4523,6 +4509,7 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
+                        "editorMode": "code",
                         "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"indexing\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Indexing",
@@ -4567,9 +4554,10 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"organizing\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Generating Signature",
+                        "legendFormat": "Organizing",
                         "queryType": "range",
                         "range": true
                       }
@@ -4589,9 +4577,10 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"posit\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Responding",
+                        "legendFormat": "Posit",
                         "queryType": "range",
                         "range": true
                       }
@@ -4611,14 +4600,59 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Total",
+                        "legendFormat": "Generating Signature",
                         "queryType": "range",
                         "range": true
                       }
                     },
                     "refId": "E",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Responding",
+                        "range": true
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "G",
                     "hidden": false
                   }
                 }
@@ -4630,7 +4664,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -4644,6 +4678,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -4814,9 +4849,10 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"organizing\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Generating Signature",
+                        "legendFormat": "Organizing",
                         "queryType": "range",
                         "range": true
                       }
@@ -4836,9 +4872,10 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"posit\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Responding",
+                        "legendFormat": "Posit",
                         "queryType": "range",
                         "range": true
                       }
@@ -4858,14 +4895,59 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
-                        "legendFormat": "Total",
+                        "legendFormat": "Generating Signature",
                         "queryType": "range",
                         "range": true
                       }
                     },
                     "refId": "E",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Responding",
+                        "range": true
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "G",
                     "hidden": false
                   }
                 }
@@ -4877,7 +4959,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -4891,6 +4973,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -5124,7 +5207,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -5138,6 +5221,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -5324,7 +5408,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "table",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "cellHeight": "sm",
@@ -5429,6 +5513,128 @@
                     ]
                   }
                 ]
+              }
+            }
+          }
+        }
+      },
+      "panel-164": {
+        "kind": "Panel",
+        "spec": {
+          "id": 164,
+          "title": "Canton: Latest Block Height",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expr": "max by(node_account_id, status) (multichain_latest_block_number{node_account_id=~\"$node_account_id\", chain=\"Canton\"})",
+                        "instant": false,
+                        "legendFormat": "{{node_account_id}} - {{status}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.1.0-27822252871",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
               }
             }
           }
@@ -5845,7 +6051,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -5855,6 +6061,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -5967,30 +6174,6 @@
                               "value": 1020
                             }
                           ]
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "__systemRef": "hideSeriesFrom",
-                    "matcher": {
-                      "id": "byNames",
-                      "options": {
-                        "mode": "exclude",
-                        "names": [
-                          "Solana"
-                        ],
-                        "prefix": "All except:",
-                        "readOnly": true
-                      }
-                    },
-                    "properties": [
-                      {
-                        "id": "custom.hideFrom",
-                        "value": {
-                          "legend": false,
-                          "tooltip": true,
-                          "viz": true
                         }
                       }
                     ]
@@ -7526,9 +7709,9 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "max by(node_account_id) (multichain_latest_block_number{node_account_id=~\"$node_account_id\", chain=\"Ethereum\", status=\"indexed\"})",
+                        "expr": "max by(node_account_id, status) (multichain_latest_block_number{node_account_id=~\"$node_account_id\", chain=\"Ethereum\"})",
                         "instant": false,
-                        "legendFormat": "__auto",
+                        "legendFormat": "{{node_account_id}} - {{status}}",
                         "queryType": "range",
                         "range": true
                       }
@@ -7545,7 +7728,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-25723336850",
+            "version": "13.1.0-27822252871",
             "spec": {
               "options": {
                 "annotations": {
@@ -7555,6 +7738,7 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -9105,7 +9289,7 @@
                       "spec": {
                         "x": 0,
                         "y": 0,
-                        "width": 8,
+                        "width": 6,
                         "height": 5,
                         "element": {
                           "kind": "ElementReference",
@@ -9116,9 +9300,9 @@
                     {
                       "kind": "GridLayoutItem",
                       "spec": {
-                        "x": 8,
+                        "x": 6,
                         "y": 0,
-                        "width": 8,
+                        "width": 6,
                         "height": 5,
                         "element": {
                           "kind": "ElementReference",
@@ -9129,13 +9313,26 @@
                     {
                       "kind": "GridLayoutItem",
                       "spec": {
-                        "x": 16,
+                        "x": 12,
                         "y": 0,
-                        "width": 8,
+                        "width": 6,
                         "height": 5,
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-157"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 18,
+                        "y": 0,
+                        "width": 6,
+                        "height": 5,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-164"
                         }
                       }
                     },
@@ -9867,7 +10064,7 @@
       "hideTimepicker": false,
       "fiscalYearStartMonth": 0
     },
-    "title": "Chain Signatures (Prod)",
+    "title": "Chain Signatures (Staging)",
     "variables": [
       {
         "kind": "QueryVariable",
