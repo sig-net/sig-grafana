@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.0](https://github.com/sig-net/sig-grafana/compare/0.4.0...0.5.0) (2026-06-25)
+
+
+### Features
+
+* **dashboards:** add canton indexer panel and accept all indexing statuses ([#61](https://github.com/sig-net/sig-grafana/issues/61)) ([3d0f47b](https://github.com/sig-net/sig-grafana/commit/3d0f47bb2502a31ad8e3658979a5646d95624dd5))
+
+
+### Bug Fixes
+
+* **alerts:** delay testnet solana signature alerting ([#59](https://github.com/sig-net/sig-grafana/issues/59)) ([7b2d760](https://github.com/sig-net/sig-grafana/commit/7b2d76007e49c2e51eca4752ad5fc4aeb5f5a7c4))
+
 ## [0.4.0](https://github.com/sig-net/sig-grafana/compare/0.3.0...0.4.0) (2026-06-17)
 
 
