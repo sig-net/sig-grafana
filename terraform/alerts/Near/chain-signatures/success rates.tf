@@ -425,14 +425,14 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
-    name      = "[TESTNET][SIGNATURES][SOLANA] Signature Success Rate/10m"
+    name      = "[TESTNET][SIGNATURES][SOLANA] Signature Success Rate/1h"
     condition = "C"
 
     data {
       ref_id = "A"
 
       relative_time_range {
-        from = 900
+        from = 3600
         to   = 0
       }
 
@@ -444,15 +444,15 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
         }
         editorMode    = "code"
         expr          = <<-EOT
-          (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[10m]))
-          / (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[10m]))
-            + (sum(increase(multichain_sign_request_delayed{environment="testnet", chain="Solana"}[10m]))
-              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[10m])))))) * 100
+          (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[1h]))
+          / (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[1h]))
+            + (sum(increase(multichain_sign_request_delayed{environment="testnet", chain="Solana"}[1h]))
+              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Solana", step="total", status="in_time"}[1h])))))) * 100
         EOT
         instant       = false
         interval      = ""
         intervalMs    = 60000
-        legendFormat  = "10 minutes · Solana"
+        legendFormat  = "1 hour · Solana"
         maxDataPoints = 43200
         range         = true
         refId         = "A"
@@ -483,11 +483,11 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
 
     no_data_state  = "NoData"
     exec_err_state = "Error"
-    for            = "30m"
+    for            = "1h"
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Solana 10-minute in-time request SLI has been below 95% for 30 minutes: {{ $values.A }}%"
+      description      = "Solana 1-hour in-time request SLI has been below 95% for 1 hour: {{ $values.A }}%"
       summary          = "[TESTNET][SIGNATURES][SOLANA] Success rate below 95%"
     }
     is_paused = false
