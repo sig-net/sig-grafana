@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/sig-net/sig-grafana/compare/0.5.0...0.5.1) (2026-07-14)
+
+
+### Bug Fixes
+
+* **alerts:** use 1h window for testnet solana success-rate alert ([#62](https://github.com/sig-net/sig-grafana/issues/62)) ([20f0e77](https://github.com/sig-net/sig-grafana/commit/20f0e77a45ec971c6eba085bf928965c37a7f91f))
+
 ## [0.5.0](https://github.com/sig-net/sig-grafana/compare/0.4.0...0.5.0) (2026-06-25)
 
 
