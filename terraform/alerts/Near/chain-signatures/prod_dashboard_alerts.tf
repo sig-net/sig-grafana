@@ -11,9 +11,9 @@ locals {
   # TODO: replace this temporary route with a dedicated Business Critical destination for David.
   business_critical_rules = [
     {
-      name          = "[MAINNET][BUSINESS CRITICAL] In-time Requests SLI 30d below 95%"
+      name          = "[MAINNET][BUSINESS CRITICAL] In-time Requests SLI 30d below 85%"
       expr          = "(((((sum(increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[30d])) or vector(0)) + (sum(increase(multichain_sign_request_delayed{environment=\"mainnet\"}[30d])) or vector(0))) > bool 0) * ((((sum(increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[30d])) or vector(0)) / clamp_min((((sum(increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[30d])) or vector(0)) + (sum(increase(multichain_sign_request_delayed{environment=\"mainnet\"}[30d])) or vector(0))), 1)) * 100))) + (((((sum(increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[30d])) or vector(0)) + (sum(increase(multichain_sign_request_delayed{environment=\"mainnet\"}[30d])) or vector(0))) == bool 0) * 100))"
-      threshold     = 95
+      threshold     = 85
       comparator    = "lt"
       panel_id      = "148"
       contact_point = local.chain_signatures_contacts.business
@@ -23,13 +23,13 @@ locals {
       range         = false
       instant       = true
       no_data_state = "OK"
-      summary       = "[MAINNET][BUSINESS CRITICAL] In-time requests SLI (30d) below 95%"
-      description   = "Mainnet in-time requests SLI (30d) is below 95%: {{ $values.B }}"
+      summary       = "[MAINNET][BUSINESS CRITICAL] In-time requests SLI (30d) below 85%"
+      description   = "Mainnet in-time requests SLI (30d) is below 85%: {{ $values.B }}"
     },
     {
-      name          = "[TESTNET][BUSINESS CRITICAL] In-time Requests SLI 30d below 95%"
+      name          = "[TESTNET][BUSINESS CRITICAL] In-time Requests SLI 30d below 85%"
       expr          = "(sum(increase(multichain_sign_request_latency_sec_count{environment=\"testnet\", step=\"total\", status=\"in_time\"}[30d])) / (sum(increase(multichain_sign_request_latency_sec_count{environment=\"testnet\", step=\"total\", status=\"in_time\"}[30d])) + (sum(increase(multichain_sign_request_delayed{environment=\"testnet\"}[30d])) or vector(0)))) * 100"
-      threshold     = 95
+      threshold     = 85
       comparator    = "lt"
       panel_id      = "148"
       contact_point = local.chain_signatures_contacts.business
@@ -39,8 +39,8 @@ locals {
       range         = false
       instant       = true
       no_data_state = "NoData"
-      summary       = "[TESTNET][BUSINESS CRITICAL] In-time requests SLI (30d) below 95%"
-      description   = "Testnet in-time requests SLI (30d) is below 95%: {{ $values.B }}"
+      summary       = "[TESTNET][BUSINESS CRITICAL] In-time requests SLI (30d) below 85%"
+      description   = "Testnet in-time requests SLI (30d) is below 85%: {{ $values.B }}"
     },
   ]
 
@@ -385,9 +385,9 @@ locals {
 
   chain_signatures_prod_mpc_rules = [
     {
-      name          = "[TESTNET][MPC] In-time Requests SLI Trend below 95%"
+      name          = "[TESTNET][MPC] In-time Requests SLI Trend below 85%"
       expr          = "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=\"testnet\", step=\"total\", status=\"in_time\"}[1h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=\"testnet\", step=\"total\", status=\"in_time\"}[1h])) + (sum by(chain) (increase(multichain_sign_request_delayed{environment=\"testnet\"}[1h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=\"testnet\", step=\"total\", status=\"in_time\"}[1h])))))) * 100"
-      threshold     = 95
+      threshold     = 85
       comparator    = "lt"
       panel_id      = "149"
       contact_point = local.chain_signatures_contacts.mpc
@@ -397,13 +397,13 @@ locals {
       range         = true
       instant       = false
       no_data_state = "NoData"
-      summary       = "[TESTNET][MPC] In-time requests SLI trend below 95%"
-      description   = "Testnet in-time requests SLI trend is below 95% for {{ $labels.chain }}: {{ $values.B }}%"
+      summary       = "[TESTNET][MPC] In-time requests SLI trend below 85%"
+      description   = "Testnet in-time requests SLI trend is below 85% for {{ $labels.chain }}: {{ $values.B }}%"
     },
     {
-      name          = "[MAINNET][MPC] In-time Requests SLI Trend below 95%"
+      name          = "[MAINNET][MPC] In-time Requests SLI Trend below 85%"
       expr          = "(((((sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[1h])) or vector(0)) + (sum by(chain) (increase(multichain_sign_request_delayed{environment=\"mainnet\"}[1h])) or vector(0))) > bool 0) * ((((sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[1h])) or vector(0)) / clamp_min((((sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[1h])) or vector(0)) + (sum by(chain) (increase(multichain_sign_request_delayed{environment=\"mainnet\"}[1h])) or vector(0))), 1)) * 100))) + (((((sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=\"mainnet\", step=\"total\", status=\"in_time\"}[1h])) or vector(0)) + (sum by(chain) (increase(multichain_sign_request_delayed{environment=\"mainnet\"}[1h])) or vector(0))) == bool 0) * 100))"
-      threshold     = 95
+      threshold     = 85
       comparator    = "lt"
       panel_id      = "149"
       contact_point = local.chain_signatures_contacts.mpc
@@ -413,8 +413,8 @@ locals {
       range         = true
       instant       = false
       no_data_state = "OK"
-      summary       = "[MAINNET][MPC] In-time requests SLI trend below 95%"
-      description   = "Mainnet in-time requests SLI trend is below 95% for {{ $labels.chain }}: {{ $values.B }}%"
+      summary       = "[MAINNET][MPC] In-time requests SLI trend below 85%"
+      description   = "Mainnet in-time requests SLI trend is below 85% for {{ $labels.chain }}: {{ $values.B }}%"
     },
     {
       name          = "[TESTNET][MPC] Backlog Size above 200"
