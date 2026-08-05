@@ -5,7 +5,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
   interval_seconds = 60
 
   rule {
-    name      = "[MAINNET][SIGNATURES][ETH] Signature SR < 95%"
+    name      = "[MAINNET][SIGNATURES][ETH] Signature SR < 85%"
     condition = "C"
 
     data {
@@ -100,7 +100,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       model = jsonencode({
         conditions = [{
           evaluator = {
-            params = [95]
+            params = [85]
             type   = "lt"
           }
           operator = {
@@ -133,8 +133,8 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Ethereum 10-minute in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
-      summary          = "[MAINNET][SIGNATURES][ETH] Success rate below 95%"
+      description      = "Ethereum 10-minute in-time request SLI has been below 85% for 5 minutes: {{ $values.A }}%"
+      summary          = "[MAINNET][SIGNATURES][ETH] Success rate below 85%"
     }
     is_paused = false
 
@@ -145,7 +145,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
-    name      = "[MAINNET][SIGNATURES][SOLANA] Signature SR < 95%"
+    name      = "[MAINNET][SIGNATURES][SOLANA] Signature SR < 85%"
     condition = "C"
 
     data {
@@ -240,7 +240,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       model = jsonencode({
         conditions = [{
           evaluator = {
-            params = [95]
+            params = [85]
             type   = "lt"
           }
           operator = {
@@ -273,8 +273,8 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Solana 10-minute in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
-      summary          = "[MAINNET][SIGNATURES][SOLANA] Success rate below 95%"
+      description      = "Solana 10-minute in-time request SLI has been below 85% for 5 minutes: {{ $values.A }}%"
+      summary          = "[MAINNET][SIGNATURES][SOLANA] Success rate below 85%"
     }
     is_paused = false
 
@@ -285,7 +285,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
-    name      = "[MAINNET][SIGNATURES][HYDRATION] Signature SR < 95%"
+    name      = "[MAINNET][SIGNATURES][HYDRATION] Signature SR < 85%"
     condition = "C"
 
     data {
@@ -380,7 +380,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       model = jsonencode({
         conditions = [{
           evaluator = {
-            params = [95]
+            params = [85]
             type   = "lt"
           }
           operator = {
@@ -413,8 +413,8 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Hydration 10-minute in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
-      summary          = "[MAINNET][SIGNATURES][HYDRATION] Success rate below 95%"
+      description      = "Hydration 10-minute in-time request SLI has been below 85% for 5 minutes: {{ $values.A }}%"
+      summary          = "[MAINNET][SIGNATURES][HYDRATION] Success rate below 85%"
     }
     is_paused = true
 
@@ -478,7 +478,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "__expr__"
-      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[95],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[85],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
     no_data_state  = "NoData"
@@ -487,8 +487,8 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Solana 1-hour in-time request SLI has been below 95% for 1 hour: {{ $values.A }}%"
-      summary          = "[TESTNET][SIGNATURES][SOLANA] Success rate below 95%"
+      description      = "Solana 1-hour in-time request SLI has been below 85% for 1 hour: {{ $values.A }}%"
+      summary          = "[TESTNET][SIGNATURES][SOLANA] Success rate below 85%"
     }
     is_paused = false
 
@@ -552,7 +552,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "__expr__"
-      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[95],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[85],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
     no_data_state  = "NoData"
@@ -561,8 +561,8 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     annotations = {
       __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
       __panelId__      = "149"
-      description      = "Ethereum 10-minute in-time request SLI has been below 95% for 5 minutes: {{ $values.A }}%"
-      summary          = "[TESTNET][SIGNATURES][ETH] Success rate below 95%"
+      description      = "Ethereum 10-minute in-time request SLI has been below 85% for 5 minutes: {{ $values.A }}%"
+      summary          = "[TESTNET][SIGNATURES][ETH] Success rate below 85%"
     }
     is_paused = false
 
@@ -607,7 +607,7 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
       }
 
       datasource_uid = "__expr__"
-      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0.95],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0.85],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
     no_data_state  = "KeepLast"
