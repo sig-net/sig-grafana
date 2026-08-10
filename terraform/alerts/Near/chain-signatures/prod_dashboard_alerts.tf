@@ -244,7 +244,7 @@ locals {
       comparator    = "lt"
       panel_id      = "81"
       contact_point = local.chain_signatures_contacts.dev
-      for           = "5m"
+      for           = "30m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -260,7 +260,7 @@ locals {
       comparator    = "lt"
       panel_id      = "140"
       contact_point = local.chain_signatures_contacts.dev
-      for           = "5m"
+      for           = "30m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -276,7 +276,7 @@ locals {
       comparator    = "lt"
       panel_id      = "157"
       contact_point = local.chain_signatures_contacts.dev
-      for           = "5m"
+      for           = "30m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -292,7 +292,7 @@ locals {
       comparator    = "lt"
       panel_id      = "81"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "5m"
+      for           = "30m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -308,7 +308,7 @@ locals {
       comparator    = "lt"
       panel_id      = "140"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "5m"
+      for           = "30m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -324,7 +324,7 @@ locals {
       comparator    = "lt"
       panel_id      = "157"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "5m"
+      for           = "30m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -340,7 +340,7 @@ locals {
       comparator    = "lt"
       panel_id      = "81"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "5m"
+      for           = "30m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -356,7 +356,7 @@ locals {
       comparator    = "lt"
       panel_id      = "140"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "5m"
+      for           = "30m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -372,7 +372,7 @@ locals {
       comparator    = "lt"
       panel_id      = "157"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "5m"
+      for           = "30m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
