@@ -239,12 +239,12 @@ locals {
     },
     {
       name          = "[DEV][NETWORK][ETH] Latest Block Height Stalled"
-      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"dev\", chain=\"Ethereum\", status=\"indexed\"}[1m]))"
-      threshold     = 0.001
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"dev\", chain=\"Ethereum\", status=\"indexed\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"dev\", chain=\"Ethereum\", status=\"indexed\"}[30m]))"
+      threshold     = 1
       comparator    = "lt"
       panel_id      = "81"
       contact_point = local.chain_signatures_contacts.dev
-      for           = "30m"
+      for           = "1m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -255,12 +255,12 @@ locals {
     },
     {
       name          = "[DEV][NETWORK][SOLANA] Latest Block Height Stalled"
-      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"dev\", chain=\"Solana\", status=\"finalized\"}[1m]))"
-      threshold     = 0.001
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"dev\", chain=\"Solana\", status=\"finalized\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"dev\", chain=\"Solana\", status=\"finalized\"}[30m]))"
+      threshold     = 1
       comparator    = "lt"
       panel_id      = "140"
       contact_point = local.chain_signatures_contacts.dev
-      for           = "30m"
+      for           = "1m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -271,12 +271,12 @@ locals {
     },
     {
       name          = "[DEV][NETWORK][HYDRATION] Latest Block Height Stalled"
-      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"dev\", chain=\"Hydration\", status=\"indexed\"}[1m]))"
-      threshold     = 0.001
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"dev\", chain=\"Hydration\", status=\"indexed\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"dev\", chain=\"Hydration\", status=\"indexed\"}[30m]))"
+      threshold     = 1
       comparator    = "lt"
       panel_id      = "157"
       contact_point = local.chain_signatures_contacts.dev
-      for           = "30m"
+      for           = "1m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -287,12 +287,12 @@ locals {
     },
     {
       name          = "[TESTNET][NETWORK][ETH] Latest Block Height Stalled"
-      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"testnet\", chain=\"Ethereum\", status=\"indexed\"}[1m]))"
-      threshold     = 0.001
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Ethereum\", status=\"indexed\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Ethereum\", status=\"indexed\"}[30m]))"
+      threshold     = 1
       comparator    = "lt"
       panel_id      = "81"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "30m"
+      for           = "1m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -303,12 +303,12 @@ locals {
     },
     {
       name          = "[TESTNET][NETWORK][SOLANA] Latest Block Height Stalled"
-      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"testnet\", chain=\"Solana\", status=\"finalized\"}[1m]))"
-      threshold     = 0.001
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Solana\", status=\"finalized\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Solana\", status=\"finalized\"}[30m]))"
+      threshold     = 1
       comparator    = "lt"
       panel_id      = "140"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "30m"
+      for           = "1m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -319,12 +319,12 @@ locals {
     },
     {
       name          = "[TESTNET][NETWORK][HYDRATION] Latest Block Height Stalled"
-      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"testnet\", chain=\"Hydration\", status=\"indexed\"}[1m]))"
-      threshold     = 0.001
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Hydration\", status=\"indexed\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Hydration\", status=\"indexed\"}[30m]))"
+      threshold     = 1
       comparator    = "lt"
       panel_id      = "157"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "30m"
+      for           = "1m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -335,12 +335,12 @@ locals {
     },
     {
       name          = "[MAINNET][NETWORK][ETH] Latest Block Height Stalled"
-      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"mainnet\", chain=\"Ethereum\", status=\"indexed\"}[1m]))"
-      threshold     = 0.001
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"mainnet\", chain=\"Ethereum\", status=\"indexed\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"mainnet\", chain=\"Ethereum\", status=\"indexed\"}[30m]))"
+      threshold     = 1
       comparator    = "lt"
       panel_id      = "81"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "30m"
+      for           = "1m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -351,12 +351,12 @@ locals {
     },
     {
       name          = "[MAINNET][NETWORK][SOLANA] Latest Block Height Stalled"
-      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"mainnet\", chain=\"Solana\", status=\"finalized\"}[1m]))"
-      threshold     = 0.001
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"mainnet\", chain=\"Solana\", status=\"finalized\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"mainnet\", chain=\"Solana\", status=\"finalized\"}[30m]))"
+      threshold     = 1
       comparator    = "lt"
       panel_id      = "140"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "30m"
+      for           = "1m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
@@ -367,12 +367,12 @@ locals {
     },
     {
       name          = "[MAINNET][NETWORK][HYDRATION] Latest Block Height Stalled"
-      expr          = "max by(node_account_id) (rate(multichain_latest_block_number{environment=\"mainnet\", chain=\"Hydration\", status=\"indexed\"}[1m]))"
-      threshold     = 0.001
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"mainnet\", chain=\"Hydration\", status=\"indexed\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"mainnet\", chain=\"Hydration\", status=\"indexed\"}[30m]))"
+      threshold     = 1
       comparator    = "lt"
       panel_id      = "157"
       contact_point = local.chain_signatures_contacts.sre
-      for           = "30m"
+      for           = "1m"
       legend_format = "{{node_account_id}}"
       query_type    = "range"
       range         = true
