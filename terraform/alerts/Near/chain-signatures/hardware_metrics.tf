@@ -106,7 +106,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       description      = "CPU usage percentage has been at or above 90% for more than 5 mins: {{ $values.A }}%"
       summary          = "[MAINNET][HARDWARE] Node CPU usage 90% or above"
     }
-    is_paused = true
+    is_paused = false
 
     notification_settings {
       contact_point = "SRE On-call"
@@ -271,7 +271,7 @@ resource "grafana_rule_group" "rule_group_d2d0b898365eeb0c" {
       description      = "Node has abnormally high memory usage: {{ $values.A }} GB remaining"
       summary          = "[DEV][HARDWARE]Node memory usage high"
     }
-    is_paused = false
+    is_paused = true
 
     notification_settings {
       contact_point = "Multichain Dev"
