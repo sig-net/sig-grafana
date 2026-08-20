@@ -1067,7 +1067,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -2415,7 +2415,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -3279,7 +3279,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -3429,7 +3429,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -3616,7 +3616,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -3726,7 +3726,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "text",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "code": {
@@ -3786,7 +3786,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -3916,7 +3916,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -4045,7 +4045,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -4662,7 +4662,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -4957,7 +4957,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -5205,7 +5205,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -5406,7 +5406,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "table",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "cellHeight": "sm",
@@ -5581,6 +5581,1114 @@
               "fieldConfig": {
                 "defaults": {
                   "unit": "short",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-165": {
+        "kind": "Panel",
+        "spec": {
+          "id": 165,
+          "title": "Midnight Sign Request Latency Breakdown P95",
+          "description": "P95 latency breakdown for Midnight sign requests by processing step: indexing (network propagation + polling), awaiting generation (queue time), generating (signature creation), and responding (delivery). Stacked bars show cumulative time spent in each stage. The total line shows end-to-end latency.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by (chain, le) (rate(multichain_sign_request_latency_sec_bucket{step=\"indexing\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Indexing",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"awaiting_generation\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Awaiting Generation",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Generating Signature",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Responding",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "D",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Total",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "E",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.2.0-31775358088",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "barRadius": 0,
+                "barWidth": 0.97,
+                "fullHighlight": false,
+                "groupWidth": 0.7,
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "orientation": "auto",
+                "showValue": "auto",
+                "stacking": "normal",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "none"
+                },
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 100
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "s",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "Latency (seconds)",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "bars",
+                    "fillOpacity": 80,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "normal"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Total"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.drawStyle",
+                        "value": "line"
+                      },
+                      {
+                        "id": "custom.lineWidth",
+                        "value": 3
+                      },
+                      {
+                        "id": "custom.fillOpacity",
+                        "value": 0
+                      },
+                      {
+                        "id": "custom.stacking",
+                        "value": {
+                          "mode": "none"
+                        }
+                      },
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "blue",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-166": {
+        "kind": "Panel",
+        "spec": {
+          "id": 166,
+          "title": "Canton Sign Request Latency Breakdown P95",
+          "description": "P95 latency breakdown for Canton sign requests by processing step: indexing (network propagation + polling), awaiting generation (queue time), generating (signature creation), and responding (delivery). Stacked bars show cumulative time spent in each stage. The total line shows end-to-end latency.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by (chain, le) (rate(multichain_sign_request_latency_sec_bucket{step=\"indexing\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Indexing",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"awaiting_generation\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Awaiting Generation",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Generating Signature",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Responding",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "D",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Total",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "E",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.2.0-31775358088",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "barRadius": 0,
+                "barWidth": 0.97,
+                "fullHighlight": false,
+                "groupWidth": 0.7,
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "orientation": "auto",
+                "showValue": "auto",
+                "stacking": "normal",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "none"
+                },
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 100
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "s",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "Latency (seconds)",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "bars",
+                    "fillOpacity": 80,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "normal"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Total"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.drawStyle",
+                        "value": "line"
+                      },
+                      {
+                        "id": "custom.lineWidth",
+                        "value": 3
+                      },
+                      {
+                        "id": "custom.fillOpacity",
+                        "value": 0
+                      },
+                      {
+                        "id": "custom.stacking",
+                        "value": {
+                          "mode": "none"
+                        }
+                      },
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "blue",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-167": {
+        "kind": "Panel",
+        "spec": {
+          "id": 167,
+          "title": "Solana Pending Checkpoints",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "max by(node_account_id) (multichain_pending_checkpoints{node_account_id=~\"$node_account_id\",chain=\"Solana\", environment=\"$environment\"})",
+                        "legendFormat": "__auto",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.2.0-31775358088",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-168": {
+        "kind": "Panel",
+        "spec": {
+          "id": 168,
+          "title": "Ethereum Pending Checkpoints",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "max by(node_account_id) (multichain_pending_checkpoints{node_account_id=~\"$node_account_id\",chain=\"Ethereum\", environment=\"$environment\"})",
+                        "legendFormat": "__auto",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.2.0-31775358088",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-169": {
+        "kind": "Panel",
+        "spec": {
+          "id": 169,
+          "title": "Canton Pending Checkpoints",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "max by(node_account_id) (multichain_pending_checkpoints{node_account_id=~\"$node_account_id\",chain=\"Canton\", environment=\"$environment\"})",
+                        "legendFormat": "__auto",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.2.0-31775358088",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-170": {
+        "kind": "Panel",
+        "spec": {
+          "id": 170,
+          "title": "Midnight Pending Checkpoints",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "max by(node_account_id) (multichain_pending_checkpoints{node_account_id=~\"$node_account_id\",chain=\"Midnight\", environment=\"$environment\"})",
+                        "legendFormat": "__auto",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.2.0-31775358088",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-171": {
+        "kind": "Panel",
+        "spec": {
+          "id": 171,
+          "title": "Hydration Pending Checkpoints",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "max by(node_account_id) (multichain_pending_checkpoints{node_account_id=~\"$node_account_id\",chain=\"Hydration\", environment=\"$environment\"})",
+                        "legendFormat": "__auto",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.2.0-31775358088",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
                   "thresholds": {
                     "mode": "absolute",
                     "steps": [
@@ -6049,7 +7157,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.2.0-31775358088",
             "spec": {
               "options": {
                 "annotations": {
@@ -9001,7 +10109,7 @@
             "kind": "RowsLayoutRow",
             "spec": {
               "title": "Key Metrics",
-              "collapse": false,
+              "collapse": true,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -9199,6 +10307,94 @@
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-162"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 38,
+                        "width": 24,
+                        "height": 10,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-165"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 48,
+                        "width": 24,
+                        "height": 10,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-166"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Checkpoints",
+              "collapse": true,
+              "layout": {
+                "kind": "AutoGridLayout",
+                "spec": {
+                  "maxColumnCount": 3,
+                  "columnWidthMode": "standard",
+                  "rowHeightMode": "standard",
+                  "items": [
+                    {
+                      "kind": "AutoGridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-167"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "AutoGridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-168"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "AutoGridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-169"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "AutoGridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-171"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "AutoGridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-170"
                         }
                       }
                     }
