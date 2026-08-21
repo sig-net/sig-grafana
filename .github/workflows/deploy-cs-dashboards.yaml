@@ -103,6 +103,18 @@ jobs:
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
 
+      - name: Terraform plan
+        run: terraform plan -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
+      - name: Terraform apply
+        run: terraform apply -auto-approve -input=false
+        working-directory: ${{ env.working-dir }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
+
   deploy-sre-folder:
     name: Deploy SRE folder
     needs: changes
