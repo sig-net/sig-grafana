@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.6.0](https://github.com/sig-net/sig-grafana/compare/0.5.0...0.6.0) (2026-08-25)
+
+
+### Features
+
+* **alerts:** add multichain kubernetes workload sre observability ([#74](https://github.com/sig-net/sig-grafana/issues/74)) ([86782d6](https://github.com/sig-net/sig-grafana/commit/86782d64298971da8f974bfd28f3f3ae1a629b33))
+* **dashboard:** add panels for canton, midnight and a section for checkpoints ([#71](https://github.com/sig-net/sig-grafana/issues/71)) ([1f256e9](https://github.com/sig-net/sig-grafana/commit/1f256e998227a785605a47c35abda3930bd9bfe9))
+
+
+### Bug Fixes
+
+* **alerts:** evaluate block height stalls over 30m window ([#67](https://github.com/sig-net/sig-grafana/issues/67)) ([491063e](https://github.com/sig-net/sig-grafana/commit/491063ea76aa0d085dbd770ed9c05ed9afed4d90))
+* **alerts:** extend block height stalled alert delay ([#66](https://github.com/sig-net/sig-grafana/issues/66)) ([f5446e3](https://github.com/sig-net/sig-grafana/commit/f5446e3549814a7485a8cd4e8776510cced37707))
+* **alerts:** lower chain signatures thresholds to 85% ([#64](https://github.com/sig-net/sig-grafana/issues/64)) ([f2661a3](https://github.com/sig-net/sig-grafana/commit/f2661a38cca2707b100dd0125a59f2d51d81e868))
+* **alerts:** raise dev node memory threshold ([#68](https://github.com/sig-net/sig-grafana/issues/68)) ([874c6b6](https://github.com/sig-net/sig-grafana/commit/874c6b69863a7488a6c8ab582d06bbc3fd193c74))
+* **alerts:** raise dev node memory threshold to 4.5gb ([#69](https://github.com/sig-net/sig-grafana/issues/69)) ([88eeea1](https://github.com/sig-net/sig-grafana/commit/88eeea1ce81809a304f2447f4109cd9a5e614841))
+* **alerts:** use 1h window for testnet solana success-rate alert ([#62](https://github.com/sig-net/sig-grafana/issues/62)) ([20f0e77](https://github.com/sig-net/sig-grafana/commit/20f0e77a45ec971c6eba085bf928965c37a7f91f))
+* **dashboards:** remove stale chain-signatures dashboard reference ([#73](https://github.com/sig-net/sig-grafana/issues/73)) ([c6d4271](https://github.com/sig-net/sig-grafana/commit/c6d42719b54998fbf7e254c9e3a6519613a00741))
+* **dashboards:** run chain-signatures dashboard deploy apply ([#72](https://github.com/sig-net/sig-grafana/issues/72)) ([79e4ade](https://github.com/sig-net/sig-grafana/commit/79e4ade42a3eaab62095bd5b8120b708764ac22b))
+
 ## [0.5.0](https://github.com/sig-net/sig-grafana/compare/0.4.0...0.5.0) (2026-06-25)
 
 
