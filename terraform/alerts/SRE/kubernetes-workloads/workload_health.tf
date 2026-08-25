@@ -1,7 +1,6 @@
 locals {
   sre_folder_uid            = "befk4ud4xv5s0d"
   near_k8s_dashboard_uid    = "sre-near-k8s-workloads"
-  alert_contact_point       = "SRE On-call"
   stackdriver_relative_from = 1800
   stackdriver_step          = "60s"
   cpu_request_panel_ids     = { dev = 1, testnet = 2, mainnet = 3 }
@@ -17,6 +16,8 @@ locals {
       cluster_name     = "dev"
       datasource_uid   = "eefmhllfyfjswe"
       namespaces_regex = "^(default|chain-sig|contract-watcher|contract-pinger|arc-runners|chainstack-faucet)$"
+      contact_point    = "Multichain Dev"
+      priority         = "low"
     }
     testnet = {
       display_name     = "Testnet"
@@ -26,6 +27,8 @@ locals {
       cluster_name     = "testnet"
       datasource_uid   = "cefmhlk39et4wb"
       namespaces_regex = "^(default|chain-sig)$"
+      contact_point    = "SRE On-call"
+      priority         = "high"
     }
     mainnet = {
       display_name     = "Mainnet"
@@ -35,6 +38,8 @@ locals {
       cluster_name     = "mainnet"
       datasource_uid   = "aefk7aww1brb4c"
       namespaces_regex = "^default$"
+      contact_point    = "SRE On-call"
+      priority         = "high"
     }
   }
 
@@ -55,6 +60,9 @@ locals {
       duration      = "15m"
       panel_id      = local.cpu_request_panel_ids[key]
       no_data_state = "OK"
+      contact_point = cluster.contact_point
+      priority      = cluster.priority
+      environment   = key
       description   = "Workload CPU request utilization has stayed above 90 percent for at least 15 minutes. This usually means requests are too small for current steady-state usage or replicas need tuning."
       summary       = "${cluster.summary_prefix} workload CPU request utilization high"
     }
@@ -77,6 +85,9 @@ locals {
       duration      = "10m"
       panel_id      = local.memory_limit_panel_ids[key]
       no_data_state = "OK"
+      contact_point = cluster.contact_point
+      priority      = cluster.priority
+      environment   = key
       description   = "Workload memory limit utilization has stayed above 90 percent for at least 10 minutes. This is an early warning for OOM pressure and under-sized memory limits."
       summary       = "${cluster.summary_prefix} workload memory limit utilization high"
     }
@@ -99,6 +110,9 @@ locals {
       duration      = "5m"
       panel_id      = local.restart_panel_ids[key]
       no_data_state = "OK"
+      contact_point = cluster.contact_point
+      priority      = cluster.priority
+      environment   = key
       description   = "One or more workload containers restarted more than three times over the last 15 minutes. This is a practical crash-loop and pod-error early warning when kube-state metrics are not available in Grafana."
       summary       = "${cluster.summary_prefix} workload restart count increasing"
     }
@@ -216,10 +230,16 @@ resource "grafana_rule_group" "sre_near_kubernetes_workloads" {
         description      = rule.value.description
         summary          = rule.value.summary
       }
+      labels = {
+        environment = rule.value.environment
+        priority    = rule.value.priority
+        service     = "multichain"
+        team        = "sre"
+      }
       is_paused = false
 
       notification_settings {
-        contact_point = local.alert_contact_point
+        contact_point = rule.value.contact_point
       }
     }
   }
