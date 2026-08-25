@@ -16,7 +16,7 @@ locals {
       cluster_name     = "dev"
       datasource_uid   = "eefmhllfyfjswe"
       namespaces_regex = "^(default|chain-sig|contract-watcher|contract-pinger|arc-runners|chainstack-faucet)$"
-      contact_point    = "Multichain Dev"
+      contact_point    = "SRE On-call"
       priority         = "low"
     }
     testnet = {
