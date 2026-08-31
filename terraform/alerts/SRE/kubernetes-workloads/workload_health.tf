@@ -60,7 +60,7 @@ locals {
       duration      = "15m"
       panel_id      = local.cpu_request_panel_ids[key]
       no_data_state = "OK"
-      contact_point = cluster.contact_point
+      contact_point = key == "dev" ? "Multichain Dev" : cluster.contact_point
       priority      = cluster.priority
       environment   = key
       description   = "Workload CPU request utilization has stayed above 90 percent for at least 15 minutes. This usually means requests are too small for current steady-state usage or replicas need tuning."
