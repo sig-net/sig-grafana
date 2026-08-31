@@ -287,7 +287,7 @@ locals {
     },
     {
       name          = "[TESTNET][NETWORK][ETH] Latest Block Height Stalled"
-      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Ethereum\", status=\"indexed\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Ethereum\", status=\"indexed\"}[30m]))"
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Ethereum\", status=\"indexed\"}[1h]) - min_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Ethereum\", status=\"indexed\"}[1h]))"
       threshold     = 1
       comparator    = "lt"
       panel_id      = "81"
