@@ -5732,7 +5732,7 @@
         {
           "columns": [
             {
-              "selector": "amount",
+              "selector": "result.amount",
               "text": "Amount",
               "type": "number"
             }
@@ -5756,13 +5756,26 @@
           "maxDataPoints": 43200,
           "parser": "backend",
           "refId": "A",
-          "root_selector": "account",
+          "root_selector": "",
           "source": "url",
           "summarizeExpression": "",
           "type": "json",
-          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-0.testnet",
+          "url": "https://rpc.testnet.near.org",
           "url_options": {
-            "method": "GET"
+            "body_content_type": "application/json",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-0.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-0.testnet\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
           }
         }
       ],
@@ -5826,7 +5839,7 @@
         {
           "columns": [
             {
-              "selector": "amount",
+              "selector": "result.amount",
               "text": "Amount",
               "type": "number"
             }
@@ -5850,13 +5863,26 @@
           "maxDataPoints": 43200,
           "parser": "backend",
           "refId": "A",
-          "root_selector": "account",
+          "root_selector": "",
           "source": "url",
           "summarizeExpression": "",
           "type": "json",
-          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-1.testnet",
+          "url": "https://rpc.testnet.near.org",
           "url_options": {
-            "method": "GET"
+            "body_content_type": "application/json",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-1.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-1.testnet\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
           }
         }
       ],
@@ -5920,7 +5946,7 @@
         {
           "columns": [
             {
-              "selector": "amount",
+              "selector": "result.amount",
               "text": "Amount",
               "type": "number"
             }
@@ -5944,13 +5970,26 @@
           "maxDataPoints": 43200,
           "parser": "backend",
           "refId": "A",
-          "root_selector": "account",
+          "root_selector": "",
           "source": "url",
           "summarizeExpression": "",
           "type": "json",
-          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-2.testnet",
+          "url": "https://rpc.testnet.near.org",
           "url_options": {
-            "method": "GET"
+            "body_content_type": "application/json",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-2.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-2.testnet\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
           }
         }
       ],
@@ -6014,7 +6053,7 @@
         {
           "columns": [
             {
-              "selector": "amount",
+              "selector": "result.amount",
               "text": "Amount",
               "type": "number"
             }
@@ -6038,13 +6077,26 @@
           "maxDataPoints": 43200,
           "parser": "backend",
           "refId": "A",
-          "root_selector": "account",
+          "root_selector": "",
           "source": "url",
           "summarizeExpression": "",
           "type": "json",
-          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-3.testnet",
+          "url": "https://rpc.testnet.near.org",
           "url_options": {
-            "method": "GET"
+            "body_content_type": "application/json",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-3.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-3.testnet\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
           }
         }
       ],
@@ -6108,7 +6160,7 @@
         {
           "columns": [
             {
-              "selector": "amount",
+              "selector": "result.amount",
               "text": "Amount",
               "type": "number"
             }
@@ -6132,13 +6184,26 @@
           "maxDataPoints": 43200,
           "parser": "backend",
           "refId": "A",
-          "root_selector": "account",
+          "root_selector": "",
           "source": "url",
           "summarizeExpression": "",
           "type": "json",
-          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-4.testnet",
+          "url": "https://rpc.testnet.near.org",
           "url_options": {
-            "method": "GET"
+            "body_content_type": "application/json",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-4.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-4.testnet\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
           }
         }
       ],
@@ -6202,7 +6267,7 @@
         {
           "columns": [
             {
-              "selector": "amount",
+              "selector": "result.amount",
               "text": "Amount",
               "type": "number"
             }
@@ -6226,13 +6291,26 @@
           "maxDataPoints": 43200,
           "parser": "backend",
           "refId": "A",
-          "root_selector": "account",
+          "root_selector": "",
           "source": "url",
           "summarizeExpression": "",
           "type": "json",
-          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-5.testnet",
+          "url": "https://rpc.testnet.near.org",
           "url_options": {
-            "method": "GET"
+            "body_content_type": "application/json",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-5.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-5.testnet\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
           }
         }
       ],
@@ -6296,7 +6374,7 @@
         {
           "columns": [
             {
-              "selector": "amount",
+              "selector": "result.amount",
               "text": "Amount",
               "type": "number"
             }
@@ -6320,13 +6398,26 @@
           "maxDataPoints": 43200,
           "parser": "backend",
           "refId": "A",
-          "root_selector": "account",
+          "root_selector": "",
           "source": "url",
           "summarizeExpression": "",
           "type": "json",
-          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-6.testnet",
+          "url": "https://rpc.testnet.near.org",
           "url_options": {
-            "method": "GET"
+            "body_content_type": "application/json",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-6.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-6.testnet\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
           }
         }
       ],
@@ -6390,7 +6481,7 @@
         {
           "columns": [
             {
-              "selector": "amount",
+              "selector": "result.amount",
               "text": "Amount",
               "type": "number"
             }
@@ -6414,13 +6505,26 @@
           "maxDataPoints": 43200,
           "parser": "backend",
           "refId": "A",
-          "root_selector": "account",
+          "root_selector": "",
           "source": "url",
           "summarizeExpression": "",
           "type": "json",
-          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-7.testnet",
+          "url": "https://rpc.testnet.near.org",
           "url_options": {
-            "method": "GET"
+            "body_content_type": "application/json",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-7.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-7.testnet\"\n  }\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "source",
+                "value": "grafana"
+              }
+            ],
+            "method": "POST"
           }
         }
       ],
