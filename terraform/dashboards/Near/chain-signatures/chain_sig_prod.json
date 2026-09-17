@@ -1067,7 +1067,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-34942711622",
             "spec": {
               "options": {
                 "annotations": {
@@ -3279,7 +3279,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-34942711622",
             "spec": {
               "options": {
                 "annotations": {
@@ -4508,7 +4508,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"indexing\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"indexing\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Indexing",
                         "queryType": "range",
@@ -4530,7 +4530,8 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"awaiting_generation\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"awaiting_generation\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Awaiting Generation",
                         "queryType": "range",
@@ -4553,7 +4554,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"organizing\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"organizing\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Organizing",
                         "queryType": "range",
@@ -4576,7 +4577,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"posit\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"posit\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Posit",
                         "queryType": "range",
@@ -4599,7 +4600,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"generating\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Generating Signature",
                         "queryType": "range",
@@ -4622,7 +4623,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"responding\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Responding",
                         "range": true
@@ -4644,7 +4645,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"total\",chain=\"Solana\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Total",
                         "range": true
@@ -4662,7 +4663,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-34942711622",
             "spec": {
               "options": {
                 "annotations": {
@@ -4803,7 +4804,8 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"indexing\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"indexing\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Indexing",
                         "queryType": "range",
@@ -4825,7 +4827,8 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"awaiting_generation\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"awaiting_generation\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Awaiting Generation",
                         "queryType": "range",
@@ -4848,7 +4851,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"organizing\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"organizing\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Organizing",
                         "queryType": "range",
@@ -4871,7 +4874,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"posit\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"posit\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Posit",
                         "queryType": "range",
@@ -4894,7 +4897,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"generating\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Generating Signature",
                         "queryType": "range",
@@ -4917,7 +4920,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"responding\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Responding",
                         "range": true
@@ -4939,7 +4942,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"total\",chain=\"Ethereum\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Total",
                         "range": true
@@ -4957,7 +4960,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-34942711622",
             "spec": {
               "options": {
                 "annotations": {
@@ -5098,7 +5101,8 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"indexing\",chain=\"Hydration\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"indexing\",chain=\"Hydration\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Indexing",
                         "queryType": "range",
@@ -5120,7 +5124,8 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"awaiting_generation\",chain=\"Hydration\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"awaiting_generation\",chain=\"Hydration\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Awaiting Generation",
                         "queryType": "range",
@@ -5142,7 +5147,8 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Hydration\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"generating\",chain=\"Hydration\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Generating Signature",
                         "queryType": "range",
@@ -5164,7 +5170,8 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Hydration\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"responding\",chain=\"Hydration\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Responding",
                         "queryType": "range",
@@ -5186,7 +5193,8 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Hydration\",environment=~\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"total\",chain=\"Hydration\",environment=~\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Total",
                         "queryType": "range",
@@ -5205,7 +5213,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-34942711622",
             "spec": {
               "options": {
                 "annotations": {
@@ -5661,7 +5669,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by (chain, le) (rate(multichain_sign_request_latency_sec_bucket{step=\"indexing\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by (chain, le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"indexing\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Indexing",
                         "queryType": "range",
@@ -5684,7 +5692,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"awaiting_generation\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"awaiting_generation\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Awaiting Generation",
                         "queryType": "range",
@@ -5707,7 +5715,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"generating\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Generating Signature",
                         "queryType": "range",
@@ -5730,7 +5738,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"responding\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Responding",
                         "queryType": "range",
@@ -5753,7 +5761,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"total\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Total",
                         "queryType": "range",
@@ -5772,7 +5780,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-34942711622",
             "spec": {
               "options": {
                 "annotations": {
@@ -5915,7 +5923,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by (chain, le) (rate(multichain_sign_request_latency_sec_bucket{step=\"indexing\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by (chain, le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"indexing\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Indexing",
                         "queryType": "range",
@@ -5938,7 +5946,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"awaiting_generation\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"awaiting_generation\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Awaiting Generation",
                         "queryType": "range",
@@ -5961,7 +5969,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"generating\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"generating\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Generating Signature",
                         "queryType": "range",
@@ -5984,7 +5992,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"responding\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"responding\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Responding",
                         "queryType": "range",
@@ -6007,7 +6015,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{step=\"total\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", step=\"total\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "Total",
                         "queryType": "range",
@@ -6026,7 +6034,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-34942711622",
             "spec": {
               "options": {
                 "annotations": {
@@ -6741,6 +6749,1362 @@
                   }
                 },
                 "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-172": {
+        "kind": "Panel",
+        "spec": {
+          "id": 172,
+          "title": "Solana Bidirectional Request Latency Breakdown P95",
+          "description": "P95 latency breakdown for Solana sign requests by processing step: indexing (network propagation + polling), awaiting generation (queue time), generating (signature creation), and responding (delivery). Stacked bars show cumulative time spent in each stage. The total line shows end-to-end latency.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"indexing\",chain=\"Solana\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Indexing",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"awaiting_generation\",chain=\"Solana\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Awaiting Generation",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"organizing\",chain=\"Solana\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Organizing",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"posit\",chain=\"Solana\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Posit",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "D",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"generating\",chain=\"Solana\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Generating",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "E",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"responding\",chain=\"Solana\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Responding",
+                        "range": true
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"total\",chain=\"Solana\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "G",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"awaiting_execution\",chain=\"Solana\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Awaiting Execution",
+                        "range": true
+                      }
+                    },
+                    "refId": "H",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"Organizing\",chain=\"Solana\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Organizing",
+                        "range": true
+                      }
+                    },
+                    "refId": "I",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"posit\",chain=\"Solana\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Posit",
+                        "range": true
+                      }
+                    },
+                    "refId": "J",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"generating\",chain=\"Solana\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Generating",
+                        "range": true
+                      }
+                    },
+                    "refId": "K",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"responding\",chain=\"Solana\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Responding",
+                        "range": true
+                      }
+                    },
+                    "refId": "M",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"total\",chain=\"Solana\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "L",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"bidirectional_total\",chain=\"Solana\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Roundtrip Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "N",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.3.0-34942711622",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "barRadius": 0,
+                "barWidth": 0.97,
+                "fullHighlight": false,
+                "groupWidth": 0.7,
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "orientation": "auto",
+                "showValue": "auto",
+                "stacking": "normal",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "none"
+                },
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 100
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "s",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "Latency (seconds)",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "bars",
+                    "fillOpacity": 80,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "normal"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Total"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.drawStyle",
+                        "value": "line"
+                      },
+                      {
+                        "id": "custom.lineWidth",
+                        "value": 3
+                      },
+                      {
+                        "id": "custom.fillOpacity",
+                        "value": 0
+                      },
+                      {
+                        "id": "custom.stacking",
+                        "value": {
+                          "mode": "none"
+                        }
+                      },
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "blue",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-173": {
+        "kind": "Panel",
+        "spec": {
+          "id": 173,
+          "title": "Midnight Bidirectional Request Latency Breakdown P95",
+          "description": "P95 latency breakdown for Solana sign requests by processing step: indexing (network propagation + polling), awaiting generation (queue time), generating (signature creation), and responding (delivery). Stacked bars show cumulative time spent in each stage. The total line shows end-to-end latency.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"indexing\",chain=\"Midnight\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Indexing",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"awaiting_generation\",chain=\"Midnight\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Awaiting Generation",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"organizing\",chain=\"Midnight\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Organizing",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"posit\",chain=\"Midnight\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Posit",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "D",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"generating\",chain=\"Midnight\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Generating",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "E",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"responding\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Responding",
+                        "range": true
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"total\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "G",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"awaiting_execution\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Awaiting Execution",
+                        "range": true
+                      }
+                    },
+                    "refId": "H",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"Organizing\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Organizing",
+                        "range": true
+                      }
+                    },
+                    "refId": "I",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"posit\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Posit",
+                        "range": true
+                      }
+                    },
+                    "refId": "J",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"generating\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Generating",
+                        "range": true
+                      }
+                    },
+                    "refId": "K",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"responding\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Responding",
+                        "range": true
+                      }
+                    },
+                    "refId": "M",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"total\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "L",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"bidirectional_total\",chain=\"Midnight\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Roundtrip Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "N",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.3.0-34942711622",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "barRadius": 0,
+                "barWidth": 0.97,
+                "fullHighlight": false,
+                "groupWidth": 0.7,
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "orientation": "auto",
+                "showValue": "auto",
+                "stacking": "normal",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "none"
+                },
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 100
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "s",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "Latency (seconds)",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "bars",
+                    "fillOpacity": 80,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "normal"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Total"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.drawStyle",
+                        "value": "line"
+                      },
+                      {
+                        "id": "custom.lineWidth",
+                        "value": 3
+                      },
+                      {
+                        "id": "custom.fillOpacity",
+                        "value": 0
+                      },
+                      {
+                        "id": "custom.stacking",
+                        "value": {
+                          "mode": "none"
+                        }
+                      },
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "blue",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-174": {
+        "kind": "Panel",
+        "spec": {
+          "id": 174,
+          "title": "Canton Bidirectional Request Latency Breakdown P95",
+          "description": "P95 latency breakdown for Solana sign requests by processing step: indexing (network propagation + polling), awaiting generation (queue time), generating (signature creation), and responding (delivery). Stacked bars show cumulative time spent in each stage. The total line shows end-to-end latency.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"indexing\",chain=\"Canton\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Indexing",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"awaiting_generation\",chain=\"Canton\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Awaiting Generation",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"organizing\",chain=\"Canton\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Organizing",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"posit\",chain=\"Canton\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Posit",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "D",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"generating\",chain=\"Canton\",environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Generating",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "E",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"responding\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Responding",
+                        "range": true
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", step=\"total\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg1 Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "G",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"awaiting_execution\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Awaiting Execution",
+                        "range": true
+                      }
+                    },
+                    "refId": "H",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"Organizing\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Organizing",
+                        "range": true
+                      }
+                    },
+                    "refId": "I",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"posit\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Posit",
+                        "range": true
+                      }
+                    },
+                    "refId": "J",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"generating\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Generating",
+                        "range": true
+                      }
+                    },
+                    "refId": "K",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"responding\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Responding",
+                        "range": true
+                      }
+                    },
+                    "refId": "M",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"total\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Leg2 Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "L",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "histogram_quantile(0.95, sum by(le) (rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", step=\"bidirectional_total\",chain=\"Canton\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "Roundtrip Total",
+                        "range": true
+                      }
+                    },
+                    "refId": "N",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.3.0-34942711622",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "barRadius": 0,
+                "barWidth": 0.97,
+                "fullHighlight": false,
+                "groupWidth": 0.7,
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "orientation": "auto",
+                "showValue": "auto",
+                "stacking": "normal",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "none"
+                },
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 100
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "s",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "Latency (seconds)",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "bars",
+                    "fillOpacity": 80,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "normal"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Total"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.drawStyle",
+                        "value": "line"
+                      },
+                      {
+                        "id": "custom.lineWidth",
+                        "value": 3
+                      },
+                      {
+                        "id": "custom.fillOpacity",
+                        "value": 0
+                      },
+                      {
+                        "id": "custom.stacking",
+                        "value": {
+                          "mode": "none"
+                        }
+                      },
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "blue",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  }
+                ]
               }
             }
           }
@@ -10240,7 +11604,7 @@
             "kind": "RowsLayoutRow",
             "spec": {
               "title": "Requests",
-              "collapse": true,
+              "collapse": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -10333,6 +11697,45 @@
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-166"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 58,
+                        "width": 24,
+                        "height": 10,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-172"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 68,
+                        "width": 24,
+                        "height": 10,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-173"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 78,
+                        "width": 24,
+                        "height": 10,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-174"
                         }
                       }
                     }
