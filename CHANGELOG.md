@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.7.0](https://github.com/sig-net/sig-grafana/compare/0.6.0...0.7.0) (2026-09-17)
+
+
+### Features
+
+* **dashboard:** separate by sign kind ([#81](https://github.com/sig-net/sig-grafana/issues/81)) ([eb036af](https://github.com/sig-net/sig-grafana/commit/eb036afbf897ece669508ab9152f849f1897f621))
+* **grafana:** add testnet near balance alerts ([#82](https://github.com/sig-net/sig-grafana/issues/82)) ([ff672e9](https://github.com/sig-net/sig-grafana/commit/ff672e931d186961f5192a07e4b93b596f3d5bc4))
+
+
+### Bug Fixes
+
+* **alerts:** extend testnet eth block height stalled window ([#75](https://github.com/sig-net/sig-grafana/issues/75)) ([778b4e1](https://github.com/sig-net/sig-grafana/commit/778b4e188dd9eac7d7a8cc73d0aa30c207d15c8f))
+* **alerts:** raise dev cpu request alert duration ([#77](https://github.com/sig-net/sig-grafana/issues/77)) ([5e788fe](https://github.com/sig-net/sig-grafana/commit/5e788fe60c37fb0d036753337ab4165945e82606))
+* **grafana:** use near rpc for testnet balances ([#83](https://github.com/sig-net/sig-grafana/issues/83)) ([ea97109](https://github.com/sig-net/sig-grafana/commit/ea971094bc6974287904c82965d6a08e18c364c0))
+
 ## [0.6.0](https://github.com/sig-net/sig-grafana/compare/0.5.0...0.6.0) (2026-08-25)
 
 
