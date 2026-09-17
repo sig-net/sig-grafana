@@ -5661,6 +5661,771 @@
         }
       ],
       "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 63
+      },
+      "id": 59,
+      "panels": [],
+      "title": "[TESTNET][NEAR]",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 64
+      },
+      "id": 60,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "13.0.0-23069273608.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "NEAR",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filterExpression": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "intervalMs": 1000,
+          "maxDataPoints": 43200,
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "account",
+          "source": "url",
+          "summarizeExpression": "",
+          "type": "json",
+          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-0.testnet",
+          "url_options": {
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "multichain-node-0.testnet NEAR Balance",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 64
+      },
+      "id": 61,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "13.0.0-23069273608.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "NEAR",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filterExpression": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "intervalMs": 1000,
+          "maxDataPoints": 43200,
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "account",
+          "source": "url",
+          "summarizeExpression": "",
+          "type": "json",
+          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-1.testnet",
+          "url_options": {
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "multichain-node-1.testnet NEAR Balance",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 72
+      },
+      "id": 62,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "13.0.0-23069273608.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "NEAR",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filterExpression": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "intervalMs": 1000,
+          "maxDataPoints": 43200,
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "account",
+          "source": "url",
+          "summarizeExpression": "",
+          "type": "json",
+          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-2.testnet",
+          "url_options": {
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "multichain-node-2.testnet NEAR Balance",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 72
+      },
+      "id": 63,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "13.0.0-23069273608.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "NEAR",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filterExpression": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "intervalMs": 1000,
+          "maxDataPoints": 43200,
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "account",
+          "source": "url",
+          "summarizeExpression": "",
+          "type": "json",
+          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-3.testnet",
+          "url_options": {
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "multichain-node-3.testnet NEAR Balance",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 80
+      },
+      "id": 64,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "13.0.0-23069273608.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "NEAR",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filterExpression": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "intervalMs": 1000,
+          "maxDataPoints": 43200,
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "account",
+          "source": "url",
+          "summarizeExpression": "",
+          "type": "json",
+          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-4.testnet",
+          "url_options": {
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "multichain-node-4.testnet NEAR Balance",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 80
+      },
+      "id": 65,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "13.0.0-23069273608.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "NEAR",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filterExpression": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "intervalMs": 1000,
+          "maxDataPoints": 43200,
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "account",
+          "source": "url",
+          "summarizeExpression": "",
+          "type": "json",
+          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-5.testnet",
+          "url_options": {
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "multichain-node-5.testnet NEAR Balance",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 88
+      },
+      "id": 66,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "13.0.0-23069273608.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "NEAR",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filterExpression": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "intervalMs": 1000,
+          "maxDataPoints": 43200,
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "account",
+          "source": "url",
+          "summarizeExpression": "",
+          "type": "json",
+          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-6.testnet",
+          "url_options": {
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "multichain-node-6.testnet NEAR Balance",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 88
+      },
+      "id": 67,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "13.0.0-23069273608.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount",
+              "text": "Amount",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "Amount / 1000000000000000000000000",
+              "text": "NEAR",
+              "type": "number"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filterExpression": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "intervalMs": 1000,
+          "maxDataPoints": 43200,
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "account",
+          "source": "url",
+          "summarizeExpression": "",
+          "type": "json",
+          "url": "https://api-testnet.nearblocks.io/v1/account/multichain-node-7.testnet",
+          "url_options": {
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "multichain-node-7.testnet NEAR Balance",
+      "type": "stat"
     }
   ],
   "preload": false,
