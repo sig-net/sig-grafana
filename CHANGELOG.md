@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.8.0](https://github.com/sig-net/sig-grafana/compare/0.7.0...0.8.0) (2026-09-18)
+
+
+### Features
+
+* **dashboard:** more bidirectional separation on key metrics ([#89](https://github.com/sig-net/sig-grafana/issues/89)) ([6b4ee96](https://github.com/sig-net/sig-grafana/commit/6b4ee96cd519ac52c452b84c913b69f3317d76de))
+* **grafana:** add dev near balance panels ([#84](https://github.com/sig-net/sig-grafana/issues/84)) ([1899835](https://github.com/sig-net/sig-grafana/commit/1899835852f49e85901421abca14413cfa4e4c62))
+
+
+### Bug Fixes
+
+* **grafana:** reduce dev near balance polling ([#86](https://github.com/sig-net/sig-grafana/issues/86)) ([385de42](https://github.com/sig-net/sig-grafana/commit/385de4240f7fe344ccf6c999627a98b84bb59370))
+
 ## [0.7.0](https://github.com/sig-net/sig-grafana/compare/0.6.0...0.7.0) (2026-09-17)
 
 
