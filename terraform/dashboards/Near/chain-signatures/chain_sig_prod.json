@@ -694,7 +694,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -1067,7 +1067,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.3.0-34942711622",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -2378,7 +2378,7 @@
         "kind": "Panel",
         "spec": {
           "id": 136,
-          "title": "Request rate",
+          "title": "Sign Request rate",
           "description": "Rate of sign requests at awaiting_generation step by chain",
           "links": [],
           "data": {
@@ -2396,7 +2396,8 @@
                         "name": "grafanacloud-prom"
                       },
                       "spec": {
-                        "expr": "max by (chain) (sum by (node_account_id, chain) (rate(multichain_sign_request_latency_sec_count{step=\"awaiting_generation\", environment=\"$environment\"}[$__rate_interval])))",
+                        "editorMode": "code",
+                        "expr": "max by (chain) (sum by (node_account_id, chain) (rate(multichain_sign_request_latency_sec_count{kind=\"sign\", step=\"awaiting_generation\", environment=\"$environment\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "{{chain}}",
                         "queryType": "range",
@@ -2415,7 +2416,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -2779,7 +2780,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -3279,7 +3280,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.3.0-34942711622",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -3429,7 +3430,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -3485,7 +3486,7 @@
         "kind": "Panel",
         "spec": {
           "id": 149,
-          "title": "In-time Requests SLI Trend",
+          "title": "In-time Sign Requests SLI Trend",
           "description": "Percentage of sign requests completed on time (not delayed). Tracks 24-hour, 7-day, and 30-day windows plus current rate.",
           "links": [],
           "data": {
@@ -3505,7 +3506,7 @@
                       "spec": {
                         "app": "grafana-assistant-app",
                         "editorMode": "code",
-                        "expr": "(sum by(chain) (rate(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])) / (sum by(chain) (rate(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])) + (sum by(chain) (rate(multichain_sign_request_delayed{environment=~\"$environment\"}[$__rate_interval])) or (0 * sum by(chain) (rate(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])))))) * 100",
+                        "expr": "(sum by(chain) (rate(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])) / (sum by(chain) (rate(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])) + (sum by(chain) (rate(multichain_sign_request_delayed{kind=\"sign\", environment=~\"$environment\"}[$__rate_interval])) or (0 * sum by(chain) (rate(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])))))) * 100",
                         "instant": false,
                         "legendFormat": "Rate Interval · {{chain}}",
                         "queryType": "range",
@@ -3528,7 +3529,8 @@
                       },
                       "spec": {
                         "app": "grafana-assistant-app",
-                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) + (sum by(chain) (increase(multichain_sign_request_delayed{environment=~\"$environment\"}[1h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])))))) * 100",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign\", environment=~\"$environment\"}[1h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])))))) * 100",
                         "instant": false,
                         "legendFormat": "1 hour · {{chain}}",
                         "queryType": "range",
@@ -3551,7 +3553,32 @@
                       },
                       "spec": {
                         "app": "grafana-assistant-app",
-                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])) + (sum by(chain) (increase(multichain_sign_request_delayed{environment=~\"$environment\"}[24h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])))))) * 100",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign\", environment=~\"$environment\"}[1h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "1 hour · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign\", environment=~\"$environment\"}[24h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])))))) * 100",
                         "instant": false,
                         "legendFormat": "24 hours · {{chain}}",
                         "queryType": "range",
@@ -3574,7 +3601,8 @@
                       },
                       "spec": {
                         "app": "grafana-assistant-app",
-                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])) + (sum by(chain) (increase(multichain_sign_request_delayed{environment=~\"$environment\"}[7d])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])))))) * 100",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign\", environment=~\"$environment\"}[7d])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])))))) * 100",
                         "instant": false,
                         "legendFormat": "7 days · {{chain}}",
                         "queryType": "range",
@@ -3597,7 +3625,8 @@
                       },
                       "spec": {
                         "app": "grafana-assistant-app",
-                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])) + (sum by(chain) (increase(multichain_sign_request_delayed{environment=~\"$environment\"}[30d])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])))))) * 100",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign\", environment=~\"$environment\"}[30d])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])))))) * 100",
                         "instant": false,
                         "legendFormat": "30 days · {{chain}}",
                         "queryType": "range",
@@ -3616,7 +3645,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -3726,7 +3755,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "text",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "code": {
@@ -3786,7 +3815,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -3916,7 +3945,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -4045,7 +4074,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -4175,7 +4204,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -4292,7 +4321,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -4362,7 +4391,32 @@
                     }
                   }
                 },
-                "overrides": []
+                "overrides": [
+                  {
+                    "__systemRef": "hideSeriesFrom",
+                    "matcher": {
+                      "id": "byNames",
+                      "options": {
+                        "mode": "exclude",
+                        "names": [
+                          "Solana: multichain-node-dev-8.testnet"
+                        ],
+                        "prefix": "All except:",
+                        "readOnly": true
+                      }
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.hideFrom",
+                        "value": {
+                          "legend": false,
+                          "tooltip": true,
+                          "viz": true
+                        }
+                      }
+                    ]
+                  }
+                ]
               }
             }
           }
@@ -4409,7 +4463,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -4663,7 +4717,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.3.0-34942711622",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -4960,7 +5014,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.3.0-34942711622",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -5213,7 +5267,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.3.0-34942711622",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -5414,7 +5468,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "table",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "cellHeight": "sm",
@@ -5566,7 +5620,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -5780,7 +5834,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.3.0-34942711622",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -6034,7 +6088,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.3.0-34942711622",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -7086,7 +7140,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.3.0-34942711622",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -7538,7 +7592,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.3.0-34942711622",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -7990,7 +8044,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.3.0-34942711622",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -8105,6 +8159,1033 @@
                     ]
                   }
                 ]
+              }
+            }
+          }
+        }
+      },
+      "panel-175": {
+        "kind": "Panel",
+        "spec": {
+          "id": 175,
+          "title": "Bidirectional Request rate",
+          "description": "Rate of sign_bidirectional requests at awaiting_generation step by chain",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "max by (chain) (sum by (node_account_id, chain) (rate(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", step=\"awaiting_generation\", environment=\"$environment\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "{{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.3.0-35049663052",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "reqps",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "transparent"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "continuous-BlPu",
+                    "fixedColor": "dark-blue"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-176": {
+        "kind": "Panel",
+        "spec": {
+          "id": 176,
+          "title": "Bidirectional Request Leg1 Latency P95",
+          "description": "95th percentile latency for sign_bidirectional leg1 requests by chain",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "max by (chain) (histogram_quantile(0.95, rate(multichain_sign_request_latency_sec_bucket{kind=\"sign_bidirectional\", environment=\"$environment\", step=\"total\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "{{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.3.0-35049663052",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "s",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "scheme",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 2,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Solana"
+                    },
+                    "properties": [
+                      {
+                        "id": "thresholds",
+                        "value": {
+                          "mode": "absolute",
+                          "steps": [
+                            {
+                              "color": "green",
+                              "value": 0
+                            },
+                            {
+                              "color": "yellow",
+                              "value": 5
+                            },
+                            {
+                              "color": "red",
+                              "value": 8
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Ethereum"
+                    },
+                    "properties": [
+                      {
+                        "id": "thresholds",
+                        "value": {
+                          "mode": "absolute",
+                          "steps": [
+                            {
+                              "color": "green",
+                              "value": 0
+                            },
+                            {
+                              "color": "yellow",
+                              "value": 840
+                            },
+                            {
+                              "color": "red",
+                              "value": 1020
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "__systemRef": "hideSeriesFrom",
+                    "matcher": {
+                      "id": "byNames",
+                      "options": {
+                        "mode": "exclude",
+                        "names": [
+                          "Solana"
+                        ],
+                        "prefix": "All except:",
+                        "readOnly": true
+                      }
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.hideFrom",
+                        "value": {
+                          "legend": false,
+                          "tooltip": true,
+                          "viz": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-177": {
+        "kind": "Panel",
+        "spec": {
+          "id": 177,
+          "title": "Bidirectional Request Leg2 Latency P95",
+          "description": "95th percentile latency for sign_bidirectional leg2 requests by chain",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "max by (chain) (histogram_quantile(0.95, rate(multichain_sign_request_latency_sec_bucket{kind=\"respond_bidirectional\", environment=\"$environment\", step=\"total\"}[$__rate_interval])))",
+                        "instant": false,
+                        "legendFormat": "{{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.3.0-35049663052",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "s",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "scheme",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 2,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Solana"
+                    },
+                    "properties": [
+                      {
+                        "id": "thresholds",
+                        "value": {
+                          "mode": "absolute",
+                          "steps": [
+                            {
+                              "color": "green",
+                              "value": 0
+                            },
+                            {
+                              "color": "yellow",
+                              "value": 5
+                            },
+                            {
+                              "color": "red",
+                              "value": 8
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Ethereum"
+                    },
+                    "properties": [
+                      {
+                        "id": "thresholds",
+                        "value": {
+                          "mode": "absolute",
+                          "steps": [
+                            {
+                              "color": "green",
+                              "value": 0
+                            },
+                            {
+                              "color": "yellow",
+                              "value": 840
+                            },
+                            {
+                              "color": "red",
+                              "value": 1020
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "__systemRef": "hideSeriesFrom",
+                    "matcher": {
+                      "id": "byNames",
+                      "options": {
+                        "mode": "exclude",
+                        "names": [
+                          "Solana"
+                        ],
+                        "prefix": "All except:",
+                        "readOnly": true
+                      }
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.hideFrom",
+                        "value": {
+                          "legend": false,
+                          "tooltip": true,
+                          "viz": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-178": {
+        "kind": "Panel",
+        "spec": {
+          "id": 178,
+          "title": "In-time Bidirectional Requests Leg1 SLI Trend",
+          "description": "Percentage of sign_bidirectional requests leg1 completed on time (not delayed). Tracks 24-hour, 7-day, and 30-day windows plus current rate.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (rate(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])) / (sum by(chain) (rate(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])) + (sum by(chain) (rate(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[$__rate_interval])) or (0 * sum by(chain) (rate(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "Rate Interval · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[1h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "1 hour · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[1h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "1 hour · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[24h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "24 hours · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[7d])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "7 days · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "D",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[30d])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "30 days · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "E",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.3.0-35049663052",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "last"
+                  ],
+                  "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "percent",
+                  "decimals": 2,
+                  "min": 0,
+                  "max": 100,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "red"
+                      },
+                      {
+                        "value": 95,
+                        "color": "yellow"
+                      },
+                      {
+                        "value": 98,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.9,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "scheme",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "smooth",
+                    "lineStyle": {
+                      "fill": "solid"
+                    },
+                    "lineWidth": 2,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-179": {
+        "kind": "Panel",
+        "spec": {
+          "id": 179,
+          "title": "In-time Bidirectional Requests Leg2 SLI Trend",
+          "description": "Percentage of sign_bidirectional requests leg2 completed on time (not delayed). Tracks 24-hour, 7-day, and 30-day windows plus current rate.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (rate(multichain_sign_request_latency_sec_count{kind=\"respond_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])) / (sum by(chain) (rate(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])) + (sum by(chain) (rate(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[$__rate_interval])) or (0 * sum by(chain) (rate(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[$__rate_interval])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "Rate Interval · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"respond_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[1h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "1 hour · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"respond_bidirectional\",environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[1h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[1h])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "1 hour · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "F",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"respond_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[24h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[24h])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "24 hours · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"respond_bidirectional\",environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[7d])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[7d])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "7 days · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "D",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "prometheus",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "grafanacloud-prom"
+                      },
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "editorMode": "code",
+                        "expr": "(sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"respond_bidirectional\",environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])) / (sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])) + (sum by(chain) (increase(multichain_sign_request_delayed{kind=\"sign_bidirectional\", environment=~\"$environment\"}[30d])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign_bidirectional\", environment=~\"$environment\", step=\"total\", status=\"in_time\"}[30d])))))) * 100",
+                        "instant": false,
+                        "legendFormat": "30 days · {{chain}}",
+                        "queryType": "range",
+                        "range": true
+                      }
+                    },
+                    "refId": "E",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.3.0-35049663052",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "last"
+                  ],
+                  "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "percent",
+                  "decimals": 2,
+                  "min": 0,
+                  "max": 100,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "red"
+                      },
+                      {
+                        "value": 95,
+                        "color": "yellow"
+                      },
+                      {
+                        "value": 98,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.9,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "scheme",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "smooth",
+                    "lineStyle": {
+                      "fill": "solid"
+                    },
+                    "lineWidth": 2,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
               }
             }
           }
@@ -8483,7 +9564,7 @@
         "kind": "Panel",
         "spec": {
           "id": 49,
-          "title": "Request Latency P95",
+          "title": "Sign Request Latency P95",
           "description": "95th percentile latency for sign requests by chain",
           "links": [],
           "data": {
@@ -8502,7 +9583,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "max by (chain) (histogram_quantile(0.95, rate(multichain_sign_request_latency_sec_bucket{environment=\"$environment\", step=\"total\"}[$__rate_interval])))",
+                        "expr": "max by (chain) (histogram_quantile(0.95, rate(multichain_sign_request_latency_sec_bucket{kind=\"sign\", environment=\"$environment\", step=\"total\"}[$__rate_interval])))",
                         "instant": false,
                         "legendFormat": "{{chain}}",
                         "queryType": "range",
@@ -8521,7 +9602,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.2.0-31775358088",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -8644,6 +9725,30 @@
                               "value": 1020
                             }
                           ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "__systemRef": "hideSeriesFrom",
+                    "matcher": {
+                      "id": "byNames",
+                      "options": {
+                        "mode": "exclude",
+                        "names": [
+                          "Solana"
+                        ],
+                        "prefix": "All except:",
+                        "readOnly": true
+                      }
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.hideFrom",
+                        "value": {
+                          "legend": false,
+                          "tooltip": true,
+                          "viz": true
                         }
                       }
                     ]
@@ -10198,7 +11303,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.1.0-27822252871",
+            "version": "13.3.0-35049663052",
             "spec": {
               "options": {
                 "annotations": {
@@ -11473,7 +12578,7 @@
             "kind": "RowsLayoutRow",
             "spec": {
               "title": "Key Metrics",
-              "collapse": true,
+              "collapse": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -11578,7 +12683,7 @@
                         "height": 7,
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-49"
+                          "name": "panel-175"
                         }
                       }
                     },
@@ -11592,6 +12697,71 @@
                         "element": {
                           "kind": "ElementReference",
                           "name": "panel-149"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 33,
+                        "width": 12,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-178"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12,
+                        "y": 33,
+                        "width": 12,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-179"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 40,
+                        "width": 12,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-49"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12,
+                        "y": 40,
+                        "width": 12,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-176"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 47,
+                        "width": 12,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-177"
                         }
                       }
                     }
@@ -11876,7 +13046,7 @@
             "kind": "RowsLayoutRow",
             "spec": {
               "title": "Indexers",
-              "collapse": true,
+              "collapse": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
