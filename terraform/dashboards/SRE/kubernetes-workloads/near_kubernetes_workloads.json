@@ -59,7 +59,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^(default|chain-sig|contract-watcher|contract-pinger|arc-runners|chainstack-faucet)$\",container_name!=\"POD\"}[30m])))",
+                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^(default|contract-watcher|contract-pinger|arc-runners|chainstack-faucet)$\",container_name!=\"POD\"}[30m])))",
                           "projectName": "near-cs-dev",
                           "step": "60s"
                         },
@@ -181,7 +181,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^(default|chain-sig)$\",container_name!=\"POD\"}[30m])))",
+                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",container_name!=\"POD\"}[30m])))",
                           "projectName": "near-cs-testnet",
                           "step": "60s"
                         },
@@ -303,7 +303,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^(default|chain-sig)$\",container_name!=\"POD\"}[30m])))",
+                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",container_name!=\"POD\"}[30m])))",
                           "projectName": "near-cs-mainnet",
                           "step": "60s"
                         },
@@ -425,7 +425,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^(default|chain-sig|contract-watcher|contract-pinger|arc-runners|chainstack-faucet)$\",container_name!=\"POD\"}[30m])))",
+                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^(default|contract-watcher|contract-pinger|arc-runners|chainstack-faucet)$\",container_name!=\"POD\"}[30m])))",
                           "projectName": "near-cs-dev",
                           "step": "60s"
                         },
@@ -547,7 +547,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^(default|chain-sig)$\",container_name!=\"POD\"}[30m])))",
+                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",container_name!=\"POD\"}[30m])))",
                           "projectName": "near-cs-testnet",
                           "step": "60s"
                         },
@@ -669,7 +669,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^(default|chain-sig)$\",container_name!=\"POD\"}[30m])))",
+                          "expr": "topk(10, max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",container_name!=\"POD\"}[30m])))",
                           "projectName": "near-cs-mainnet",
                           "step": "60s"
                         },
@@ -791,7 +791,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "topk(10, sum by (namespace_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^(default|chain-sig|contract-watcher|contract-pinger|arc-runners|chainstack-faucet)$\",container_name!=\"POD\"}[30m])))",
+                          "expr": "topk(10, sum by (namespace_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^(default|contract-watcher|contract-pinger|arc-runners|chainstack-faucet)$\",container_name!=\"POD\"}[30m])))",
                           "projectName": "near-cs-dev",
                           "step": "60s"
                         },
@@ -913,7 +913,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "topk(10, sum by (namespace_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^(default|chain-sig)$\",container_name!=\"POD\"}[30m])))",
+                          "expr": "topk(10, sum by (namespace_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",container_name!=\"POD\"}[30m])))",
                           "projectName": "near-cs-testnet",
                           "step": "60s"
                         },
@@ -1035,7 +1035,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "topk(10, sum by (namespace_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^(default|chain-sig)$\",container_name!=\"POD\"}[30m])))",
+                          "expr": "topk(10, sum by (namespace_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",container_name!=\"POD\"}[30m])))",
                           "projectName": "near-cs-mainnet",
                           "step": "60s"
                         },
@@ -1157,7 +1157,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^(default|chain-sig)$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-dev",
                           "step": "60s"
                         },
@@ -1279,7 +1279,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^(default|chain-sig)$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-testnet",
                           "step": "60s"
                         },
@@ -1401,7 +1401,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^(default|chain-sig)$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-mainnet",
                           "step": "60s"
                         },
@@ -1523,7 +1523,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^(default|chain-sig)$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-dev",
                           "step": "60s"
                         },
@@ -1645,7 +1645,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^(default|chain-sig)$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-testnet",
                           "step": "60s"
                         },
@@ -1767,7 +1767,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^(default|chain-sig)$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-mainnet",
                           "step": "60s"
                         },
@@ -1889,7 +1889,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "sum by (namespace_name, metadata_system_top_level_controller_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^(default|chain-sig)$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "sum by (namespace_name, metadata_system_top_level_controller_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-dev",
                           "step": "60s"
                         },
@@ -2011,7 +2011,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "sum by (namespace_name, metadata_system_top_level_controller_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^(default|chain-sig)$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "sum by (namespace_name, metadata_system_top_level_controller_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-testnet",
                           "step": "60s"
                         },
@@ -2133,7 +2133,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "sum by (namespace_name, metadata_system_top_level_controller_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^(default|chain-sig)$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "sum by (namespace_name, metadata_system_top_level_controller_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-mainnet",
                           "step": "60s"
                         },
