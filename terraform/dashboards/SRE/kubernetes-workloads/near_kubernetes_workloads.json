@@ -1139,7 +1139,7 @@
         "spec": {
           "id": 10,
           "title": "Dev Support Workload CPU Request Utilization",
-          "description": "CPU request utilization for proof server and Redis support workloads over the last 30 minutes.",
+          "description": "CPU request utilization for proof server and Redis support workload pods over the last 30 minutes.",
           "links": [],
           "data": {
             "kind": "QueryGroup",
@@ -1157,7 +1157,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, pod_name, container_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^default$\",pod_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client).*\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-dev",
                           "step": "60s"
                         },
@@ -1261,7 +1261,7 @@
         "spec": {
           "id": 11,
           "title": "Testnet Support Workload CPU Request Utilization",
-          "description": "CPU request utilization for proof server and Redis support workloads over the last 30 minutes.",
+          "description": "CPU request utilization for proof server and Redis support workload pods over the last 30 minutes.",
           "links": [],
           "data": {
             "kind": "QueryGroup",
@@ -1279,7 +1279,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, pod_name, container_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",pod_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client).*\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-testnet",
                           "step": "60s"
                         },
@@ -1383,7 +1383,7 @@
         "spec": {
           "id": 12,
           "title": "Mainnet Support Workload CPU Request Utilization",
-          "description": "CPU request utilization for proof server and Redis support workloads over the last 30 minutes.",
+          "description": "CPU request utilization for proof server and Redis support workload pods over the last 30 minutes.",
           "links": [],
           "data": {
             "kind": "QueryGroup",
@@ -1401,7 +1401,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, pod_name, container_name) (max_over_time(kubernetes_io:container_cpu_request_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",pod_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client).*\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-mainnet",
                           "step": "60s"
                         },
@@ -1505,7 +1505,7 @@
         "spec": {
           "id": 13,
           "title": "Dev Support Workload Memory Limit Utilization",
-          "description": "Memory limit utilization for proof server and Redis support workloads over the last 30 minutes.",
+          "description": "Memory limit utilization for proof server and Redis support workload pods over the last 30 minutes.",
           "links": [],
           "data": {
             "kind": "QueryGroup",
@@ -1523,7 +1523,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, pod_name, container_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^default$\",pod_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client).*\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-dev",
                           "step": "60s"
                         },
@@ -1627,7 +1627,7 @@
         "spec": {
           "id": 14,
           "title": "Testnet Support Workload Memory Limit Utilization",
-          "description": "Memory limit utilization for proof server and Redis support workloads over the last 30 minutes.",
+          "description": "Memory limit utilization for proof server and Redis support workload pods over the last 30 minutes.",
           "links": [],
           "data": {
             "kind": "QueryGroup",
@@ -1645,7 +1645,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, pod_name, container_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",pod_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client).*\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-testnet",
                           "step": "60s"
                         },
@@ -1749,7 +1749,7 @@
         "spec": {
           "id": 15,
           "title": "Mainnet Support Workload Memory Limit Utilization",
-          "description": "Memory limit utilization for proof server and Redis support workloads over the last 30 minutes.",
+          "description": "Memory limit utilization for proof server and Redis support workload pods over the last 30 minutes.",
           "links": [],
           "data": {
             "kind": "QueryGroup",
@@ -1767,7 +1767,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "max by (namespace_name, metadata_system_top_level_controller_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "max by (namespace_name, pod_name, container_name) (max_over_time(kubernetes_io:container_memory_limit_utilization{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",pod_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client).*\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-mainnet",
                           "step": "60s"
                         },
@@ -1871,7 +1871,7 @@
         "spec": {
           "id": 16,
           "title": "Dev Support Workload Restart Increases",
-          "description": "Container restart increases for proof server and Redis support workloads over the last 30 minutes.",
+          "description": "Container restart increases for proof server and Redis support workload pods over the last 30 minutes.",
           "links": [],
           "data": {
             "kind": "QueryGroup",
@@ -1889,7 +1889,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "sum by (namespace_name, metadata_system_top_level_controller_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "sum by (namespace_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-dev\",location=\"europe-west1\",cluster_name=\"dev\",namespace_name=~\"^default$\",pod_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client).*\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-dev",
                           "step": "60s"
                         },
@@ -1993,7 +1993,7 @@
         "spec": {
           "id": 17,
           "title": "Testnet Support Workload Restart Increases",
-          "description": "Container restart increases for proof server and Redis support workloads over the last 30 minutes.",
+          "description": "Container restart increases for proof server and Redis support workload pods over the last 30 minutes.",
           "links": [],
           "data": {
             "kind": "QueryGroup",
@@ -2011,7 +2011,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "sum by (namespace_name, metadata_system_top_level_controller_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "sum by (namespace_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-testnet\",location=\"europe-west1\",cluster_name=\"testnet\",namespace_name=~\"^default$\",pod_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client).*\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-testnet",
                           "step": "60s"
                         },
@@ -2115,7 +2115,7 @@
         "spec": {
           "id": 18,
           "title": "Mainnet Support Workload Restart Increases",
-          "description": "Container restart increases for proof server and Redis support workloads over the last 30 minutes.",
+          "description": "Container restart increases for proof server and Redis support workload pods over the last 30 minutes.",
           "links": [],
           "data": {
             "kind": "QueryGroup",
@@ -2133,7 +2133,7 @@
                       },
                       "spec": {
                         "promQLQuery": {
-                          "expr": "sum by (namespace_name, metadata_system_top_level_controller_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",metadata_system_top_level_controller_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client)$\",container_name!=\"POD\"}[30m]))",
+                          "expr": "sum by (namespace_name, pod_name, container_name) (increase(kubernetes_io:container_restart_count{monitored_resource=\"k8s_container\",project_id=\"near-cs-mainnet\",location=\"europe-west1\",cluster_name=\"mainnet\",namespace_name=~\"^default$\",pod_name=~\"^(midnight-proof-server|redis-master|redis-slave|redis-exporter|redis-client-deployment|redis-client).*\",container_name!=\"POD\"}[30m]))",
                           "projectName": "near-cs-mainnet",
                           "step": "60s"
                         },
