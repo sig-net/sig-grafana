@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.8.0](https://github.com/sig-net/sig-grafana/compare/0.7.0...0.8.0) (2026-10-09)
+
+
+### Features
+
+* **dashboard:** add CS support workload metrics ([#92](https://github.com/sig-net/sig-grafana/issues/92)) ([d4f764e](https://github.com/sig-net/sig-grafana/commit/d4f764e81492350d35bc91d5d4713f0e91ac1425))
+* **dashboard:** fix the in time rate to use expired|in_time ([#93](https://github.com/sig-net/sig-grafana/issues/93)) ([068eb62](https://github.com/sig-net/sig-grafana/commit/068eb6210f8cccfea739d8b65cf93c7be1d914eb))
+* **dashboard:** fix the leg2 organizing metric ([#91](https://github.com/sig-net/sig-grafana/issues/91)) ([85ce174](https://github.com/sig-net/sig-grafana/commit/85ce174849a248cdbe037a5921e4b5f1adb11376))
+* **dashboard:** more bidirectional separation on key metrics ([#89](https://github.com/sig-net/sig-grafana/issues/89)) ([6b4ee96](https://github.com/sig-net/sig-grafana/commit/6b4ee96cd519ac52c452b84c913b69f3317d76de))
+* **grafana:** add dev near balance panels ([#84](https://github.com/sig-net/sig-grafana/issues/84)) ([1899835](https://github.com/sig-net/sig-grafana/commit/1899835852f49e85901421abca14413cfa4e4c62))
+
+
+### Bug Fixes
+
+* **dashboard:** remove broken support workload panels ([#95](https://github.com/sig-net/sig-grafana/issues/95)) ([d62591f](https://github.com/sig-net/sig-grafana/commit/d62591fdf4b842a845ece691c094195ebf55b98d))
+* **dashboard:** repair CS support workload panels ([#94](https://github.com/sig-net/sig-grafana/issues/94)) ([bca590c](https://github.com/sig-net/sig-grafana/commit/bca590c46218e95c1d217fa30761f2844d3f2e5b))
+* **grafana:** reduce dev near balance polling ([#86](https://github.com/sig-net/sig-grafana/issues/86)) ([385de42](https://github.com/sig-net/sig-grafana/commit/385de4240f7fe344ccf6c999627a98b84bb59370))
+
 ## [0.7.0](https://github.com/sig-net/sig-grafana/compare/0.6.0...0.7.0) (2026-09-17)
 
 
