@@ -334,6 +334,22 @@ locals {
       description   = "Testnet Hydration indexed block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
     },
     {
+      name          = "[TESTNET][NETWORK][MIDNIGHT] Latest Block Height Stalled"
+      expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Midnight\", status=\"indexed\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"testnet\", chain=\"Midnight\", status=\"indexed\"}[30m]))"
+      threshold     = 1
+      comparator    = "lt"
+      panel_id      = "180"
+      contact_point = local.chain_signatures_contacts.sre
+      for           = "1m"
+      legend_format = "{{node_account_id}}"
+      query_type    = "range"
+      range         = true
+      instant       = false
+      no_data_state = "NoData"
+      summary       = "[TESTNET][NETWORK][MIDNIGHT] Latest block height stalled"
+      description   = "Testnet Midnight indexed block height has not advanced for {{ $labels.node_account_id }}: {{ $values.B }}"
+    },
+    {
       name          = "[MAINNET][NETWORK][ETH] Latest Block Height Stalled"
       expr          = "max by(node_account_id) (max_over_time(multichain_latest_block_number{environment=\"mainnet\", chain=\"Ethereum\", status=\"indexed\"}[30m]) - min_over_time(multichain_latest_block_number{environment=\"mainnet\", chain=\"Ethereum\", status=\"indexed\"}[30m]))"
       threshold     = 1
