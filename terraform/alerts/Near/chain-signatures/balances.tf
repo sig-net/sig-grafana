@@ -1312,8 +1312,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
         to   = 0
       }
 
-      datasource_uid = "de2db39oo2rk0a"
-      model          = "{\"columns\":[{\"selector\":\"balance\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://contract-ping.sig.network/eth_balance\",\"url_options\":{\"body_content_type\":\"Application/json\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"address\\\": \\\"0x24377DfbF9F0Ce85F22B6E9B5d0eD86bdeD6b013\\\"\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"x-api-secret\",\"value\":\"default-secret-key\"}],\"method\":\"POST\"}}"
+      datasource_uid = "contract-pinger-alerts"
+      model          = "{\"columns\":[{\"selector\":\"balance\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"contract-pinger-alerts\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://contract-ping.sig.network/eth_balance\",\"url_options\":{\"body_content_type\":\"Application/json\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"address\\\": \\\"0x24377DfbF9F0Ce85F22B6E9B5d0eD86bdeD6b013\\\"\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"}],\"method\":\"POST\"}}"
     }
     data {
       ref_id = "C"
@@ -1343,6 +1343,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "68"
       description      = "Bidirectional funding account (0x24377DfbF9F0Ce85F22B6E9B5d0eD86bdeD6b013), which tops up the bidirectional worker addresses, ETH balance is {{ $values.B }}"
     }
     is_paused = false
