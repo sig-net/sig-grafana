@@ -5,8 +5,8 @@
     "name": "chain_signatures_staging_dashboard",
     "namespace": "stacks-1067523",
     "uid": "33ce36bf-8a57-4668-845d-bbe3822af3db",
-    "resourceVersion": "2112401472618954752",
-    "generation": 39,
+    "resourceVersion": "2112402986490068992",
+    "generation": 40,
     "creationTimestamp": "2026-08-21T20:07:05Z",
     "labels": {
       "grafana.app/deprecatedInternalID": "1509599898324992"
@@ -15,7 +15,7 @@
       "grafana.app/createdBy": "user:ce16hvx2a3ev4f",
       "grafana.app/saved-from-ui": "Grafana Cloud",
       "grafana.app/updatedBy": "user:ee1zfeni5dg5ce",
-      "grafana.app/updatedTimestamp": "2026-10-20T04:32:12Z"
+      "grafana.app/updatedTimestamp": "2026-10-20T04:38:13Z"
     }
   },
   "spec": {
@@ -3456,33 +3456,9 @@
                       "spec": {
                         "app": "grafana-assistant-app",
                         "editorMode": "code",
-                        "expr": "((sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\",\n  status=\"in_time\"}[1h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\",\n  environment=~\"$environment\", step=\"total\", status=\"expired\"}[1h])))) / (sum by(chain)\n  (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\",\n  status=~\"in_time|expired\"}[1h])) > 0)) * 100",
-                        "instant": false,
-                        "legendFormat": "__auto",
-                        "queryType": "range",
-                        "range": true
-                      }
-                    },
-                    "refId": "F",
-                    "hidden": false
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "query": {
-                      "kind": "DataQuery",
-                      "group": "prometheus",
-                      "version": "v0",
-                      "datasource": {
-                        "name": "grafanacloud-prom"
-                      },
-                      "spec": {
-                        "app": "grafana-assistant-app",
-                        "editorMode": "code",
                         "expr": "((sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\",\n  status=\"in_time\"}[24h])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\",\n  environment=~\"$environment\", step=\"total\", status=\"expired\"}[24h])))) / (sum by(chain)\n  (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\",\n  status=~\"in_time|expired\"}[24h])) > 0)) * 100",
                         "instant": false,
-                        "legendFormat": "__auto",
+                        "legendFormat": "24 hour · {{chain}}",
                         "queryType": "range",
                         "range": true
                       }
@@ -3530,7 +3506,7 @@
                         "editorMode": "code",
                         "expr": "((sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\",\n  status=\"in_time\"}[30d])) or (0 * sum by(chain) (increase(multichain_sign_request_latency_sec_count{kind=\"sign\",\n  environment=~\"$environment\", step=\"total\", status=\"expired\"}[30d])))) / (sum by(chain)\n  (increase(multichain_sign_request_latency_sec_count{kind=\"sign\", environment=~\"$environment\", step=\"total\",\n  status=~\"in_time|expired\"}[30d])) > 0)) * 100",
                         "instant": false,
-                        "legendFormat": "__auto",
+                        "legendFormat": "30 days · {{chain}}",
                         "queryType": "range",
                         "range": true
                       }
