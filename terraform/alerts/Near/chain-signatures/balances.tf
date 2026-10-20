@@ -1343,6 +1343,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "68"
       description      = "Bidirectional funding account (0x24377DfbF9F0Ce85F22B6E9B5d0eD86bdeD6b013), which tops up the bidirectional worker addresses, ETH balance is {{ $values.B }}"
     }
     is_paused = false
