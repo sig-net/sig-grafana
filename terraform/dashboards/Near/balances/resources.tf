@@ -29,3 +29,51 @@ data "google_secret_manager_secret_version" "grafana_cloud_url" {
   project = "sig-bootstrap"
   secret  = "grafana-cloud-url"
 }
+
+data "google_secret_manager_secret_version" "alchemy_api_key_nonprod" {
+  project = "sig-bootstrap"
+  secret  = "alchemy-api-key-nonprod"
+}
+
+data "google_secret_manager_secret_version" "alchemy_api_key_mainnet" {
+  project = "sig-bootstrap"
+  secret  = "alchemy-api-key-mainnet"
+}
+
+resource "grafana_data_source" "alchemy_nonprod" {
+  type = "yesoreyeram-infinity-datasource"
+  name = "Alchemy non-production"
+  uid  = "alchemy-nonprod-balances"
+  url  = "https://solana-devnet.g.alchemy.com/v2"
+
+  json_data_encoded = jsonencode({
+    auth_method = "bearerToken"
+    allowedHosts = [
+      "https://solana-devnet.g.alchemy.com",
+      "https://eth-sepolia.g.alchemy.com",
+    ]
+  })
+
+  secure_json_data_encoded = jsonencode({
+    bearerToken = data.google_secret_manager_secret_version.alchemy_api_key_nonprod.secret_data
+  })
+}
+
+resource "grafana_data_source" "alchemy_mainnet" {
+  type = "yesoreyeram-infinity-datasource"
+  name = "Alchemy mainnet"
+  uid  = "alchemy-mainnet-balances"
+  url  = "https://solana-mainnet.g.alchemy.com/v2"
+
+  json_data_encoded = jsonencode({
+    auth_method = "bearerToken"
+    allowedHosts = [
+      "https://solana-mainnet.g.alchemy.com",
+      "https://eth-mainnet.g.alchemy.com",
+    ]
+  })
+
+  secure_json_data_encoded = jsonencode({
+    bearerToken = data.google_secret_manager_secret_version.alchemy_api_key_mainnet.secret_data
+  })
+}

@@ -4,6 +4,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
   folder_uid       = "multichain"
   interval_seconds = 60
 
+  depends_on = [grafana_data_source.alchemy_nonprod]
+
   rule {
     name      = "[TESTNET][SOL][BALANCE] Testnet Network Balance"
     condition = "C"
@@ -16,8 +18,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
         to   = 0
       }
 
-      datasource_uid = "de2db39oo2rk0a"
-      model          = "{\"columns\":[{\"selector\":\"result.value\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://solana-devnet.g.alchemy.com/v2/aqA2k3YTA96ODOgOYbmqeaxPUIS-qGpk\",\"url_options\":{\"body_content_type\":\"text/plain\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"method\\\": \\\"getBalance\\\",\\n  \\\"params\\\": [\\n    \\\"9LXFa1Tx4fjb69EYNZhMneMaCa4P6UQVN4JPovysLhW5\\\"\\n      ],\\n \\\"id\\\": 1\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+      datasource_uid = "alchemy-nonprod-alerts"
+      model          = "{\"columns\":[{\"selector\":\"result.value\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"alchemy-nonprod-alerts\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://solana-devnet.g.alchemy.com/v2\",\"url_options\":{\"body_content_type\":\"text/plain\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"method\\\": \\\"getBalance\\\",\\n  \\\"params\\\": [\\n    \\\"9LXFa1Tx4fjb69EYNZhMneMaCa4P6UQVN4JPovysLhW5\\\"\\n      ],\\n \\\"id\\\": 1\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
     }
     data {
       ref_id = "C"
@@ -70,8 +72,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
         to   = 0
       }
 
-      datasource_uid = "de2db39oo2rk0a"
-      model          = "{\"columns\":[{\"selector\":\"result.value\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://solana-devnet.g.alchemy.com/v2/aqA2k3YTA96ODOgOYbmqeaxPUIS-qGpk\",\"url_options\":{\"body_content_type\":\"text/plain\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"method\\\": \\\"getBalance\\\",\\n  \\\"params\\\": [\\n    \\\"8oYvqBeCAhQYhA7Fw2fxG2ZvYgmhUtEdtXhteT7xdbti\\\"\\n      ],\\n \\\"id\\\": 1\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+      datasource_uid = "alchemy-nonprod-alerts"
+      model          = "{\"columns\":[{\"selector\":\"result.value\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"alchemy-nonprod-alerts\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://solana-devnet.g.alchemy.com/v2\",\"url_options\":{\"body_content_type\":\"text/plain\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"method\\\": \\\"getBalance\\\",\\n  \\\"params\\\": [\\n    \\\"8oYvqBeCAhQYhA7Fw2fxG2ZvYgmhUtEdtXhteT7xdbti\\\"\\n      ],\\n \\\"id\\\": 1\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
     }
     data {
       ref_id = "C"
@@ -124,8 +126,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
         to   = 0
       }
 
-      datasource_uid = "de2db39oo2rk0a"
-      model          = "{\"columns\":[{\"selector\":\"result.value\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://solana-devnet.g.alchemy.com/v2/aqA2k3YTA96ODOgOYbmqeaxPUIS-qGpk\",\"url_options\":{\"body_content_type\":\"text/plain\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"method\\\": \\\"getBalance\\\",\\n  \\\"params\\\": [\\n    \\\"9LXFa1Tx4fjb69EYNZhMneMaCa4P6UQVN4JPovysLhW5\\\"\\n      ],\\n \\\"id\\\": 1\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+      datasource_uid = "alchemy-nonprod-alerts"
+      model          = "{\"columns\":[{\"selector\":\"result.value\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"alchemy-nonprod-alerts\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://solana-devnet.g.alchemy.com/v2\",\"url_options\":{\"body_content_type\":\"text/plain\",\"body_graphql_query\":\"\",\"body_graphql_variables\":\"\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"method\\\": \\\"getBalance\\\",\\n  \\\"params\\\": [\\n    \\\"9LXFa1Tx4fjb69EYNZhMneMaCa4P6UQVN4JPovysLhW5\\\"\\n      ],\\n \\\"id\\\": 1\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
     }
     data {
       ref_id = "C"
