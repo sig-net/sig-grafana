@@ -45,6 +45,11 @@ data "google_secret_manager_secret_version" "alchemy_api_key_nonprod" {
   secret  = "alchemy-api-key-nonprod"
 }
 
+data "google_secret_manager_secret_version" "contract_pinger_api_secret" {
+  project = "sig-bootstrap"
+  secret  = "contract-pinger-api-secret"
+}
+
 resource "grafana_data_source" "alchemy_nonprod" {
   type = "yesoreyeram-infinity-datasource"
   name = "Alchemy non-production alerts"
@@ -61,5 +66,25 @@ resource "grafana_data_source" "alchemy_nonprod" {
 
   secure_json_data_encoded = jsonencode({
     bearerToken = data.google_secret_manager_secret_version.alchemy_api_key_nonprod.secret_data
+  })
+}
+
+resource "grafana_data_source" "contract_pinger" {
+  type = "yesoreyeram-infinity-datasource"
+  name = "Contract pinger alerts"
+  uid  = "contract-pinger-alerts"
+  url  = "https://contract-ping.sig.network"
+
+  json_data_encoded = jsonencode({
+    auth_method = "apiKey"
+    apiKeyKey   = "x-api-secret"
+    apiKeyType  = "header"
+    allowedHosts = [
+      "https://contract-ping.sig.network",
+    ]
+  })
+
+  secure_json_data_encoded = jsonencode({
+    apiKeyValue = data.google_secret_manager_secret_version.contract_pinger_api_secret.secret_data
   })
 }
