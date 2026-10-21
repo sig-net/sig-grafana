@@ -499,6 +499,80 @@ resource "grafana_rule_group" "rule_group_ab5e7f79a1339a71" {
     }
   }
   rule {
+    name      = "[TESTNET][SIGNATURES][MIDNIGHT] Signature Success Rate/1h"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 3600
+        to   = 0
+      }
+
+      datasource_uid = "grafanacloud-prom"
+      model = jsonencode({
+        datasource = {
+          type = "prometheus"
+          uid  = "grafanacloud-prom"
+        }
+        editorMode    = "code"
+        expr          = <<-EOT
+          (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Midnight", step="total", status="in_time"}[1h]))
+          / (sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Midnight", step="total", status="in_time"}[1h]))
+            + (sum(increase(multichain_sign_request_delayed{environment="testnet", chain="Midnight"}[1h]))
+              or (0 * sum(increase(multichain_sign_request_latency_sec_count{environment="testnet", chain="Midnight", step="total", status="in_time"}[1h])))))) * 100
+        EOT
+        instant       = false
+        interval      = ""
+        intervalMs    = 60000
+        legendFormat  = "1 hour · Midnight"
+        maxDataPoints = 43200
+        range         = true
+        refId         = "A"
+      })
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"B\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"A\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"reducer\":\"last\",\"refId\":\"B\",\"type\":\"reduce\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[85],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
+    for            = "1h"
+    annotations = {
+      __dashboardUid__ = "a8258407-c08f-4796-9d3e-31caacde8653"
+      __panelId__      = "178"
+      description      = "Midnight 1-hour in-time request SLI has been below 85% for 1 hour: {{ $values.A }}%"
+      summary          = "[TESTNET][SIGNATURES][MIDNIGHT] Success rate below 85%"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "MPC Alerts"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+  rule {
     name      = "[TESTNET][SIGNATURES][ETH] Signature Success Rate/10m"
     condition = "C"
 
