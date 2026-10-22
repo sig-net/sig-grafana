@@ -46,7 +46,7 @@ resource "grafana_rule_group" "midnight_balances" {
     for            = "15m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
-      __panelId__      = "79"
+      __panelId__      = "97"
       description      = "{{ $labels.node_account_id }} has {{ $values.B }} DUST in its Midnight funding wallet, read before its last landed publish. Top up NIGHT so DUST regenerates."
       summary          = "[DEV][MIDNIGHT] Node funding wallet DUST below 10,000"
     }
