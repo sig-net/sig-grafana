@@ -5430,7 +5430,7 @@
               "source": "url",
               "summarizeExpression": "",
               "type": "json",
-              "url": "https://rpc.testnet.near.org",
+              "url": "https://rpc.testnet.fastnear.com",
               "url_options": {
                 "body_content_type": "application/json",
                 "body_type": "raw",
@@ -5535,7 +5535,7 @@
               "source": "url",
               "summarizeExpression": "",
               "type": "json",
-              "url": "https://rpc.testnet.near.org",
+              "url": "https://rpc.testnet.fastnear.com",
               "url_options": {
                 "body_content_type": "application/json",
                 "body_type": "raw",
@@ -5640,7 +5640,7 @@
               "source": "url",
               "summarizeExpression": "",
               "type": "json",
-              "url": "https://rpc.testnet.near.org",
+              "url": "https://rpc.testnet.fastnear.com",
               "url_options": {
                 "body_content_type": "application/json",
                 "body_type": "raw",
@@ -5745,7 +5745,7 @@
               "source": "url",
               "summarizeExpression": "",
               "type": "json",
-              "url": "https://rpc.testnet.near.org",
+              "url": "https://rpc.testnet.fastnear.com",
               "url_options": {
                 "body_content_type": "application/json",
                 "body_type": "raw",
@@ -5850,7 +5850,7 @@
               "source": "url",
               "summarizeExpression": "",
               "type": "json",
-              "url": "https://rpc.testnet.near.org",
+              "url": "https://rpc.testnet.fastnear.com",
               "url_options": {
                 "body_content_type": "application/json",
                 "body_type": "raw",
@@ -5955,7 +5955,7 @@
               "source": "url",
               "summarizeExpression": "",
               "type": "json",
-              "url": "https://rpc.testnet.near.org",
+              "url": "https://rpc.testnet.fastnear.com",
               "url_options": {
                 "body_content_type": "application/json",
                 "body_type": "raw",
@@ -6060,7 +6060,7 @@
               "source": "url",
               "summarizeExpression": "",
               "type": "json",
-              "url": "https://rpc.testnet.near.org",
+              "url": "https://rpc.testnet.fastnear.com",
               "url_options": {
                 "body_content_type": "application/json",
                 "body_type": "raw",
@@ -6165,7 +6165,7 @@
               "source": "url",
               "summarizeExpression": "",
               "type": "json",
-              "url": "https://rpc.testnet.near.org",
+              "url": "https://rpc.testnet.fastnear.com",
               "url_options": {
                 "body_content_type": "application/json",
                 "body_type": "raw",
