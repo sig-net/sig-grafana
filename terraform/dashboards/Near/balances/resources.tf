@@ -75,3 +75,39 @@ resource "grafana_data_source" "alchemy_mainnet" {
     bearerToken = data.google_secret_manager_secret_version.alchemy_api_key_mainnet.secret_data
   })
 }
+
+resource "grafana_data_source" "alchemy_eth_sepolia" {
+  type = "yesoreyeram-infinity-datasource"
+  name = "Alchemy Ethereum Sepolia"
+  uid  = "alchemy-eth-sepolia-balances"
+  url  = "https://eth-sepolia.g.alchemy.com"
+
+  json_data_encoded = jsonencode({
+    auth_method = "bearerToken"
+    allowedHosts = [
+      "https://eth-sepolia.g.alchemy.com",
+    ]
+  })
+
+  secure_json_data_encoded = jsonencode({
+    bearerToken = data.google_secret_manager_secret_version.alchemy_api_key_nonprod.secret_data
+  })
+}
+
+resource "grafana_data_source" "alchemy_eth_mainnet" {
+  type = "yesoreyeram-infinity-datasource"
+  name = "Alchemy Ethereum mainnet"
+  uid  = "alchemy-eth-mainnet-balances"
+  url  = "https://eth-mainnet.g.alchemy.com"
+
+  json_data_encoded = jsonencode({
+    auth_method = "bearerToken"
+    allowedHosts = [
+      "https://eth-mainnet.g.alchemy.com",
+    ]
+  })
+
+  secure_json_data_encoded = jsonencode({
+    bearerToken = data.google_secret_manager_secret_version.alchemy_api_key_mainnet.secret_data
+  })
+}

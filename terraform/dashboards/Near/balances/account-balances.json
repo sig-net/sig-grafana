@@ -587,7 +587,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -597,9 +597,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x7ACa63fdDE2356E85bb98Ceee79BAad1b8955f3A\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -721,7 +721,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -731,9 +731,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xea8B9883245d907Be8B81B0792f9C58fF8299090\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -855,7 +855,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -865,9 +865,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x53370DF3f1F8A9d95133Bc01D272E3c57e20D010\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -989,7 +989,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -999,9 +999,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x152e6F5A560A68266581A8147aBa8C29F1D9b655\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -1123,7 +1123,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -1133,9 +1133,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xc36F31bBc1EAd8dfBBB2888120dB9320f8A881F7\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -1257,7 +1257,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -1267,9 +1267,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xb18ad974b6853092e902dF327171B6D9a2F59D87\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -1391,7 +1391,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -1401,9 +1401,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xe9535206db309aa5bF85268890c590B485F2EB63\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -1525,7 +1525,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -1535,9 +1535,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x11345F6D810F64ba5649a87EAE43c5EAF8dEfD68\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -1659,7 +1659,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -1669,9 +1669,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xd3D119096b96C1e4CA791Cd89A52FdE93E25155F\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -1793,7 +1793,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -1803,9 +1803,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x5CD0c5934c9b46D8B84D495c66C0C30Bfa6A6a57\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -1927,7 +1927,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -1937,9 +1937,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xe38866255987983435C563A2eB4d95877acdd1DE\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -2061,7 +2061,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -2071,9 +2071,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x8CAF5e881b3CB29Da8e36B5D448CbEa34ED2fBf9\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -2209,7 +2209,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -2219,9 +2219,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x190c79eFF713Eae2BCcD64DC48eE6080C8C5e178\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -2343,7 +2343,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -2353,9 +2353,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x7afDdcF824E319Fa1dA5099dB1c7C8f4eFfC146c\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -2477,7 +2477,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -2487,9 +2487,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xaa4878DfBB72F51Eb519caA96a6a064946e95724\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -2611,7 +2611,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -2621,9 +2621,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xF9b540ab0BEAe02d0a956F325E65545F0E467Cbe\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -2745,7 +2745,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -2755,9 +2755,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x21bd2b9c258570d3c371E336973F60a72e25b3E5\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -2879,7 +2879,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -2889,9 +2889,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xc0aEdDBA68eAD5A34B1644196ff1EF000335B26A\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -3013,7 +3013,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -3023,9 +3023,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x32B620BeE309e7001d6B6012a20E64001a6eF34E\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -3147,7 +3147,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-nonprod-balances"
+                "uid": "alchemy-eth-sepolia-balances"
               },
               "filters": [],
               "format": "table",
@@ -3157,9 +3157,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-sepolia.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xe6C4142016937c4e0EbbB025Bf566bf40cFF8ac2\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -3295,7 +3295,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-mainnet-balances"
+                "uid": "alchemy-eth-mainnet-balances"
               },
               "filters": [],
               "format": "table",
@@ -3305,9 +3305,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-mainnet.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xbf8f3cb37d50353d7f4a0b9bfc5615a492f7f557\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -3429,7 +3429,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-mainnet-balances"
+                "uid": "alchemy-eth-mainnet-balances"
               },
               "filters": [],
               "format": "table",
@@ -3439,9 +3439,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-mainnet.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x0751fbaa7324e74a5fa7775158acb6c2c50a6838\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -3563,7 +3563,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-mainnet-balances"
+                "uid": "alchemy-eth-mainnet-balances"
               },
               "filters": [],
               "format": "table",
@@ -3573,9 +3573,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-mainnet.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xa7134a9a7ad07f14e85898433611f8782fcfc6c5\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -3697,7 +3697,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-mainnet-balances"
+                "uid": "alchemy-eth-mainnet-balances"
               },
               "filters": [],
               "format": "table",
@@ -3707,9 +3707,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-mainnet.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x36307aa360b228139674325e797276aeccc37351\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -3831,7 +3831,7 @@
               ],
               "datasource": {
                 "type": "yesoreyeram-infinity-datasource",
-                "uid": "alchemy-mainnet-balances"
+                "uid": "alchemy-eth-mainnet-balances"
               },
               "filters": [],
               "format": "table",
@@ -3841,9 +3841,9 @@
               "root_selector": "",
               "source": "url",
               "type": "json",
-              "url": "https://eth-mainnet.g.alchemy.com/v2",
+              "url": "/v2",
               "url_options": {
-                "body_content_type": "text/plain",
+                "body_content_type": "application/json",
                 "body_type": "raw",
                 "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x31d22ddafdf238367030f29f9294e24979e258e7\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
                 "headers": [
@@ -4277,7 +4277,7 @@
           ],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "alchemy-nonprod-balances"
+            "uid": "alchemy-eth-sepolia-balances"
           },
           "filters": [],
           "format": "table",
@@ -4287,9 +4287,9 @@
           "root_selector": "",
           "source": "url",
           "type": "json",
-          "url": "https://eth-sepolia.g.alchemy.com/v2",
+          "url": "/v2",
           "url_options": {
-            "body_content_type": "text/plain",
+            "body_content_type": "application/json",
             "body_type": "raw",
             "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xE4765a5D7335DAd51b3058d0b8eDeE540D149a21\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
             "headers": [
@@ -4411,7 +4411,7 @@
           ],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "alchemy-nonprod-balances"
+            "uid": "alchemy-eth-sepolia-balances"
           },
           "filters": [],
           "format": "table",
@@ -4421,9 +4421,9 @@
           "root_selector": "",
           "source": "url",
           "type": "json",
-          "url": "https://eth-sepolia.g.alchemy.com/v2",
+          "url": "/v2",
           "url_options": {
-            "body_content_type": "text/plain",
+            "body_content_type": "application/json",
             "body_type": "raw",
             "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x205F417D35AAe79eEf7681C9dC9Db5876d0dB264\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
             "headers": [
@@ -4545,7 +4545,7 @@
           ],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "alchemy-nonprod-balances"
+            "uid": "alchemy-eth-sepolia-balances"
           },
           "filters": [],
           "format": "table",
@@ -4555,9 +4555,9 @@
           "root_selector": "",
           "source": "url",
           "type": "json",
-          "url": "https://eth-sepolia.g.alchemy.com/v2",
+          "url": "/v2",
           "url_options": {
-            "body_content_type": "text/plain",
+            "body_content_type": "application/json",
             "body_type": "raw",
             "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0x24377DfbF9F0Ce85F22B6E9B5d0eD86bdeD6b013\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
             "headers": [
