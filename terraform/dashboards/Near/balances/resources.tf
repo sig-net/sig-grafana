@@ -44,7 +44,6 @@ resource "grafana_data_source" "alchemy_nonprod" {
   type = "yesoreyeram-infinity-datasource"
   name = "Alchemy non-production"
   uid  = "alchemy-nonprod-balances"
-  url  = "https://solana-devnet.g.alchemy.com/v2"
 
   json_data_encoded = jsonencode({
     auth_method = "bearerToken"
@@ -63,7 +62,6 @@ resource "grafana_data_source" "alchemy_mainnet" {
   type = "yesoreyeram-infinity-datasource"
   name = "Alchemy mainnet"
   uid  = "alchemy-mainnet-balances"
-  url  = "https://solana-mainnet.g.alchemy.com/v2"
 
   json_data_encoded = jsonencode({
     auth_method = "bearerToken"

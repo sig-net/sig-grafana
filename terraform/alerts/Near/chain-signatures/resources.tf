@@ -54,7 +54,6 @@ resource "grafana_data_source" "alchemy_nonprod" {
   type = "yesoreyeram-infinity-datasource"
   name = "Alchemy non-production alerts"
   uid  = "alchemy-nonprod-alerts"
-  url  = "https://solana-devnet.g.alchemy.com/v2"
 
   json_data_encoded = jsonencode({
     auth_method = "bearerToken"
