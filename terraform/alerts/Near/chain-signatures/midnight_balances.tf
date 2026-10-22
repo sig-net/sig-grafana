@@ -46,7 +46,7 @@ resource "grafana_rule_group" "midnight_balances" {
     for            = "15m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
-      __panelId__      = "78"
+      __panelId__      = "79"
       description      = "{{ $labels.node_account_id }} has {{ $values.B }} DUST in its Midnight funding wallet, read before its last landed publish. Top up NIGHT so DUST regenerates."
       summary          = "[DEV][MIDNIGHT] Node funding wallet DUST below 10,000"
     }
@@ -101,10 +101,8 @@ resource "grafana_rule_group" "midnight_balances" {
     exec_err_state = "Error"
     for            = "5m"
     annotations = {
-      __dashboardUid__ = "ddtms2vlw0buob"
-      __panelId__      = "80"
-      description      = "{{ $labels.node_account_id }} had {{ $values.B }} Midnight publishes refused as wallet_unfunded in 15m. The DUST gauge only updates on landed publishes, so this is the signal that the wallet actually ran dry."
-      summary          = "[DEV][MIDNIGHT] Midnight publishes refused: wallet unfunded"
+      description = "{{ $labels.node_account_id }} had {{ $values.B }} Midnight publishes refused as wallet_unfunded in 15m. The DUST gauge only updates on landed publishes, so this is the signal that the wallet actually ran dry."
+      summary     = "[DEV][MIDNIGHT] Midnight publishes refused: wallet unfunded"
     }
     is_paused = false
 
