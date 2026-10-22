@@ -2437,4 +2437,939 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
   }
   # End testnet NEAR multichain node balance alerts
 
+  rule {
+    name      = "[MAINNET][NEAR][BALANCE] node.sig-net.near"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.mainnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"node.sig-net.near\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"node.sig-net.near\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "78"
+      description      = "node.sig-net.near NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[MAINNET][NEAR][BALANCE] natsai-bp.near"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.mainnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"natsai-bp.near\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"natsai-bp.near\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "79"
+      description      = "natsai-bp.near NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[MAINNET][NEAR][BALANCE] sig-mpc-staking4all-01.near"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.mainnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"sig-mpc-staking4all-01.near\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"sig-mpc-staking4all-01.near\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "80"
+      description      = "sig-mpc-staking4all-01.near NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[MAINNET][NEAR][BALANCE] sig.stakin.near"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.mainnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"sig.stakin.near\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"sig.stakin.near\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "81"
+      description      = "sig.stakin.near NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[MAINNET][NEAR][BALANCE] taxistake-sig.near"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.mainnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"taxistake-sig.near\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"taxistake-sig.near\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "82"
+      description      = "taxistake-sig.near NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-0.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-0.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-0.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "84"
+      description      = "multichain-node-dev-0.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-1.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-1.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-1.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "85"
+      description      = "multichain-node-dev-1.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-2.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-2.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-2.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "86"
+      description      = "multichain-node-dev-2.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-3.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-3.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-3.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "87"
+      description      = "multichain-node-dev-3.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-4.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-4.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-4.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "88"
+      description      = "multichain-node-dev-4.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-5.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-5.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-5.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "89"
+      description      = "multichain-node-dev-5.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-6.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-6.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-6.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "90"
+      description      = "multichain-node-dev-6.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-7.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-7.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-7.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "91"
+      description      = "multichain-node-dev-7.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-8.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-8.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-8.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "92"
+      description      = "multichain-node-dev-8.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-9.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-9.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-9.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "93"
+      description      = "multichain-node-dev-9.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-10.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-10.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-10.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "94"
+      description      = "multichain-node-dev-10.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
+  rule {
+    name      = "[DEV][NEAR][BALANCE] multichain-node-dev-11.testnet"
+    condition = "C"
+
+    data {
+      ref_id = "A"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "de2db39oo2rk0a"
+      model          = "{\"columns\":[{\"selector\":\"result.amount\",\"text\":\"Amount\",\"type\":\"number\"}],\"computed_columns\":[],\"datasource\":{\"type\":\"yesoreyeram-infinity-datasource\",\"uid\":\"de2db39oo2rk0a\"},\"filterExpression\":\"\",\"filters\":[],\"format\":\"table\",\"global_query_id\":\"\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"parser\":\"backend\",\"refId\":\"A\",\"root_selector\":\"\",\"source\":\"url\",\"summarizeExpression\":\"\",\"type\":\"json\",\"url\":\"https://rpc.testnet.fastnear.com\",\"url_options\":{\"body_content_type\":\"application/json\",\"body_type\":\"raw\",\"data\":\"{\\n  \\\"jsonrpc\\\": \\\"2.0\\\",\\n  \\\"id\\\": \\\"multichain-node-dev-11.testnet\\\",\\n  \\\"method\\\": \\\"query\\\",\\n  \\\"params\\\": {\\n    \\\"request_type\\\": \\\"view_account\\\",\\n    \\\"finality\\\": \\\"final\\\",\\n    \\\"account_id\\\": \\\"multichain-node-dev-11.testnet\\\"\\n  }\\n}\",\"headers\":[{\"key\":\"Content-Type\",\"value\":\"application/json\"},{\"key\":\"source\",\"value\":\"grafana\"}],\"method\":\"POST\"}}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 0
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 21600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
+    }
+
+    no_data_state  = "OK"
+    exec_err_state = "OK"
+    for            = "5m"
+    annotations = {
+      __dashboardUid__ = "ddtms2vlw0buob"
+      __panelId__      = "95"
+      description      = "multichain-node-dev-11.testnet NEAR account balance is {{ $values.B }}"
+    }
+    is_paused = false
+
+    notification_settings {
+      contact_point = "SRE On-call"
+      group_by      = null
+      mute_timings  = null
+    }
+  }
+
 }

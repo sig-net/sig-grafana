@@ -6190,6 +6190,1819 @@
       ],
       "title": "[TESTNET][NEAR]",
       "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 77,
+      "title": "[MAINNET][NEAR]",
+      "type": "row",
+      "panels": [
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 25
+          },
+          "id": 78,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.mainnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"node.sig-net.near\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"node.sig-net.near\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "node.sig-net.near NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 25
+          },
+          "id": 79,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.mainnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"natsai-bp.near\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"natsai-bp.near\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "natsai-bp.near NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 33
+          },
+          "id": 80,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.mainnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"sig-mpc-staking4all-01.near\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"sig-mpc-staking4all-01.near\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "sig-mpc-staking4all-01.near NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 33
+          },
+          "id": 81,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.mainnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"sig.stakin.near\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"sig.stakin.near\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "sig.stakin.near NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 41
+          },
+          "id": 82,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.mainnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"taxistake-sig.near\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"taxistake-sig.near\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "taxistake-sig.near NEAR Balance",
+          "type": "stat"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 83,
+      "title": "[DEV][NEAR]",
+      "type": "row",
+      "panels": [
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 26
+          },
+          "id": 84,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-0.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-0.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-0.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 26
+          },
+          "id": 85,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-1.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-1.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-1.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 34
+          },
+          "id": 86,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-2.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-2.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-2.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 34
+          },
+          "id": 87,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-3.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-3.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-3.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 42
+          },
+          "id": 88,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-4.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-4.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-4.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 42
+          },
+          "id": 89,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-5.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-5.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-5.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 50
+          },
+          "id": 90,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-6.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-6.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-6.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 50
+          },
+          "id": 91,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-7.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-7.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-7.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 58
+          },
+          "id": 92,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-8.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-8.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-8.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 58
+          },
+          "id": 93,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-9.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-9.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-9.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 66
+          },
+          "id": 94,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-10.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-10.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-10.testnet NEAR Balance",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red",
+                    "value": 0
+                  },
+                  {
+                    "color": "green",
+                    "value": 1
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 66
+          },
+          "id": 95,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "13.3.0-38866939788",
+          "targets": [
+            {
+              "columns": [
+                {
+                  "selector": "result.amount",
+                  "text": "Amount",
+                  "type": "number"
+                }
+              ],
+              "computed_columns": [
+                {
+                  "selector": "Amount / 1000000000000000000000000",
+                  "text": "NEAR",
+                  "type": "number"
+                }
+              ],
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "de2db39oo2rk0a"
+              },
+              "filterExpression": "",
+              "filters": [],
+              "format": "table",
+              "global_query_id": "",
+              "intervalMs": 1000,
+              "maxDataPoints": 43200,
+              "parser": "backend",
+              "refId": "A",
+              "root_selector": "",
+              "source": "url",
+              "summarizeExpression": "",
+              "type": "json",
+              "url": "https://rpc.testnet.fastnear.com",
+              "url_options": {
+                "body_content_type": "application/json",
+                "body_type": "raw",
+                "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"multichain-node-dev-11.testnet\",\n  \"method\": \"query\",\n  \"params\": {\n    \"request_type\": \"view_account\",\n    \"finality\": \"final\",\n    \"account_id\": \"multichain-node-dev-11.testnet\"\n  }\n}",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "source",
+                    "value": "grafana"
+                  }
+                ],
+                "method": "POST"
+              }
+            }
+          ],
+          "title": "multichain-node-dev-11.testnet NEAR Balance",
+          "type": "stat"
+        }
+      ]
     }
   ],
   "preload": false,
