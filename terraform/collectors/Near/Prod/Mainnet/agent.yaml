@@ -15,13 +15,6 @@ metrics:
               labels:
                 multichain_node: "node.sig-net.near"
                 environment: "mainnet"
-        - job_name: multichain-mainnet-lifted
-          static_configs:
-            - targets:
-                - "sig-mpc.liftedinit.org"
-              labels:
-                multichain_node: "lifted-sig.near"
-                environment: "mainnet"
         - job_name: multichain-mainnet-staking4all
           static_configs:
             - targets:
@@ -43,33 +36,12 @@ metrics:
               labels:
                 multichain_node: "taxistake-sig.near"
                 environment: "mainnet"
-        - job_name: multichain-mainnet-luganodes
-          static_configs:
-            - targets:
-                - "sig-net.lgns.xyz"
-              labels:
-                multichain_node: "luganodes.near"
-                environment: "mainnet"
-        - job_name: multichain-mainnet-piertwo
-          static_configs:
-            - targets:
-                - "multichain-mainnet-0.piertwo.io"
-              labels:
-                multichain_node: "sig-piertwo.near"
-                environment: "mainnet"
         - job_name: multichain-mainnet-stakin
           static_configs:
             - targets:
                 - "multichain-mainnet-0.stakin-nodes.com"
               labels:
                 multichain_node: "sig.stakin.near"
-                environment: "mainnet"
-        - job_name: multichain-mainnet-blacksand
-          static_configs:
-            - targets:
-                - "signetwork-mainnet.svc.blacksand.xyz"
-              labels:
-                multichain_node: "blacksandtech-sig.near"
                 environment: "mainnet"
         - job_name: mpc-recovery-mainnet
           static_configs:
