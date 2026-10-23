@@ -4209,6 +4209,150 @@
         "x": 0,
         "y": 6
       },
+      "id": 96,
+      "panels": [],
+      "title": "[MAINNET][ETH]Contract Pinger Accounts",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "de2db39oo2rk0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "suffix:ETH",
+          "decimals": 6
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 7
+      },
+      "id": 97,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.1.0-88106",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "result",
+              "text": "Amount",
+              "type": "string"
+            }
+          ],
+          "computed_columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "de2db39oo2rk0a"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "https://eth-mainnet.g.alchemy.com/v2/aqA2k3YTA96ODOgOYbmqeaxPUIS-qGpk",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"eth_getBalance\",\n  \"params\": [\n    \"0xfF6Be1256EbFCD72A45bf16632DCCE07BC663F40\",\n    \"latest\"\n  ],\n  \"id\": 1\n}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST"
+          }
+        }
+      ],
+      "title": "Mainnet Contract Pinger",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "number",
+                "enumConfig": {
+                  "text": [
+                    null
+                  ]
+                },
+                "targetField": "Amount"
+              }
+            ],
+            "fields": {}
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Balance",
+            "binary": {
+              "left": {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Amount"
+                }
+              },
+              "operator": "/",
+              "right": {
+                "fixed": "1000000000000000000"
+              }
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat",
+      "description": "Ethereum mainnet sender for contract-pinger /ping requests: 0xfF6Be1256EbFCD72A45bf16632DCCE07BC663F40"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 15
+      },
       "id": 75,
       "title": "[DEV/TESTNET][ETH]Contract Pinger Accounts",
       "type": "row"
@@ -4238,7 +4382,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 7
+        "y": 16
       },
       "id": 46,
       "options": {
@@ -4372,7 +4516,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 7
+        "y": 16
       },
       "id": 47,
       "options": {
@@ -4506,7 +4650,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 15
+        "y": 24
       },
       "id": 68,
       "options": {
@@ -4621,7 +4765,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 32
       },
       "id": 76,
       "panels": [
@@ -4655,7 +4799,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 33
           },
           "id": 60,
           "options": {
@@ -4760,7 +4904,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 33
           },
           "id": 61,
           "options": {
@@ -4865,7 +5009,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 32
+            "y": 41
           },
           "id": 62,
           "options": {
@@ -4970,7 +5114,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 32
+            "y": 41
           },
           "id": 63,
           "options": {
@@ -5075,7 +5219,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 40
+            "y": 49
           },
           "id": 64,
           "options": {
@@ -5180,7 +5324,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 40
+            "y": 49
           },
           "id": 65,
           "options": {
@@ -5285,7 +5429,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 48
+            "y": 57
           },
           "id": 66,
           "options": {
@@ -5390,7 +5534,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 48
+            "y": 57
           },
           "id": 67,
           "options": {
@@ -5475,7 +5619,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 33
       },
       "id": 77,
       "title": "[MAINNET][NEAR]",
@@ -5511,7 +5655,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 25
+            "y": 34
           },
           "id": 78,
           "options": {
@@ -5616,7 +5760,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 25
+            "y": 34
           },
           "id": 79,
           "options": {
@@ -5721,7 +5865,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 33
+            "y": 42
           },
           "id": 80,
           "options": {
@@ -5826,7 +5970,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 33
+            "y": 42
           },
           "id": 81,
           "options": {
@@ -5931,7 +6075,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 41
+            "y": 50
           },
           "id": 82,
           "options": {
@@ -6014,7 +6158,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 34
       },
       "id": 83,
       "title": "[DEV][NEAR]",
@@ -6050,7 +6194,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 26
+            "y": 35
           },
           "id": 84,
           "options": {
@@ -6155,7 +6299,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 26
+            "y": 35
           },
           "id": 85,
           "options": {
@@ -6260,7 +6404,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 34
+            "y": 43
           },
           "id": 86,
           "options": {
@@ -6365,7 +6509,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 34
+            "y": 43
           },
           "id": 87,
           "options": {
@@ -6470,7 +6614,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 42
+            "y": 51
           },
           "id": 88,
           "options": {
@@ -6575,7 +6719,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 42
+            "y": 51
           },
           "id": 89,
           "options": {
@@ -6680,7 +6824,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 50
+            "y": 59
           },
           "id": 90,
           "options": {
@@ -6785,7 +6929,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 50
+            "y": 59
           },
           "id": 91,
           "options": {
@@ -6890,7 +7034,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 58
+            "y": 67
           },
           "id": 92,
           "options": {
@@ -6995,7 +7139,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 58
+            "y": 67
           },
           "id": 93,
           "options": {
@@ -7100,7 +7244,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 66
+            "y": 75
           },
           "id": 94,
           "options": {
@@ -7205,7 +7349,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 66
+            "y": 75
           },
           "id": 95,
           "options": {
