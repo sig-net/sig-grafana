@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.8.0](https://github.com/sig-net/sig-grafana/compare/0.7.0...0.8.0) (2026-10-23)
+
+
+### Features
+
+* **alerts:** add midnight testnet block height and success rate alerts ([#99](https://github.com/sig-net/sig-grafana/issues/99)) ([83c7a4c](https://github.com/sig-net/sig-grafana/commit/83c7a4cc3bd23efe13b1815047d671e39f003cb0))
+* **alerts:** alert on dev nodes' Midnight DUST balance and unfunded publishes ([#106](https://github.com/sig-net/sig-grafana/issues/106)) ([7cde7db](https://github.com/sig-net/sig-grafana/commit/7cde7db932d12fc7653a82e4e695749791c9ada2))
+* **dashboard:** add CS support workload metrics ([#92](https://github.com/sig-net/sig-grafana/issues/92)) ([d4f764e](https://github.com/sig-net/sig-grafana/commit/d4f764e81492350d35bc91d5d4713f0e91ac1425))
+* **dashboard:** add midnight block height panel ([#98](https://github.com/sig-net/sig-grafana/issues/98)) ([96cf11c](https://github.com/sig-net/sig-grafana/commit/96cf11c71960eab0d9d06c1da3433556d2a89f12))
+* **dashboard:** add publishing row for midnight publish refusal counts ([#108](https://github.com/sig-net/sig-grafana/issues/108)) ([1120412](https://github.com/sig-net/sig-grafana/commit/1120412516f3ad2e6a718a99eff3f640bb44c586))
+* **dashboard:** fix the in time rate to use expired|in_time ([#93](https://github.com/sig-net/sig-grafana/issues/93)) ([068eb62](https://github.com/sig-net/sig-grafana/commit/068eb6210f8cccfea739d8b65cf93c7be1d914eb))
+* **dashboard:** fix the leg2 organizing metric ([#91](https://github.com/sig-net/sig-grafana/issues/91)) ([85ce174](https://github.com/sig-net/sig-grafana/commit/85ce174849a248cdbe037a5921e4b5f1adb11376))
+* **dashboard:** more bidirectional separation on key metrics ([#89](https://github.com/sig-net/sig-grafana/issues/89)) ([6b4ee96](https://github.com/sig-net/sig-grafana/commit/6b4ee96cd519ac52c452b84c913b69f3317d76de))
+* **dashboards:** add mainnet Ethereum pinger balance ([#109](https://github.com/sig-net/sig-grafana/issues/109)) ([5f47ffc](https://github.com/sig-net/sig-grafana/commit/5f47ffce0a6c78af82961794e96e2a33c19ba685))
+* **grafana:** add dev near balance panels ([#84](https://github.com/sig-net/sig-grafana/issues/84)) ([1899835](https://github.com/sig-net/sig-grafana/commit/1899835852f49e85901421abca14413cfa4e4c62))
+* **grafana:** NEAR node balance panels and alerts for testnet, mainnet and dev via FastNear ([#105](https://github.com/sig-net/sig-grafana/issues/105)) ([219ca92](https://github.com/sig-net/sig-grafana/commit/219ca9244a1d481b9a7c14f6ca7d61ae906a5e63))
+
+
+### Bug Fixes
+
+* **dashboard:** remove broken support workload panels ([#95](https://github.com/sig-net/sig-grafana/issues/95)) ([d62591f](https://github.com/sig-net/sig-grafana/commit/d62591fdf4b842a845ece691c094195ebf55b98d))
+* **dashboard:** repair CS support workload panels ([#94](https://github.com/sig-net/sig-grafana/issues/94)) ([bca590c](https://github.com/sig-net/sig-grafana/commit/bca590c46218e95c1d217fa30761f2844d3f2e5b))
+* **dashboards:** update contract pinger balance panels and add funding account ([#101](https://github.com/sig-net/sig-grafana/issues/101)) ([ae8cad7](https://github.com/sig-net/sig-grafana/commit/ae8cad70d2aad1fbb03fd59d53d922de87ae2f46))
+* **grafana:** bind ETH panels to ETH datasources ([#112](https://github.com/sig-net/sig-grafana/issues/112)) ([dcf8824](https://github.com/sig-net/sig-grafana/commit/dcf8824333efa1edf542da6b61a62489fc49a1e4))
+* **grafana:** isolate Alchemy Ethereum datasources ([#111](https://github.com/sig-net/sig-grafana/issues/111)) ([1ac6b7e](https://github.com/sig-net/sig-grafana/commit/1ac6b7eef28d3055d06f50413e4ad7c64b0f14ca))
+* **grafana:** load alchemy keys from gsm ([#103](https://github.com/sig-net/sig-grafana/issues/103)) ([866e98f](https://github.com/sig-net/sig-grafana/commit/866e98f9b5313d740b57e1f839337c63e9289e15))
+* **grafana:** reduce dev near balance polling ([#86](https://github.com/sig-net/sig-grafana/issues/86)) ([385de42](https://github.com/sig-net/sig-grafana/commit/385de4240f7fe344ccf6c999627a98b84bb59370))
+* **grafana:** remove Alchemy datasource base URLs ([#110](https://github.com/sig-net/sig-grafana/issues/110)) ([ebd98f8](https://github.com/sig-net/sig-grafana/commit/ebd98f8d3fc47437f30a9f50c38f66300bdcdbd4))
+* **grafana:** remove PierTwo, Lifted, Luganodes and Blacksand from mainnet monitoring ([#104](https://github.com/sig-net/sig-grafana/issues/104)) ([073f798](https://github.com/sig-net/sig-grafana/commit/073f798f40a9567ab1b6d78098f84794074e1f9a))
+
 ## [0.7.0](https://github.com/sig-net/sig-grafana/compare/0.6.0...0.7.0) (2026-09-17)
 
 
