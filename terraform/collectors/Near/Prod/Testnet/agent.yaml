@@ -64,13 +64,6 @@ metrics:
               labels:
                 multichain_node: "multichain-node-7.testnet"
                 environment: "testnet"
-        - job_name: mpc-recovery-testnet
-          static_configs:
-            - targets:
-                - "mpc.testnet.sig.network"
-              labels:
-                mpc_recovery: "leader"
-                environment: "testnet"
 
   global:
     scrape_interval: 60s

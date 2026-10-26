@@ -17,7 +17,6 @@ jobs:
       contents: read
     outputs:
       chain_signatures: ${{ steps.filter.outputs.chain_signatures }}
-      mpc_recovery: ${{ steps.filter.outputs.mpc_recovery }}
       sre_kubernetes_workloads: ${{ steps.filter.outputs.sre_kubernetes_workloads }}
       sre_node_hardware: ${{ steps.filter.outputs.sre_node_hardware }}
     steps:
@@ -33,8 +32,6 @@ jobs:
           filters: |
             chain_signatures:
               - 'terraform/alerts/Near/chain-signatures/**'
-            mpc_recovery:
-              - 'terraform/alerts/Near/mpc-recovery/**'
             sre_kubernetes_workloads:
               - 'terraform/alerts/SRE/kubernetes-workloads/**'
             sre_node_hardware:
@@ -49,42 +46,6 @@ jobs:
       contents: read
     env:
       working-dir: ./terraform/alerts/Near/chain-signatures
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.7.0
-
-      - name: Terraform init
-        run: terraform init -input=false
-        working-directory: ${{ env.working-dir }}
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
-
-      - name: Terraform plan
-        run: terraform plan -input=false
-        working-directory: ${{ env.working-dir }}
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
-
-      - name: Terraform apply
-        run: terraform apply -auto-approve -input=false
-        working-directory: ${{ env.working-dir }}
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GCP_STATE_SA }}
-
-  deploy-mpc-recovery:
-    name: Deploy mpc-recovery alerts
-    needs: changes
-    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.mpc_recovery == 'true'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    env:
-      working-dir: ./terraform/alerts/Near/mpc-recovery
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

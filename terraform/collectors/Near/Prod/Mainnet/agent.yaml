@@ -43,13 +43,6 @@ metrics:
               labels:
                 multichain_node: "sig.stakin.near"
                 environment: "mainnet"
-        - job_name: mpc-recovery-mainnet
-          static_configs:
-            - targets:
-                - "mpc.mainnet.sig.network"
-              labels:
-                mpc_recovery: "leader"
-                environment: "mainnet"
 
   global:
     scrape_interval: 60s
