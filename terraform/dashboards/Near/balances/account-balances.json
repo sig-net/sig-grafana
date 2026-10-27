@@ -4217,7 +4217,7 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "de2db39oo2rk0a"
+        "uid": "alchemy-eth-mainnet-balances"
       },
       "fieldConfig": {
         "defaults": {
@@ -4274,7 +4274,7 @@
           "computed_columns": [],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "de2db39oo2rk0a"
+            "uid": "alchemy-eth-mainnet-balances"
           },
           "filters": [],
           "format": "table",
@@ -4284,7 +4284,7 @@
           "root_selector": "",
           "source": "url",
           "type": "json",
-          "url": "https://eth-mainnet.g.alchemy.com/v2/aqA2k3YTA96ODOgOYbmqeaxPUIS-qGpk",
+          "url": "/v2",
           "url_options": {
             "body_content_type": "text/plain",
             "body_type": "raw",
@@ -7434,7 +7434,7 @@
         "x": 0,
         "y": 26
       },
-      "id": 96,
+      "id": 98,
       "title": "[DEV][MIDNIGHT]",
       "type": "row",
       "panels": [
@@ -7471,7 +7471,7 @@
             "x": 0,
             "y": 27
           },
-          "id": 97,
+          "id": 99,
           "options": {
             "colorMode": "value",
             "graphMode": "none",
