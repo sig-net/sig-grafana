@@ -48,7 +48,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "16"
-      description      = "Testnet network Solana account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}Testnet network Solana account balance is {{ $values.B }}{{ else }}Testnet network Solana account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -102,7 +102,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "1"
-      description      = "8oYvqBeCAhQYhA7Fw2fxG2ZvYgmhUtEdtXhteT7xdbti Solana account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}8oYvqBeCAhQYhA7Fw2fxG2ZvYgmhUtEdtXhteT7xdbti Solana account balance is {{ $values.B }}{{ else }}8oYvqBeCAhQYhA7Fw2fxG2ZvYgmhUtEdtXhteT7xdbti Solana account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -156,7 +156,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "15"
-      description      = "Dev network Solana account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}Dev network Solana account balance is {{ $values.B }}{{ else }}Dev network Solana account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -210,7 +210,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "14"
-      description      = "multichain-node-dev-0.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-0.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-0.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -264,7 +264,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "17"
-      description      = "multichain-node-dev-1.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-1.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-1.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -318,7 +318,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "18"
-      description      = "multichain-node-dev-2.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-2.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-2.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -372,7 +372,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "19"
-      description      = "multichain-node-dev-3.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-3.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-3.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -426,7 +426,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "20"
-      description      = "multichain-node-dev-4.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-4.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-4.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -480,7 +480,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "21"
-      description      = "multichain-node-dev-5.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-5.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-5.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -534,7 +534,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "22"
-      description      = "multichain-node-dev-6.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-6.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-6.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -588,7 +588,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "23"
-      description      = "multichain-node-dev-7.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-7.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-7.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -642,7 +642,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "24"
-      description      = "multichain-node-dev-8.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-8.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-8.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -696,7 +696,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "25"
-      description      = "multichain-node-dev-9.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-9.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-9.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -750,7 +750,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "26"
-      description      = "multichain-node-dev-10.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-10.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-10.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -804,7 +804,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "27"
-      description      = "multichain-node-dev-11.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-11.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-dev-11.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -858,7 +858,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "28"
-      description      = "multichain-node-testnet-0.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-testnet-0.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-testnet-0.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -912,7 +912,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "29"
-      description      = "multichain-node-testnet-1.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-testnet-1.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-testnet-1.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -966,7 +966,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "30"
-      description      = "multichain-node-testnet-2.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-testnet-2.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-testnet-2.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1020,7 +1020,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "31"
-      description      = "multichain-node-testnet-3.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-testnet-3.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-testnet-3.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1074,7 +1074,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "32"
-      description      = "multichain-node-testnet-4.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-testnet-4.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-testnet-4.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1128,7 +1128,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "33"
-      description      = "multichain-node-testnet-5.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-testnet-5.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-testnet-5.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1182,7 +1182,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "34"
-      description      = "multichain-node-testnet-6.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-testnet-6.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-testnet-6.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1236,7 +1236,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "35"
-      description      = "multichain-node-testnet-7.testnet ETH account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-testnet-7.testnet ETH account balance is {{ $values.B }}{{ else }}multichain-node-testnet-7.testnet ETH account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1290,7 +1290,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "46"
-      description      = "Dev contract pinger (0xE4765a5D7335DAd51b3058d0b8eDeE540D149a21, SIG_EVM_SK_DEV) ETH balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}Dev contract pinger (0xE4765a5D7335DAd51b3058d0b8eDeE540D149a21, SIG_EVM_SK_DEV) ETH balance is {{ $values.B }}{{ else }}Dev contract pinger (0xE4765a5D7335DAd51b3058d0b8eDeE540D149a21, SIG_EVM_SK_DEV) ETH balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1344,7 +1344,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "68"
-      description      = "Bidirectional funding account (0x24377DfbF9F0Ce85F22B6E9B5d0eD86bdeD6b013), which tops up the bidirectional worker addresses, ETH balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}Bidirectional funding account (0x24377DfbF9F0Ce85F22B6E9B5d0eD86bdeD6b013), which tops up the bidirectional worker addresses, ETH balance is {{ $values.B }}{{ else }}Bidirectional funding account (0x24377DfbF9F0Ce85F22B6E9B5d0eD86bdeD6b013), which tops up the bidirectional worker addresses, ETH balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1398,7 +1398,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "47"
-      description      = "Testnet contract pinger (0x205F417D35AAe79eEf7681C9dC9Db5876d0dB264, SIG_EVM_SK_TESTNET) ETH balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}Testnet contract pinger (0x205F417D35AAe79eEf7681C9dC9Db5876d0dB264, SIG_EVM_SK_TESTNET) ETH balance is {{ $values.B }}{{ else }}Testnet contract pinger (0x205F417D35AAe79eEf7681C9dC9Db5876d0dB264, SIG_EVM_SK_TESTNET) ETH balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1452,7 +1452,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "36"
-      description      = "Sig Mainnet Node balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}Sig Mainnet Node balance is {{ $values.B }}{{ else }}Sig Mainnet Node balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1506,7 +1506,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "37"
-      description      = "Stakin account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}Stakin account balance is {{ $values.B }}{{ else }}Stakin account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1560,7 +1560,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "38"
-      description      = "Taxistake account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}Taxistake account balance is {{ $values.B }}{{ else }}Taxistake account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1614,7 +1614,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "39"
-      description      = "Staking4All account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}Staking4All account balance is {{ $values.B }}{{ else }}Staking4All account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1668,7 +1668,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "42"
-      description      = "BountyBlok account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}BountyBlok account balance is {{ $values.B }}{{ else }}BountyBlok account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1723,7 +1723,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "60"
-      description      = "multichain-node-0.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-0.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-0.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1777,7 +1777,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "61"
-      description      = "multichain-node-1.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-1.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-1.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1831,7 +1831,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "62"
-      description      = "multichain-node-2.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-2.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-2.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1885,7 +1885,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "63"
-      description      = "multichain-node-3.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-3.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-3.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1939,7 +1939,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "64"
-      description      = "multichain-node-4.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-4.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-4.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -1993,7 +1993,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "65"
-      description      = "multichain-node-5.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-5.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-5.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2047,7 +2047,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "66"
-      description      = "multichain-node-6.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-6.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-6.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2101,7 +2101,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "67"
-      description      = "multichain-node-7.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-7.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-7.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2157,7 +2157,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "78"
-      description      = "node.sig-net.near NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}node.sig-net.near NEAR account balance is {{ $values.B }}{{ else }}node.sig-net.near NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2212,7 +2212,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "79"
-      description      = "natsai-bp.near NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}natsai-bp.near NEAR account balance is {{ $values.B }}{{ else }}natsai-bp.near NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2267,7 +2267,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "80"
-      description      = "sig-mpc-staking4all-01.near NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}sig-mpc-staking4all-01.near NEAR account balance is {{ $values.B }}{{ else }}sig-mpc-staking4all-01.near NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2322,7 +2322,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "81"
-      description      = "sig.stakin.near NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}sig.stakin.near NEAR account balance is {{ $values.B }}{{ else }}sig.stakin.near NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2377,7 +2377,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "82"
-      description      = "taxistake-sig.near NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}taxistake-sig.near NEAR account balance is {{ $values.B }}{{ else }}taxistake-sig.near NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2432,7 +2432,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "84"
-      description      = "multichain-node-dev-0.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-0.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-0.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2487,7 +2487,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "85"
-      description      = "multichain-node-dev-1.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-1.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-1.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2542,7 +2542,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "86"
-      description      = "multichain-node-dev-2.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-2.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-2.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2597,7 +2597,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "87"
-      description      = "multichain-node-dev-3.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-3.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-3.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2652,7 +2652,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "88"
-      description      = "multichain-node-dev-4.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-4.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-4.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2707,7 +2707,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "89"
-      description      = "multichain-node-dev-5.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-5.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-5.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2762,7 +2762,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "90"
-      description      = "multichain-node-dev-6.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-6.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-6.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2817,7 +2817,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "91"
-      description      = "multichain-node-dev-7.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-7.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-7.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2872,7 +2872,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "92"
-      description      = "multichain-node-dev-8.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-8.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-8.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2927,7 +2927,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "93"
-      description      = "multichain-node-dev-9.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-9.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-9.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -2982,7 +2982,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "94"
-      description      = "multichain-node-dev-10.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-10.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-10.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
@@ -3037,7 +3037,7 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
       __panelId__      = "95"
-      description      = "multichain-node-dev-11.testnet NEAR account balance is {{ $values.B }}"
+      description      = "{{ if $values.B }}multichain-node-dev-11.testnet NEAR account balance is {{ $values.B }}{{ else }}multichain-node-dev-11.testnet NEAR account balance query returned no data or failed{{ end }}"
     }
     is_paused = false
 
