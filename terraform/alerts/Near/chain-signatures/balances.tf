@@ -42,8 +42,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -96,8 +96,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -150,8 +150,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -204,8 +204,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -258,8 +258,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -312,8 +312,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -366,8 +366,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -420,8 +420,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -474,8 +474,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -528,8 +528,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -582,8 +582,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -636,8 +636,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -690,8 +690,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -744,8 +744,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -798,8 +798,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -852,8 +852,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -906,8 +906,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -960,8 +960,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1014,8 +1014,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1068,8 +1068,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1122,8 +1122,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1176,8 +1176,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1230,8 +1230,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1284,8 +1284,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1338,8 +1338,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1392,8 +1392,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1446,8 +1446,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1500,8 +1500,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1554,8 +1554,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1608,8 +1608,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1662,8 +1662,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0,0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[]},\"reducer\":{\"params\":[],\"type\":\"avg\"},\"type\":\"query\"}],\"datasource\":{\"name\":\"Expression\",\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"$A / 1000000000000000000\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"B\",\"type\":\"math\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1717,8 +1717,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1771,8 +1771,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1825,8 +1825,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1879,8 +1879,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1933,8 +1933,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -1987,8 +1987,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2041,8 +2041,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2095,8 +2095,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2151,8 +2151,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2206,8 +2206,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2261,8 +2261,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2316,8 +2316,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2371,8 +2371,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2426,8 +2426,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2481,8 +2481,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2536,8 +2536,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2591,8 +2591,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2646,8 +2646,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2701,8 +2701,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2756,8 +2756,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2811,8 +2811,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2866,8 +2866,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2921,8 +2921,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -2976,8 +2976,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
@@ -3031,8 +3031,8 @@ resource "grafana_rule_group" "rule_group_eeaacef7b4929940" {
       model          = "{\"conditions\":[{\"evaluator\":{\"params\":[1],\"type\":\"lt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
-    no_data_state  = "OK"
-    exec_err_state = "OK"
+    no_data_state  = "NoData"
+    exec_err_state = "Error"
     for            = "5m"
     annotations = {
       __dashboardUid__ = "ddtms2vlw0buob"
